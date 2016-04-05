@@ -6,9 +6,9 @@
 			"stylers": [
 			{ "visibility": "off" }
 			]
-		},
+		}/*,
 
-		/*, {
+		{
 			"featureType": "water",
 			"stylers": [ 
 				{ "visibility": "on" } 
@@ -91,5 +91,8 @@
 /*
 	-Skapa en funktion som skapar marker på en viss lng&lat. Kolla events i guider.
 	-Det går att logga in med google-konto s¨att information sparas.
-	-Det finns något i bokmärken som kanske kan fungera för att göra snyggare karta. 	
+	-Det finns något i bokmärken som kanske kan fungera för att göra snyggare karta.
+	-Lägg till .gitignore med textfil för att skriva vad du tänker.
+	-Skapa marker för Stockholm, Göteborg och Malmö och kör funktion om man klickar på marker
+	-On hover på marker, visa stadsnamn
 */
