@@ -1,0 +1,45 @@
+/* ----- ALLA VIEWS OCH HEADER ----- #98e698 */
+
+#namn {
+	font-family: "Courier New";
+	font-weight: bold;
+	text-shadow: 2px 2px white;
+	color:#00802b;
+	text-align: center;
+}
+
+/* ------- VIEW1/Välkomssidan ------ */
+
+#underrubrik {
+	font-family: Courier;
+	text-align: center;
+	color:#00802b;
+}
+
+#morkare {
+	color:#006622;
+	font-weight: bold;
+	text-shadow: 2px 2px #c1f0c1;
+}
+
+#intressen {
+	font-family: Courier;
+	text-align: center;
+	color:#98e698;
+	font-weight: bold;
+	text-shadow: -3px 0 #00802b, 0 3px #006622, 3px 0 #006622, 0 -3px #00802b;
+}
+
+#knappar {
+	text-align: center;
+	font-family: Courier;
+	color:#006622;
+}
+
+#sistaknappen {
+	text-align: center;
+	font-family: Courier;
+	color:#006622;
+	padding-top: 30px;
+
+}
