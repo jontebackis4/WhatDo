@@ -17,6 +17,7 @@
 }
 
 #morkare {
+	font-family: Courier;
 	color:#006622;
 	font-weight: bold;
 	text-shadow: 2px 2px #c1f0c1;
@@ -30,16 +31,69 @@
 	text-shadow: -3px 0 #00802b, 0 3px #006622, 3px 0 #006622, 0 -3px #00802b;
 }
 
-#knappar {
+.knappar {
 	text-align: center;
 	font-family: Courier;
 	color:#006622;
 }
 
-#sistaknappen {
+.sistaknappen {
 	text-align: center;
 	font-family: Courier;
 	color:#006622;
 	padding-top: 30px;
 
 }
+
+/* ------------- VIEW2 -------*/
+
+#vanster{
+	overflow-y: scroll;
+	height: 60vh;
+}
+
+#map-canvas {
+  height: 500px;
+  width: 500px;
+}
+
+#valdaInt {
+	font-family: Courier;
+	font-size: 25px;
+	color:#006622;
+	padding-left: 100px;
+}
+
+.forsta{
+	font-family: Courier;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: -3px 0 #00802b, 0 3px #006622, 3px 0 #006622, 0 -3px #00802b;
+}
+
+#try{
+	padding-top: 100px;
+	font-size: 50px;
+}
+
+#staden {
+	font-size: 80px;
+}
+
+.kategorier{
+	font-family: Courier;
+	color:#006622;
+	font-weight: bold;
+	font-size: 30px;
+	padding-left: 20px;
+}
+
+.attgora{
+	font-family: Courier;
+	color:white;
+	font-weight: italic;
+	font-size: 20px;
+	padding-left: 30px;
+}
+

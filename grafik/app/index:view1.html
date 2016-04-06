@@ -6,7 +6,7 @@ which module to associate the app with. In app.js we create the "dinnerPlanner" 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="Style.css">
+ 
     <title>SverigeGuiden</title>
 
     <!-- Bootstrap CSS -->
@@ -19,7 +19,7 @@ which module to associate the app with. In app.js we create the "dinnerPlanner" 
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
-    
+    <link rel="stylesheet" type="text/css" href="Style.css">
     <!-- The application JavaScript code >
     <script src="js/app.js"></script>
     <script src="js/dinnerService.js"></script>
@@ -41,26 +41,28 @@ which module to associate the app with. In app.js we create the "dinnerPlanner" 
 
     <h1 id="intressen"> INTRESSEN?</h1>
 
-       <p id="knappar">
-            <button type="button" class="btn btn-default btn-lg" id="knappar">SPORT</button>
-            <button type="button" class="btn btn-default btn-lg" id="knappar">KONST</button>
-            <button type="button" class="btn btn-default btn-lg" id="knappar">BYGGNADER</button>
-            <button type="button" class="btn btn-default btn-lg" id="knappar">MAT</button>
+       <p class="knappar">
+            <button type="button" class="btn btn-default btn-lg knappar">NÖJESFÄLT</button>
+            <button type="button" class="btn btn-default btn-lg knappar">DJUR</button>
+            <button type="button" class="btn btn-default btn-lg knappar">KONST</button>
+            <button type="button" class="btn btn-default btn-lg knappar">NATTLIV</button>
+            <button type="button" class="btn btn-default btn-lg knappar">FIKA</button>
         </p>
-        <p id="knappar">
-            <button type="button" class="btn btn-default btn-lg" id="knappar">NATUR</button>
-            <button type="button" class="btn btn-default btn-lg" id="knappar">DJUR</button>
-            <button type="button" class="btn btn-default btn-lg" id="knappar">MUSEUM</button>
-            <button type="button" class="btn btn-default btn-lg" id="knappar">NÖJESFÄLT</button>
+        <p class="knappar">
+            <button type="button" class="btn btn-default btn-lg knappar">MUSEUM</button>
+            <button type="button" class="btn btn-default btn-lg knappar">SHOPPING</button>
+            <button type="button" class="btn btn-default btn-lg knappar">BIO</button>
+            <button type="button" class="btn btn-default btn-lg knappar">SPORT</button>
+            <button type="button" class="btn btn-default btn-lg knappar">MAT</button>
         </p>
-        <p id="knappar">
-            <button type="button" class="btn btn-default btn-lg" id="knappar">TEATER</button>
-            <button type="button" class="btn btn-default btn-lg" id="knappar">PARKER</button>
-            <button type="button" class="btn btn-default btn-lg" id="knappar">VATTENDRAG</button>
-            <button type="button" class="btn btn-default btn-lg" id="knappar">KUNGLIGHETER</button>
+        <p class="knappar">
+            <button type="button" class="btn btn-default btn-lg knappar">PARKER</button>
+            <button type="button" class="btn btn-default btn-lg knappar">BYGGNADER</button>
+            <button type="button" class="btn btn-default btn-lg knappar">KYRKOGÅRDAR</button>
+            <button type="button" class="btn btn-default btn-lg knappar">LITTERATUR</button>
        </p>
-       <p id="sistaknappen">
-       <button type="button" class="btn btn-default btn-lg" id="knappar">JAG HAR FYLLT I ALLA MINA INTRESSEN</button>
+       <p class="sistaknappen">
+       <button type="button" class="btn btn-default btn-lg knappar">JAG HAR FYLLT I ALLA MINA INTRESSEN</button>
        </p>
     </div>
 
