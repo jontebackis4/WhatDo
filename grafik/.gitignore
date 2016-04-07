@@ -3,5 +3,9 @@ node_modules/
 bower.json
 package.json
 README.md
+<<<<<<< HEAD
 ign.txt
 blogg.txt
+=======
+ign.txt
+>>>>>>> 6d8f0d1c7bbefe178ed0c82011c05edb2ea1068f
