@@ -44,9 +44,9 @@ whatDoApp.config(['$routeProvider',
         templateUrl: 'partials/interests.html',
         controller: 'interestsCtrl'
       }).
-      when('/dish/:dishId', {
-        templateUrl: 'partials/dish.html',
-        controller: 'DishCtrl'
+      when('/search', {
+        templateUrl: 'partials/map.html',
+        controller: 'mapCtrl'
       }).
       /* FUNKTIONER FÖR OVERVIEW OCH PREPARATION!!!
       when('/overview/', {
