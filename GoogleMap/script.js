@@ -6,34 +6,8 @@
 			"stylers": [
 			{ "visibility": "off" }
 			]
-		}/*,
-
-		{
-			"featureType": "water",
-			"stylers": [ 
-				{ "visibility": "on" } 
-			]
-		}*/
-	];
-
-	/*[ 
-		{
-			"featureType": "landscape",
-			"stylers": [ 
-				{ "visibility": "off" } 
-			] 
-		}, { 
-			"featureType": "road",
-			"stylers": [ 
-				{ "visibility": "off" } 
-			] 
-		}, { 
-			"featureType": "poi",
-			"stylers": [ 
-				{ "visibility": "off" } 
-			] 
 		}
-	];*/
+	];
 
 	//Create map options
 	//Det går ändra så att det inte går att dra i kartan eller zooma med scrollern.
@@ -54,7 +28,8 @@
 		},
 		streetViewControl: false,
 		mapTypeControl: false,
-		styles: mapStyleArray
+		styles: mapStyleArray,
+		backgroundColor: "#00ff00"
 	};
 
 	//Create a map and bind it to 'map-canvas'
@@ -67,24 +42,57 @@
 	var layer = new google.maps.FusionTablesLayer({
 		query: {
 			select: 'geometry',
-			from: '1N2LBk4JHwWpOY4d9fobIn27lfnZ5MDy-NoqqRpk',
-			where: "ISO_2DIGIT IN ('SE')"
+			from: '1tv_FBqVJNF2q0yqZJiS1YAw3kpNDsfifBtQp7ns',
+			where: "'Countryname' = 'Sweden'"
 		},
 		styles: [{
 			polygonOptions: {
-				fillColor: '#e6e6e6',
+				fillColor: '#00ff00',
 				fillOpacity: 0.3
 			}
-		}, {
+		}/*, {
 			where: "ISO_2DIGIT IN ('SE')",
 			polygonOptions: {
 				fillColor: '#00ff00',
 				fillOpacity: 0.3
 			}
-		}]
+		}*/]
 	});
 
 	layer.setMap(map);
+
+
+	//Create PlaceService 
+
+	service = new google.maps.places.PlacesService(map);
+
+
+	//Create marker for Göteborg
+
+	var GBG = {lat: 57.708859, lng: 11.974583};
+
+	var marker = new google.maps.Marker({
+		position: GBG,
+		map: map,
+		Title: 'Göteborg'
+	});
+
+	var request = {
+		location: GBG,
+		radius: 10000,
+		types: ['library']
+	};
+
+	//Add listener to marker
+
+	marker.addListener('click', function(){
+		service.nearbySearch(request, callback);
+	});
+
+	function callback(result, status){
+		console.log(status);
+		console.log(result);
+	};
   
 }(window, google));
 
@@ -92,7 +100,7 @@
 	-Skapa en funktion som skapar marker på en viss lng&lat. Kolla events i guider.
 	-Det går att logga in med google-konto s¨att information sparas.
 	-Det finns något i bokmärken som kanske kan fungera för att göra snyggare karta.
-	-Lägg till .gitignore med textfil för att skriva vad du tänker.
 	-Skapa marker för Stockholm, Göteborg och Malmö och kör funktion om man klickar på marker
 	-On hover på marker, visa stadsnamn
+	-Ha med googles logga för att använda place libraries
 */
