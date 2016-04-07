@@ -9,7 +9,9 @@
 }
 
 /* ------- VIEW1/Välkomssidan ------ */
-
+.centerJ{
+	align-items: center;
+}
 #underrubrik {
 	font-family: Courier;
 	text-align: center;
