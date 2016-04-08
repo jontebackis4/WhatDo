@@ -37,6 +37,9 @@ var whatDoApp = angular.module('whatDo', ['ngRoute','ngResource']);
 whatDoApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
+      when('/home', {
+        templateUrl: 'home.html',
+      }).
       when('/interests', {
         templateUrl: 'partials/interests.html',
         controller: 'interestsCtrl'
@@ -46,6 +49,6 @@ whatDoApp.config(['$routeProvider',
         controller: 'mapCtrl'
       }).
       otherwise({
-        redirectTo: '/interests'
+        redirectTo: '/home'
       });
   }]);
