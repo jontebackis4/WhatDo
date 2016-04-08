@@ -10,6 +10,7 @@ whatDoApp.factory('WhatDo',function ($resource) {
   	// a bit to take the advantage of Angular resource service
   	// check lab 5 instructions for details
 
+
 //TODO Lab 2 implement the data structure that will hold number of guest
   	// and selected dinner options for dinner menu
   	this.interests = [];
@@ -35,7 +36,8 @@ whatDoApp.factory('WhatDo',function ($resource) {
 
   	this.getInterests = function(){
   		return this.interests;
-  	}
-  	
+  	}  	
+
+
   	return this;
 });
