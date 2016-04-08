@@ -44,12 +44,20 @@
 	text-shadow: -3px 0 #00802b, 0 3px #006622, 3px 0 #006622, 0 -3px #00802b;
 }
 
-.knappar {
+.knappar{
 	text-align: center;
 	font-family: Courier;
 	color:#006622;
 }
-
+.knappTryckt{
+	text-align: center;
+	font-family: Courier;
+	color:#006622;
+	background-color: #aaf683;
+}
+.btn-default:hover{
+	background-color: #d3fbbf;
+}
 .sistaknappen {
 	text-align: center;
 	font-family: Courier;

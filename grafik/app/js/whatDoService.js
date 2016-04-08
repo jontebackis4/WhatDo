@@ -12,6 +12,30 @@ whatDoApp.factory('WhatDo',function ($resource) {
 
 //TODO Lab 2 implement the data structure that will hold number of guest
   	// and selected dinner options for dinner menu
+  	this.interests = [];
 
+  	this.addInterest = function(interest){
+  		var found = false;
+   		console.log(interest);
+   		
+  		for(i = 0; i < this.interests.length; i++){
+  			if(this.interests[i] === interest){
+  				found = true;
+  				this.interests.splice(i, 1);
+  				console.log("tog bort "+interest);
+  				break;
+  			}
+  		}
+  		if (found === false){
+  			this.interests.push(interest);
+  			console.log("lade till "+interest);
+  		}
+  		console.log(this.interests);
+  	}
+
+  	this.getInterests = function(){
+  		return this.interests;
+  	}
+  	
   	return this;
 });
