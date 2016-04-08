@@ -38,7 +38,7 @@ whatDoApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/home', {
-        templateUrl: 'home.html',
+        templateUrl: 'partials/home.html',
       }).
       when('/interests', {
         templateUrl: 'partials/interests.html',
