@@ -5,13 +5,13 @@
 // the next time.
 whatDoApp.factory('WhatDo',function ($resource) {
     // TODO in Lab 5: Add your model code from previous labs
-  // feel free to remove above example code
-  // you will need to modify the model (getDish and getAllDishes) 
-  // a bit to take the advantage of Angular resource service
-  // check lab 5 instructions for details
+  	// feel free to remove above example code
+  	// you will need to modify the model (getDish and getAllDishes) 
+  	// a bit to take the advantage of Angular resource service
+  	// check lab 5 instructions for details
 
 //TODO Lab 2 implement the data structure that will hold number of guest
-  // and selected dinner options for dinner menu
-  
-  return this;
+  	// and selected dinner options for dinner menu
+
+  	return this;
 });
