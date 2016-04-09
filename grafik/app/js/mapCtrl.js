@@ -96,8 +96,6 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
           }
         }
         
-          //updateView();
-        
       });
 
       function callback(result, status, interest){
@@ -107,7 +105,10 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
       }
       $scope.interestList = WhatDo.getInterests();
 
-      $scope.displayList = WhatDo.getDisplayDict()["Nöjesfält"];
+      console.log(WhatDo.getDisplayDict()["Nöjesfält"][0].name);
+      $scope.displayList = WhatDo.getDisplayDict()["Nöjesfält"][0].name;
+
+      
   }
 
 });
