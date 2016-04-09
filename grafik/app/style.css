@@ -55,8 +55,8 @@
 	color:#006622;
 	background-color: #aaf683;
 }
-.btn-default:hover{
-	background-color: #d3fbbf;
+.knappTryckt:hover, .knappTryckt:focus, .knappTryckt:active, .knappTryckt.active, .open > .dropdown-toggle.knappTryckt{
+	background-color: #aaf683;
 }
 .sistaknappen {
 	text-align: center;
