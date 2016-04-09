@@ -2,15 +2,14 @@
 
 <!-- TODO in Lab 5: Display the input box for search (you can ignore the type dropdown since BigOven does
 not support it in free version) and list all the dishes that match the search. -->
-<div>
- 	<h2>här ska kartan vara</h2>   
+
+<ng-include src="'partials/shortInfo.html'" ng-controller="shortInfoCtrl"></ng-include>
+
+<div class="col-sm-6"> 
  	<div>
  		<a href="#/interests" class="btn btn-default">tillbaka till intressen</a>
  	</div>
- 	<div ng-init="init()"/>
 
- 	<div ng-controller="mapCtrl">
-		<div id="map-canvas"></div>
-	</div>
-	
+ 	<div ng-init="init()"/>
+	<div id="map-canvas"></div>
 </div>

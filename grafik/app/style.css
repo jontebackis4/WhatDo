@@ -74,11 +74,6 @@
 	margin-top: -25px;
 }
 
-#map-canvas {
-  height: 500px;
-  width: 500px;
-}
-
 #valdaInt {
 	font-family: Courier;
 	font-size: 15px;
@@ -121,12 +116,11 @@
 }
 
 #lasmer {
-	margin-left:550px;
 	margin-top: 3px;
 }
 
 #map-canvas {
 	height: 400px;
-	width: 700px;
+	width: 100%;
 	border: 2px solid black;
 }

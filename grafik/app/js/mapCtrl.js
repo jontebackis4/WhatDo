@@ -20,13 +20,13 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
       //Create map options
       var options ={
       center: {
-        lat: 62.173276,
-        lng: 14.942265
+        lat: 62.573276,
+        lng: 16.942265
       },
-      zoom: 5,
-      disableDefaultUI: false,
+      zoom: 4,
       maxZoom: 7,
       minZoom: 4,
+      scrollwheel: false,
       zoomControl: true,
       zoomControlOption: {
         position: google.maps.ControlPosition.RIGHT_BOTTOM,
@@ -35,7 +35,7 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
       streetViewControl: false,
       mapTypeControl: false,
       styles: mapStyleArray,
-      backgroundColor: "#00ff00"
+      backgroundColor: "#ccffcc"
       };
 
       //Create a map and bind it to 'map-canvas'
