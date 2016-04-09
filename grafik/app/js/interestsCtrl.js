@@ -6,8 +6,4 @@ whatDoApp.controller('interestsCtrl', function ($scope, WhatDo) {
 		WhatDo.addInterest(interest);
 	}
 	
-	$scope.btnColour = function(){
-		console.log("ändra färg");	
-		$(this).toggleClass('knappTryckt');
-	}
 });

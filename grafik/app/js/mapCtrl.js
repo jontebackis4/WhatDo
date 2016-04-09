@@ -2,10 +2,6 @@
 // and search results
 whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
 
-  $scope.msg = "helljo";
-
-  $scope.msg = "Hello";
-
   $scope.init = function() {
 
     //Create styles for the map
@@ -54,13 +50,7 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
             fillColor: '#00ff00',
             fillOpacity: 0.3
           }
-        }/*, {
-          where: "ISO_2DIGIT IN ('SE')",
-          polygonOptions: {
-            fillColor: '#00ff00',
-            fillOpacity: 0.3
-          }
-        }*/]
+        }]
       });
 
       layer.setMap(map);
@@ -80,23 +70,44 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
         map: map,
         Title: 'Göteborg'
       });
-
-      var request = {
-        location: GBG,
-        radius: 10000,
-        types: ['library']
-      };
+     
+      //List with interests from service     
+      var interests = WhatDo.getInterests();
+      var searchTerms = WhatDo.getSearchTerms();
+      console.log(interests);
 
       //Add listener to marker
 
       marker.addListener('click', function(){
-        service.nearbySearch(request, callback);
+        //WhatDo.resetCityData();
+        WhatDo.setBin(-1);
+        for(var i = 0; i < interests.length; i++){
+          //console.log(searchTerms[interests[i]]);
+          for(j = 0; j < searchTerms[interests[i]].length; j++){
+            var request = {
+              location: GBG,
+              radius: 10000,
+              types:  searchTerms[interests[i]][j]
+            };
+            service.nearbySearch(request, function(result, status){
+              WhatDo.setBin(WhatDo.getBin()+1);
+              callback(result, status, interests[WhatDo.getBin()])
+            });
+          }
+        }
+        
+          //updateView();
+        
       });
 
-      function callback(result, status){
-        console.log(status);
-        console.log(result);
-      };
+      function callback(result, status, interest){
+        WhatDo.setInterestInfo(result, interest);
+        //console.log(status);
+        //console.log(result);
+      }
+      $scope.interestList = WhatDo.getInterests();
+
+      $scope.displayList = WhatDo.getDisplayDict()["Nöjesfält"];
   }
 
 });

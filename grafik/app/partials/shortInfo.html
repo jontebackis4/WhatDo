@@ -7,26 +7,14 @@
      
     <p class="forsta" id="staden">GÖTEBORG</p>
     <div id="vanster">
-        <p class="kategorier">KONST:</p>
-        <p class="attgora">eva-gallerian, konsthuset, tavlor</p>
-        <p class="kategorier">LITTERATUR:</p>
-        <p class="attgora">statsbiblioteket, minbokhandel</p>
-        <p class="kategorier">DJUR:</p>
-        <p class="attgora">scandinvaium, slottsskogen</p>
-        <p class="kategorier">DJUR:</p>
-        <p class="attgora">scandinvaium, slottsskogen</p>
-        <p class="kategorier">DJUR:</p>
-        <p class="attgora">scandinvaium, slottsskogen</p>
-        <p class="kategorier">DJUR:</p>
-        <p class="attgora">scandinvaium, slottsskogen</p>
-        <p class="kategorier">DJUR:</p>
-        <p class="attgora">scandinvaium, slottsskogen</p>
-        <p class="attgora">scandinvaium, slottsskogen</p>
-        <p class="kategorier">DJUR:</p>
-        <p class="attgora">scandinvaium, slottsskogen</p>
-        <p class="attgora">scandinvaium, slottsskogen</p>
-        <p class="kategorier">DJUR:</p>
-        <p class="attgora">scandinvaium, slottsskogen</p>
+        <div ng-repeat="interest in interestList">
+
+            <p>{{interest}}</p>
+            <div ng-repeat="data in displayList">
+                {{data.name}}
+            </div>
+        </div>
+        </div>
     </div>
 
     <button type="button" class="btn btn-default btn-lg knappar" id="lasmer">LÄS MER</button>
