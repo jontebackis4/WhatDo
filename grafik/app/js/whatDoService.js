@@ -1,43 +1,86 @@
-// Here we create an Angular service that we will use for our 
-// model. In your controllers (or other services) you can include the
-// dependency on any service you need. Angular will insure that the
-// service is created first time it is needed and then just reuse it
-// the next time.
+
 whatDoApp.factory('WhatDo',function ($resource) {
-    // TODO in Lab 5: Add your model code from previous labs
-  	// feel free to remove above example code
-  	// you will need to modify the model (getDish and getAllDishes) 
-  	// a bit to take the advantage of Angular resource service
-  	// check lab 5 instructions for details
 
-
-//TODO Lab 2 implement the data structure that will hold number of guest
-  	// and selected dinner options for dinner menu
+	/*The arrays under are synched such as interest [1] is the result [1]*/
+  	this.bin;
   	this.interests = [];
+  	this.displayDict = {};
+  	this.searchTerms = {
+  		Nöjesfält : ["amusement_park"], 
+		Djur : ["aquarium","zoo"],
+		Konst: ["art_gallery"],
+		Nattliv : ["bar", "night_club"],
+		Museum : ["museum"],
+		Shopping : ["shopping_mall"],
+		Bio : ["movie_theater" ],
+		Sport: ["bowling_alley"],
+		Parker: ["park"],
+		Byggnader:["mosque","church", "synagogue", "hindu_temple", "city_hall" ],
+		cemetery : ["Kyrkogård"],
+		Fika: ["cafe"],
+		Mat: ["restaurant"], 
+		Litteratur: ["library"]
+  	};
+
+  	this.setBin = function(i){
+  		this.bin = i;
+  	}
+
+  	this.getBin = function(){
+  		return this.bin;
+  	}
+
+  	/*Interest is a string and result is an array with googlePlaces/Maps-objects*/
+  	this.getSearchTerms = function(){
+  		return this.searchTerms;
+  	}
+
+  	this.resetCityData = function(){
+  		this.interests = [];
+  		this.interestInfo = [];
+  	}
+
+  	this.setInterestInfo = function(result, interest){
+  		console.log(interest);
+  		if(Array.isArray(this.displayDict[interest])){
+	  		for (var i = 0; i < result.length; i++) {
+	  			this.displayDict[interest].push(result[i]);
+	  		}
+  		}
+  		else{
+  			this.displayDict[interest] = [];
+	  		for (var i = 0; i < result.length; i++) {
+	  			this.displayDict[interest].push(result[i]);
+	  		}
+  		}
+  		console.log(this.displayDict);
+  	}
+  	
+  	this.getDisplayDict = function(){
+  		return this.displayDict;
+  	}
+
+  	this.getInterestInfo = function(){
+  		return this.interestInfo;
+  	}
+
 
   	this.addInterest = function(interest){
   		var found = false;
-   		console.log(interest);
-   		
   		for(i = 0; i < this.interests.length; i++){
   			if(this.interests[i] === interest){
   				found = true;
   				this.interests.splice(i, 1);
-  				console.log("tog bort "+interest);
   				break;
   			}
   		}
   		if (found === false){
   			this.interests.push(interest);
-  			console.log("lade till "+interest);
   		}
-  		console.log(this.interests);
   	}
 
   	this.getInterests = function(){
   		return this.interests;
   	}  	
-
-
   	return this;
 });
