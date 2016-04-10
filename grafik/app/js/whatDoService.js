@@ -4,7 +4,7 @@ whatDoApp.factory('WhatDo',function ($resource) {
 	/*The arrays under are synched such as interest [1] is the result [1]*/
   	this.bin;
   	this.interests = [];
-  	this.displayDict = {};
+  	this.displayDict = {Nöjesfält: []};
   	this.searchTerms = {
   		Nöjesfält : ["amusement_park"], 
 		Djur : ["aquarium","zoo"],
@@ -41,13 +41,14 @@ whatDoApp.factory('WhatDo',function ($resource) {
   	}
 
   	this.setInterestInfo = function(result, interest){
-  		console.log(interest);
+
   		if(Array.isArray(this.displayDict[interest])){
 	  		for (var i = 0; i < result.length; i++) {
 	  			this.displayDict[interest].push(result[i]);
 	  		}
   		}
   		else{
+        console.log("FEEEEL i ELSE");
   			this.displayDict[interest] = [];
 	  		for (var i = 0; i < result.length; i++) {
 	  			this.displayDict[interest].push(result[i]);

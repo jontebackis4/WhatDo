@@ -7,11 +7,11 @@
      
     <p class="forsta" id="staden">GÖTEBORG</p>
     <div id="vanster">
-        <div ng-repeat="interest in interestList">
+        <!--<div ng-repeat="interest in interestList">
 
-            <p>{{interest}}</p>
-            <div ng-repeat="data in displayList">
-                {{data.name}}
+            <p>{{interest}}</p>-->
+            <div ng-repeat="(key, val) in displayList()">
+                {{key}} : {{val[0].name}}
             </div>
         </div>
         </div>

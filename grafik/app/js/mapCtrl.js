@@ -105,8 +105,9 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
       }
       $scope.interestList = WhatDo.getInterests();
 
-      console.log(WhatDo.getDisplayDict()["Nöjesfält"][0].name);
-      $scope.displayList = WhatDo.getDisplayDict()["Nöjesfält"][0].name;
+      $scope.displayList = function(){
+        return WhatDo.displayDict;
+      }
 
       
   }
