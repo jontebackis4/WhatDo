@@ -6,7 +6,7 @@ whatDoApp.factory('WhatDo',function ($resource) {
   	this.interests = [];
   	this.displayDict = {Nöjesfält: []};
   	this.searchTerms = {
-  		Nöjesfält : ["amusement_park"], 
+  	Nöjesfält : ["amusement_park"], 
 		Djur : ["aquarium","zoo"],
 		Konst: ["art_gallery"],
 		Nattliv : ["bar", "night_club"],
@@ -16,7 +16,7 @@ whatDoApp.factory('WhatDo',function ($resource) {
 		Sport: ["bowling_alley"],
 		Parker: ["park"],
 		Byggnader:["mosque","church", "synagogue", "hindu_temple", "city_hall" ],
-		cemetery : ["Kyrkogård"],
+		Kyrkogård : ["cemetery"],
 		Fika: ["cafe"],
 		Mat: ["restaurant"], 
 		Litteratur: ["library"]

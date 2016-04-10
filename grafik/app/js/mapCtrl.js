@@ -75,6 +75,7 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
       var interests = WhatDo.getInterests();
       var searchTerms = WhatDo.getSearchTerms();
       console.log(interests);
+      
 
       //Add listener to marker
 
@@ -82,8 +83,8 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
         //WhatDo.resetCityData();
         WhatDo.setBin(-1);
         for(var i = 0; i < interests.length; i++){
-          //console.log(searchTerms[interests[i]]);
           for(j = 0; j < searchTerms[interests[i]].length; j++){
+            //console.log(searchTerms[interests[i]][j]);
             var request = {
               location: GBG,
               radius: 10000,
@@ -95,22 +96,31 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
             });
           }
         }
-        
       });
+
+
 
       function callback(result, status, interest){
         WhatDo.setInterestInfo(result, interest);
         //console.log(status);
         //console.log(result);
       }
-      $scope.interestList = WhatDo.getInterests();
-
-      $scope.displayList = function(){
-        return WhatDo.displayDict;
+     $scope.$watch(function () { return WhatDo.getDisplayDict() }, function (newVal, oldVal) {
+      if (typeof newVal !== 'undefined') {
+        $scope.displayList = WhatDo.getDisplayDict();
+        console.log (WhatDo.getDisplayDict());
       }
+    });
 
       
   }
+
+
+
+
+  /*$scope.displayList = function(){
+    return WhatDo.getDisplayDict();
+  }*/
 
 });
 
