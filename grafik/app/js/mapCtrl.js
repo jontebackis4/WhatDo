@@ -80,22 +80,21 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
       //Add listener to marker
 
       marker.addListener('click', function(){
-        //WhatDo.resetCityData();
-        WhatDo.setBin(-1);
-        for(var i = 0; i < interests.length; i++){
-          for(j = 0; j < searchTerms[interests[i]].length; j++){
-            //console.log(searchTerms[interests[i]][j]);
-            var request = {
-              location: GBG,
-              radius: 10000,
-              types:  searchTerms[interests[i]][j]
-            };
-            service.nearbySearch(request, function(result, status){
-              WhatDo.setBin(WhatDo.getBin()+1);
-              callback(result, status, interests[WhatDo.getBin()])
-            });
+          for(var i = 0; i < interests.length; i++){
+            (function(i){
+              for(j = 0; j < searchTerms[interests[i]].length; j++){
+                console.log(searchTerms[interests[i]][j]);
+                var request = {
+                  location: GBG,
+                  radius: 10000,
+                  types:  [searchTerms[interests[i]][j]]
+                };
+                service.nearbySearch(request, function(result, status){
+                  callback(result, status, interests[i])
+                });
+              }
+            })(i);
           }
-        }
       });
 
 

@@ -4,7 +4,7 @@ whatDoApp.factory('WhatDo',function ($resource) {
 	/*The arrays under are synched such as interest [1] is the result [1]*/
   	this.bin;
   	this.interests = [];
-  	this.displayDict = {Nöjesfält: []};
+  	this.displayDict = {};
   	this.searchTerms = {
   	Nöjesfält : ["amusement_park"], 
 		Djur : ["aquarium","zoo"],
@@ -22,14 +22,6 @@ whatDoApp.factory('WhatDo',function ($resource) {
 		Litteratur: ["library"]
   	};
 
-  	this.setBin = function(i){
-  		this.bin = i;
-  	}
-
-  	this.getBin = function(){
-  		return this.bin;
-  	}
-
   	/*Interest is a string and result is an array with googlePlaces/Maps-objects*/
   	this.getSearchTerms = function(){
   		return this.searchTerms;
@@ -41,14 +33,13 @@ whatDoApp.factory('WhatDo',function ($resource) {
   	}
 
   	this.setInterestInfo = function(result, interest){
-
+      console.log(result);
   		if(Array.isArray(this.displayDict[interest])){
 	  		for (var i = 0; i < result.length; i++) {
 	  			this.displayDict[interest].push(result[i]);
 	  		}
   		}
   		else{
-        console.log("FEEEEL i ELSE");
   			this.displayDict[interest] = [];
 	  		for (var i = 0; i < result.length; i++) {
 	  			this.displayDict[interest].push(result[i]);
