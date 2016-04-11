@@ -105,18 +105,24 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
         //console.log(status);
         //console.log(result);
       }
-     $scope.$watch(function () { return WhatDo.getDisplayDict() }, function (newVal, oldVal) {
-      if (typeof newVal !== 'undefined') {
-        $scope.displayList = WhatDo.getDisplayDict();
-        console.log (WhatDo.getDisplayDict());
-      }
-    });
-
       
   }
 
+  $scope.interestList = WhatDo.getInterests();
 
+  $scope.displayDict = WhatDo.displayDict;
 
+  /*$scope.$watch('displayDict', function(newVal, oldVal, scope){
+    console.log(newVal);
+    scope.displayDict = WhatDo.getDisplayDict();
+  }, true)*/
+
+  /*$scope.$watch(function () { return WhatDo.displayDict }, function (newVal, oldVal) {
+    if (typeof newVal !== 'undefined') {
+      $scope.displayList = WhatDo.displayDict;
+      console.log (WhatDo.displayDict);
+    }
+  });*/
 
   /*$scope.displayList = function(){
     return WhatDo.getDisplayDict();

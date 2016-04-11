@@ -9,11 +9,12 @@
     <div id="vanster">
         <!--<div ng-repeat="interest in interestList">
 
-            <p>{{interest}}</p>
-            <div ng-repeat="(key, val) in displayList()">
-                {{key}} : {{val[$index].name}}
-            </div>-->
+            <p>{{interest}}</p> -->
+            <div ng-repeat="(key, val) in displayDict">
+                {{key}} : {{val[0].name}}
+            </div>
         
+        <!--
         <p class="kategorier">KONST:</p>
         <p class="attgora">eva-gallerian, konsthuset, tavlor</p>
         <p class="kategorier">LITTERATUR:</p>
@@ -33,7 +34,7 @@
         <p class="attgora">scandinvaium, slottsskogen</p>
         <p class="attgora">scandinvaium, slottsskogen</p>
         <p class="kategorier">DJUR:</p>
-        <p class="attgora">scandinvaium, slottsskogen</p>
+        <p class="attgora">scandinvaium, slottsskogen</p> -->
     </div>
 </div>
 {{test}}
