@@ -32,8 +32,7 @@ whatDoApp.factory('WhatDo',function ($resource) {
   		this.interestInfo = [];
   	}
 
-  	this.setInterestInfo = function(result, interest){
-      console.log(result);
+  	this.setDisplayDict = function(result, interest){
   		if(Array.isArray(this.displayDict[interest])){
 	  		for (var i = 0; i < result.length; i++) {
 	  			this.displayDict[interest].push(result[i]);
@@ -45,7 +44,6 @@ whatDoApp.factory('WhatDo',function ($resource) {
 	  			this.displayDict[interest].push(result[i]);
 	  		}
   		}
-  		console.log(this.displayDict);
   	}
   	
   	this.getDisplayDict = function(){

@@ -91,7 +91,9 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
                 };
                 service.nearbySearch(request, function(result, status){
                   callback(result, status, interests[i])
-                });
+                }).then(function(response){
+                    $scope.displayDict = WhatDo.displayDict;
+                  });
               }
             })(i);
           }
@@ -100,9 +102,7 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
 
 
       function callback(result, status, interest){
-        WhatDo.setInterestInfo(result, interest);
-        //console.log(status);
-        //console.log(result);
+        WhatDo.setDisplayDict(result, interest);
       }
       
   }
