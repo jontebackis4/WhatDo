@@ -58,24 +58,33 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
 
       //Create PlaceService 
 
-      service = new google.maps.places.PlacesService(map);
-
+      placeService = new google.maps.places.PlacesService(map);
 
       //Create marker for Göteborg
 
-      var GBG = {lat: 57.708859, lng: 11.974583};
+     /* var GBG = {lat: 57.708859, lng: 11.974583};
 
       var marker = new google.maps.Marker({
         position: GBG,
         map: map,
         Title: 'Göteborg'
-      });
-     
+      });*/
+
+      var towns = WhatDo.towns;
+
+      //Create marker for a list of towns
+      for(key in towns){
+        var marker = new google.maps.Marker({
+          position: towns[key],
+          map: map,
+          Title: key
+        });
+      }
+/*
       //List with interests from service     
       var interests = WhatDo.getInterests();
       var searchTerms = WhatDo.getSearchTerms();
       console.log(interests);
-      
 
       //Add listener to marker
 
@@ -89,11 +98,9 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
                   radius: 10000,
                   types:  [searchTerms[interests[i]][j]]
                 };
-                service.nearbySearch(request, function(result, status){
-                  callback(result, status, interests[i])
-                }).then(function(response){
-                    $scope.displayDict = WhatDo.displayDict;
-                  });
+                placeService.nearbySearch(request, function(result, status){
+                  callbackRadar(result, status, interests[i])
+                })
               }
             })(i);
           }
@@ -101,10 +108,10 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
 
 
 
-      function callback(result, status, interest){
+      function callbackRadar(result, status, interest){
         WhatDo.setDisplayDict(result, interest);
       }
-      
+*/ 
   }
 
   $scope.interestList = WhatDo.getInterests();
