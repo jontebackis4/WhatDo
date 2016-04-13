@@ -5,6 +5,23 @@ whatDoApp.factory('WhatDo',function ($resource) {
   	this.bin;
   	this.interests = [];
   	this.displayDict = {};
+    this.btnStatus = {
+      'btn1': true,
+      'btn2': true,
+      'btn3': true,
+      'btn4': true,
+      'btn5': true, 
+      'btn6': true,
+      'btn7': true,
+      'btn8': true,
+      'btn9': true,
+      'btn10': true,
+      'btn11': true,
+      'btn12': true,
+      'btn13': true,
+      'btn14': true
+    }
+
   	this.searchTerms = {
   	Nöjesfält : ["amusement_park"], 
 		Djur : ["aquarium","zoo"],
@@ -26,6 +43,14 @@ whatDoApp.factory('WhatDo',function ($resource) {
   	this.getSearchTerms = function(){
   		return this.searchTerms;
   	}
+
+    this.getBtnStatus = function(btn) {
+      return this.btnStatus[btn];
+    }
+
+    this.setBtnStatus = function(btn){
+      this.btnStatus[btn] = !this.btnStatus[btn];
+    }
 
   	this.resetCityData = function(){
   		this.interests = [];

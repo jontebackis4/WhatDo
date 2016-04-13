@@ -6,4 +6,19 @@ whatDoApp.controller('interestsCtrl', function ($scope, WhatDo) {
 		WhatDo.addInterest(interest);
 	}
 	
+	$scope.setBtn = function(value) {
+		if (value){
+			return 'btn btn-default btn-lg knappar';
+		}else{
+			return'btn btn-default btn-lg knappTryckt';
+		}
+	}
+
+	$scope.btnStatus = function(btn){
+		return WhatDo.getBtnStatus(btn);
+	}
+
+	$scope.btnSwitch = function(btn){
+		WhatDo.setBtnStatus(btn);
+	}
 });

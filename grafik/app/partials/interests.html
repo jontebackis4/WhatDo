@@ -8,24 +8,24 @@
 
 
    <p class="knappar">
-        <button ng-class="{true: 'btn btn-default btn-lg knappar', false: 'btn btn-default btn-lg knappTryckt'}[!checked1]" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Nöjesfält'); checked1 = !checked1">NÖJESFÄLT</button>
-        <button ng-class="{true: 'btn btn-default btn-lg knappar', false: 'btn btn-default btn-lg knappTryckt'}[!checked2]" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Djur'); checked2 = !checked2">DJUR</button>
-        <button ng-class="{true: 'btn btn-default btn-lg knappar', false: 'btn btn-default btn-lg knappTryckt'}[!checked3]" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Konst'); checked3 = !checked3">KONST</button>
-        <button ng-class="{true: 'btn btn-default btn-lg knappar', false: 'btn btn-default btn-lg knappTryckt'}[!checked4]" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Nattliv'); checked4 = !checked4">NATTLIV</button>
-        <button ng-class="{true: 'btn btn-default btn-lg knappar', false: 'btn btn-default btn-lg knappTryckt'}[!checked5]" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Fika'); checked5 = !checked5">FIKA</button>
+        <button ng-class="setBtn(btnStatus('btn1'))" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Nöjesfält'); btnSwitch('btn1')">NÖJESFÄLT</button>
+        <button ng-class="setBtn(btnStatus('btn2'))" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Djur'); btnSwitch('btn2')">DJUR</button>
+        <button ng-class="setBtn(btnStatus('btn3'))" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Konst'); btnSwitch('btn3')">KONST</button>
+        <button ng-class="setBtn(btnStatus('btn4'))" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Nattliv'); btnSwitch('btn4')">NATTLIV</button>
+        <button ng-class="setBtn(btnStatus('btn5'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Fika'); btnSwitch('btn5')">FIKA</button>
     </p>
     <p class="knappar">
-        <button ng-class="{true: 'btn btn-default btn-lg knappar', false: 'btn btn-default btn-lg knappTryckt'}[!checked6]" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Museum'); checked6 = !checked6">MUSEUM</button>
-        <button ng-class="{true: 'btn btn-default btn-lg knappar', false: 'btn btn-default btn-lg knappTryckt'}[!checked7]" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Shopping'); checked7 = !checked7">SHOPPING</button>
-        <button ng-class="{true: 'btn btn-default btn-lg knappar', false: 'btn btn-default btn-lg knappTryckt'}[!checked8]" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Bio'); checked8 = !checked8">BIO</button>
-        <button ng-class="{true: 'btn btn-default btn-lg knappar', false: 'btn btn-default btn-lg knappTryckt'}[!checked9]" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Sport'); checked9 = !checked9">SPORT</button>
-        <button ng-class="{true: 'btn btn-default btn-lg knappar', false: 'btn btn-default btn-lg knappTryckt'}[!checked10]" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Mat'); checked10 = !checked10">MAT</button>
+        <button ng-class="setBtn(btnStatus('btn6'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Museum'); btnSwitch('btn6')">MUSEUM</button>
+        <button ng-class="setBtn(btnStatus('btn7'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Shopping'); btnSwitch('btn7')">SHOPPING</button>
+        <button ng-class="setBtn(btnStatus('btn8'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Bio'); btnSwitch('btn8')">BIO</button>
+        <button ng-class="setBtn(btnStatus('btn9'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Sport'); btnSwitch('btn9')">SPORT</button>
+        <button ng-class="setBtn(btnStatus('btn10'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Mat'); btnSwitch('btn10')">MAT</button>
     </p>
     <p class="knappar">
-        <button ng-class="{true: 'btn btn-default btn-lg knappar', false: 'btn btn-default btn-lg knappTryckt'}[!checked11]" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Parker'); checked11 = !checked11">PARKER</button>
-        <button ng-class="{true: 'btn btn-default btn-lg knappar', false: 'btn btn-default btn-lg knappTryckt'}[!checked12]" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Byggnader'); checked12 = !checked12">BYGGNADER</button>
-        <button ng-class="{true: 'btn btn-default btn-lg knappar', false: 'btn btn-default btn-lg knappTryckt'}[!checked13]" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Kyrkogårdar'); checked13 = !checked13">KYRKOGÅRDAR</button>
-        <button ng-class="{true: 'btn btn-default btn-lg knappar', false: 'btn btn-default btn-lg knappTryckt'}[!checked14]" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Litteratur'); checked14 = !checked14">LITTERATUR</button>
+        <button ng-class="setBtn(btnStatus('btn11'))" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Parker'); btnSwitch('btn11')">PARKER</button>
+        <button ng-class="setBtn(btnStatus('btn12'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Byggnader'); btnSwitch('btn12')">BYGGNADER</button>
+        <button ng-class="setBtn(btnStatus('btn13'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Kyrkogårdar'); btnSwitch('btn13')">KYRKOGÅRDAR</button>
+        <button ng-class="setBtn(btnStatus('btn14'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Litteratur'); btnSwitch('btn14')">LITTERATUR</button>
    </p>
    <p class="sistaknappen">
    <a href="#/search" class="btn btn-default btn-lg knappar">JAG HAR FYLLT I ALLA MINA INTRESSEN</a>
