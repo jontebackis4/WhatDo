@@ -8,7 +8,10 @@
 // also see that we included separate JavaScript files for these modules. Angular
 // has other core modules that you might want to use and explore when you go deeper
 // into developing Angular applications. For this lab, these two will suffice.
-var whatDoApp = angular.module('whatDo', ['ngRoute','ngResource']);
+
+
+
+var whatDoApp = angular.module('whatDo', ['ngRoute','ngResource', 'firebase']);
 //jdsgksd
 
 // Here we configure our application module and more specifically our $routeProvider. 
@@ -39,6 +42,7 @@ whatDoApp.config(['$routeProvider',
     $routeProvider.
       when('/home', {
         templateUrl: 'partials/home.html',
+        controller: 'homeCtrl'
       }).
       when('/interests', {
         templateUrl: 'partials/interests.html',
