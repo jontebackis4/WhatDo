@@ -53,6 +53,6 @@ whatDoApp.config(['$routeProvider',
         controller: 'mapCtrl'
       }).
       otherwise({
-        redirectTo: '/home'
+        redirectTo: '/home',
       });
   }]);

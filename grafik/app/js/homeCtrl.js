@@ -1,4 +1,17 @@
-whatDoApp.controller("homeCtrl", function($scope, $firebaseObject, WhatDo) {
+whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService) {
+  console.log("i homectrl");
+
+  $scope.setUser = function (){
+    fbService.addUser();
+  };
+
+  $scope.setspcUser = function (){
+    fbService.addSpecificUser("Jonas");
+  };
+
+
+
+/*
   var ref = new Firebase("https://sverigeguiden.firebaseio.com");
   // download the data into a local object
   $scope.data = $firebaseObject(ref);
@@ -17,7 +30,6 @@ whatDoApp.controller("homeCtrl", function($scope, $firebaseObject, WhatDo) {
     console.log("Logged in as:", authData.uid);
   }).catch(function(error) {
     console.log("Authentication failed:", error);
-  });
-
+  });*/
 
 });
