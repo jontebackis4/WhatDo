@@ -33,12 +33,40 @@ which module to associate the app with. In app.js we create the "dinnerPlanner" 
   </head>
   <body>
     <!-- HEADERN -->
-    <div class="container-fluid">
+    <!--<div class="container-fluid">
         <div class="jumbotron">
         <h1 id="namn"><a class = "removeLinkLook" href="#/home">SverigeGuiden</a></h1>
     </div >
-        
-    
+    <div class="container">
+        <h3 class = "text-center">SverigeGuiden</h3>
+        <ul class="nav nav-tabs ">
+            <li><a href="#/home">Home</a></li>
+            <li><a href="#/interests">Interests</a></li>
+            <li><a href="#/search">Search</a></li>
+        </ul>
+        <br>
+    </div>-->
+    <div class="container-fluid">
+    <nav class="navbar navbar-header navbar-static-top">
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li><a class ="removeLinkLook" href="#/home">Home</a></li>
+                <li><a class ="removeLinkLook" href="#/interests">Interests</a></li>
+                <li><a class ="removeLinkLook" href="#/search">Search</a></li>
+                <li class="nav dropdown navbar-right">
+                    <a class="dropdown-toggle removeLinkLook" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action 1</a></li>
+                        <li><a href="#">Action 2</a></li>
+                        <li><a href="#">Action 3</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Sign out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </div>
     <!-- HEM / STARTSIDA -->
     <div ng-view></div>
 
