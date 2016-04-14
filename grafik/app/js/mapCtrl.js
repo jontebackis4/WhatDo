@@ -60,16 +60,6 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
 
       placeService = new google.maps.places.PlacesService(map);
 
-      //Create marker for Göteborg
-
-     /* var GBG = {lat: 57.708859, lng: 11.974583};
-
-      var marker = new google.maps.Marker({
-        position: GBG,
-        map: map,
-        Title: 'Göteborg'
-      });*/
-
       var towns = WhatDo.towns;
 
       //Create marker for a list of towns
@@ -80,59 +70,7 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
           Title: key
         });
       }
-/*
-      //List with interests from service     
-      var interests = WhatDo.getInterests();
-      var searchTerms = WhatDo.getSearchTerms();
-      console.log(interests);
-
-      //Add listener to marker
-
-      marker.addListener('click', function(){
-          for(var i = 0; i < interests.length; i++){
-            (function(i){
-              for(j = 0; j < searchTerms[interests[i]].length; j++){
-                console.log(searchTerms[interests[i]][j]);
-                var request = {
-                  location: GBG,
-                  radius: 10000,
-                  types:  [searchTerms[interests[i]][j]]
-                };
-                placeService.nearbySearch(request, function(result, status){
-                  callbackRadar(result, status, interests[i])
-                })
-              }
-            })(i);
-          }
-      });
-
-
-
-      function callbackRadar(result, status, interest){
-        WhatDo.setDisplayDict(result, interest);
-      }
-*/ 
-  }
-
-  $scope.interestList = WhatDo.getInterests();
-
-  $scope.displayDict = WhatDo.displayDict;
-
-  /*$scope.$watch('displayDict', function(newVal, oldVal, scope){
-    console.log(newVal);
-    scope.displayDict = WhatDo.getDisplayDict();
-  }, true)*/
-
-  /*$scope.$watch(function () { return WhatDo.displayDict }, function (newVal, oldVal) {
-    if (typeof newVal !== 'undefined') {
-      $scope.displayList = WhatDo.displayDict;
-      console.log (WhatDo.displayDict);
     }
-  });*/
-
-  /*$scope.displayList = function(){
-    return WhatDo.getDisplayDict();
-  }*/
 
 });
 
