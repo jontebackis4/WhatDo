@@ -1,5 +1,9 @@
 /* ----- ALLA VIEWS OCH HEADER ----- #98e698 */
 
+.index{
+	background-color: #98e698;
+}
+
 #namn {
 	font-family: "Courier New";
 	font-weight: bold;

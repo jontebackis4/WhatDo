@@ -34,7 +34,7 @@ which module to associate the app with. In app.js we create the "dinnerPlanner" 
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Angular JavaScript including routing and resource modules  -->
-    <script src="bower_components/angular/angular.js"></script>
+    <!--<script src="bower_components/angular/angular.js"></script>-->
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     
@@ -51,7 +51,8 @@ which module to associate the app with. In app.js we create the "dinnerPlanner" 
         <script src="js/homeCtrl.js"></script>
 
   </head>
-  <body>
+  <body class="index">
+  
     <!-- HEADERN -->
     <!--<div class="container-fluid">
         <div class="jumbotron">
@@ -67,34 +68,33 @@ which module to associate the app with. In app.js we create the "dinnerPlanner" 
         <br>
     </div>-->
     <div class="container-fluid">
-    <nav class="navbar navbar-header navbar-static-top">
-        <div class="container">
-            <ul class="nav nav-tabs">
-                <li><a class ="removeLinkLook" href="#/home">Home</a></li>
-                <li><a class ="removeLinkLook" href="#/interests">Interests</a></li>
-                <li><a class ="removeLinkLook" href="#/search">Search</a></li>
-                <li class="nav dropdown navbar-right">
-                    <a class="dropdown-toggle removeLinkLook" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action 1</a></li>
-                        <li><a href="#">Action 2</a></li>
-                        <li><a href="#">Action 3</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Sign out</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
+        <nav class="navbar navbar-header navbar-static-top">
+            <div class="container">
+                <ul class="nav nav-tabs">
+                    <li><a class ="removeLinkLook" href="#/home">Home</a></li>
+                    <li><a class ="removeLinkLook" href="#/interests">Interests</a></li>
+                    <li><a class ="removeLinkLook" href="#/search">Search</a></li>
+                    <li class="nav dropdown navbar-right">
+                        <a class="dropdown-toggle removeLinkLook" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action 1</a></li>
+                            <li><a href="#">Action 2</a></li>
+                            <li><a href="#">Action 3</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Sign out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div ng-view></div>
     </div>
         
     <!-- HEM / STARTSIDA -->
-    <div ng-view></div>
+    
 
     <!-- ng-view Angular directive is where the partials will be loaded. app.js configures the $routingProvider
     where you specify which partial should be loaded when. -->
-    <!--div ng-view></div-->
-    </div>
-    </div>
+
   </body>
 </html>
