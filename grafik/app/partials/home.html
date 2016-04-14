@@ -1,23 +1,12 @@
 <!-- TODO in Lab 5: there is not much to do on the home screen. Just arrange the layout so it
 looks a bit nicer. -->
-<div class ="row">	
-	<div class="col-md-3 ">
-		<form role="form">
-		    <div class="form-group">
-		     	<label for="usr">User Name:</label>
-		     	<input type="text" class="form-control" id="usr">
-		    </div>
-		    <div class="form-group">
-		     	<label for="pwd">Password:</label>
-		     	<input type="password" class="form-control" id="pwd">
-		    </div>
-		</form>
-	</div>
-</div>
-<div class = "row">
-	<div class = "col-md-3">
-    	<a href="#/interests" class="btn btn-success">Tryck för att börja</a>
-    </div>
-</div>
+<div id="start">
+
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+<a href="#/interests" class="btn btn-default btn-lg knappar" id="borja">BÖRJA!</a>
+<button ng-click="setspcUser()">jonas</button>
 
 
+
+</div>
