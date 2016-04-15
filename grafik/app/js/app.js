@@ -11,7 +11,7 @@
 
 
 
-var whatDoApp = angular.module('whatDo', ['ngRoute','ngResource', 'firebase']);
+var whatDoApp = angular.module('whatDo', ['ngRoute','ngResource', 'firebase', 'auth0', 'angular-storage', 'angular-jwt']);
 //jdsgksd
 
 // Here we configure our application module and more specifically our $routeProvider. 
@@ -37,8 +37,8 @@ var whatDoApp = angular.module('whatDo', ['ngRoute','ngResource', 'firebase']);
 // the path we use the ":" sign. For instance, our '/dish/:dishId' will be triggered when we access 
 // 'http://localhost:8000/#/dish/12345'. The 12345 value will be stored in a dishId parameter, which we can
 // then access through $routeParams service. More information on this in the dishCtrl.js 
-whatDoApp.config(['$routeProvider',
-  function($routeProvider) {
+whatDoApp.config(['$routeProvider', 'authProvider',
+  function($routeProvider, authProvider) {
     $routeProvider.
       when('/home', {
         templateUrl: 'partials/home.html',
@@ -55,4 +55,25 @@ whatDoApp.config(['$routeProvider',
       otherwise({
         redirectTo: '/home',
       });
-  }]);
+
+    authProvider.init({
+      domain: 'whatdo.eu.auth0.com',
+      clientID: 'RbZdbivO8xiFCv3XLo7rNO0zi56luzgR'
+    });
+
+    authProvider.on('loginSuccess', function($location, profilePromise, idToken, store) {
+      console.log("Login Success");
+      profilePromise.then(function(profile) {
+        store.set('profile', profile);
+        store.set('token', idToken);
+      });
+      $location.path('/');
+    });
+
+    authProvider.on('loginFailure', function() {
+       console.log("Error login");
+    });
+  }])
+  .run(function(auth){
+    auth.hookEvents();
+  });
