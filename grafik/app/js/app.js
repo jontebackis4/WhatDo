@@ -52,6 +52,12 @@ whatDoApp.config(['$routeProvider', 'authProvider',
         templateUrl: 'partials/map.html',
         controller: 'mapCtrl'
       }).
+      when('/favorit', {
+      templateUrl: 'partials/favorit.html',
+      }).
+      when('/current', {
+      templateUrl: 'partials/current.html',
+      }).
       otherwise({
         redirectTo: '/home',
       });

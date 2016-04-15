@@ -1,10 +1,12 @@
 <!-- We include the sidebar as it is shared across two screens. -->
+<div id="darkback">
 
+<ng-include src="'partials/navBar.html'"></ng-include>
 <ng-include src="'partials/shortInfo.html'" ng-controller="mapCtrl"></ng-include>
 
 <div class="col-sm-6"> 
- 	
-
  	<div ng-init="init()"/>
-	<div id="map-canvas"></div>
+		<div id="map-canvas"></div>
+	</div>
+</div>
 </div>

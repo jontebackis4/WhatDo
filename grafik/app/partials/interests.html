@@ -1,27 +1,29 @@
 <!-- We include the sidebar as it is shared across two screens. -->
+<div id="darkback">
+<ng-include src="'partials/navBar.html'"></ng-include>
 
+  <p id="steg1">Steg 1.</p>
+  <hr id="infoline">
+  <p class="info" id="info1">När man besöker en ny stad vill man helst inte gå runt och vela.</p>
+  <p class="info" id="info2">Så snälla fyll i dina intressen så minimerar du risken för det. </p>
 
-  <h2 id="underrubrik"><span id="morkare">Sverige</span> är ett avlångt land med <span id="morkare">mycket</span> att se & göra. </h2>
-  <h2 id="underrubrik">Fyll nedan i dina intressen så kommer du få se vad som <span id="morkare">passar just dig</span> i Sveriges många fantastiska städer. </h2>
-<h1 id="intressen"> INTRESSEN?</h1>
-  <div>
+<!--h1 id="intressen"> INTRESSEN?</h1-->
 
-
-   <p class="knappar">
+   <p class="knappar2">
         <button ng-class="setBtn(btnStatus('btn1'))" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Nöjesfält'); btnSwitch('btn1')">NÖJESFÄLT</button>
         <button ng-class="setBtn(btnStatus('btn2'))" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Djur'); btnSwitch('btn2')">DJUR</button>
         <button ng-class="setBtn(btnStatus('btn3'))" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Konst'); btnSwitch('btn3')">KONST</button>
         <button ng-class="setBtn(btnStatus('btn4'))" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Nattliv'); btnSwitch('btn4')">NATTLIV</button>
         <button ng-class="setBtn(btnStatus('btn5'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Fika'); btnSwitch('btn5')">FIKA</button>
-    </p>
-    <p class="knappar">
+    <p>
+    <p class="knappar2">
         <button ng-class="setBtn(btnStatus('btn6'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Museum'); btnSwitch('btn6')">MUSEUM</button>
         <button ng-class="setBtn(btnStatus('btn7'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Shopping'); btnSwitch('btn7')">SHOPPING</button>
         <button ng-class="setBtn(btnStatus('btn8'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Bio'); btnSwitch('btn8')">BIO</button>
         <button ng-class="setBtn(btnStatus('btn9'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Sport'); btnSwitch('btn9')">SPORT</button>
         <button ng-class="setBtn(btnStatus('btn10'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Mat'); btnSwitch('btn10')">MAT</button>
     </p>
-    <p class="knappar">
+    <p class="knappar2">
         <button ng-class="setBtn(btnStatus('btn11'))" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Parker'); btnSwitch('btn11')">PARKER</button>
         <button ng-class="setBtn(btnStatus('btn12'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Byggnader'); btnSwitch('btn12')">BYGGNADER</button>
         <button ng-class="setBtn(btnStatus('btn13'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Kyrkogårdar'); btnSwitch('btn13')">KYRKOGÅRDAR</button>
@@ -35,3 +37,4 @@
 <!-- TODO in Lab 5: Display the dish information including image, Description, 
 Instructions, Ingredients and total cost. -->
   
+</div>

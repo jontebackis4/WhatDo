@@ -40,14 +40,74 @@
 	margin-left:42%;
 }
 
+
+#menybar{
+	background-color: transparent;
+	border-color: transparent;
+	color:yellow;
+}
+
+.info{
+	font-family: Courier;
+	text-align: center;
+	font-weight: lighter;
+}
+
+#info1{
+	font-size: 15px;
+	color:#4080bf;
+}
+
+#info2{
+	font-size: 20px;
+	margin-bottom:40px;
+	margin-top:30px;
+	color:white;
+}
+
+
+.nav.navbar-nav.navbar-right li a {
+    color: #8cb1d9;
+    font-family: Courier;
+}
+
+.nav.navbar-nav li a {
+    color: #8cb1d9;
+    font-family: Courier;
+}
+
+#steg1 {
+	text-align: center;
+	color:#004080;
+	font-family: Courier;
+	text-shadow: 0.5px 0.5px white;
+	padding-top:40px;
+	font-size: 55px;
+	font-weight: bold;
+}
+
+#infoline{
+	width:25%;
+	margin-top: -23px;
+	}
+
+
 /* ------- VIEW1/Välkomssidan ------ */
 
 #startsida{ 
-background-image: url("tradstampel.jpg");
+background-image: url("trad.jpg");
 background-size: 100% 100%; 
 background-repeat: no-repeat;
 height: 100vh;
 width: 100vw;
+}
+
+#darkback{
+	background-image: url("tradmorkast.jpg");
+	background-size: 100% 100%; 
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100vw;
 }
 
 
@@ -57,14 +117,7 @@ width: 100vw;
 	font-size: 20px;
 	color:#00802b;;
 }
-.removeLinkLook:hover, .removeLinkLook:visited, .removeLinkLook:active, .removeLinkLook:link {
-	font-family: "Courier New";
-	font-weight: bold;
-	font-size: 20px;
-	color:#00802b;
-	text-decoration: none;
 
-}
 #underrubrik {
 	font-family: Courier;
 	text-align: center;
@@ -89,21 +142,29 @@ width: 100vw;
 .knappar{
 	text-align: center;
 	font-family: Courier;
-	color:#006622;
+	color:#b3cbe6;
+	background-color: transparent;
+}
+
+.knappar2{
+	text-align: center;
+	font-family: Courier;
+	color:black;
 }
 .knappTryckt{
 	text-align: center;
 	font-family: Courier;
-	color:#006622;
-	background-color: #aaf683;
+	color:white;
+	background-color: #004080;
 }
 .knappTryckt:hover, .knappTryckt:focus, .knappTryckt:active, .knappTryckt.active, .open > .dropdown-toggle.knappTryckt{
-	background-color: #aaf683;
+	background-color: #004080;
+	color:white;
 }
 .sistaknappen {
 	text-align: center;
 	font-family: Courier;
-	color:#006622;
+	color:red;
 	padding-top: 30px;
 
 }
@@ -166,12 +227,20 @@ width: 100vw;
 	width: 100%;
 	border: 2px solid black;
 }
+
+.removeLinkLook:hover, .removeLinkLook:visited, .removeLinkLook:active, .removeLinkLook:link {
+	font-family: "Courier New";
+	font-weight: bold;
+	font-size: 20px;
+	color:black;
+	text-decoration: none;
+}
 .navbar-header, .navbar-header:focus, .navbar-header:active{
-	background-color: #99E698;
+	background-color: white;
 
 }
 .nav>li>a:hover {
-	background-color: #5CB85C; 
+	background-color: gray; 
 }
 .nav>li>a:focus{
 	background-color: transparent;
