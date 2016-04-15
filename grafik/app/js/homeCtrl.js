@@ -11,5 +11,10 @@ whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService, auth) {
 
   $scope.auth = auth;
 
+  $scope.logout = function() {
+    auth.signout();
+    //store.remove('profile');
+    //store.remove('token');
+  }
 
 });
