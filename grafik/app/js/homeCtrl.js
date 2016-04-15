@@ -10,7 +10,30 @@ whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService) {
   };
 
 
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+}
 
+function signOut(gapi) {
+  console.log(gapi);
+    var auth2 = gapi.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+
+$scope.signIn = function (googleUser){
+  onSignIn(googleUser);
+}
+
+$scope.signO = function (gapi){
+  console.log(gapi);
+  signOut(gapi);
+}
 /*
   var ref = new Firebase("https://sverigeguiden.firebaseio.com");
   // download the data into a local object
