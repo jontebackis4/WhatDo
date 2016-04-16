@@ -19,9 +19,9 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
         lat: 62.573276,
         lng: 16.942265
       },
-      zoom: 4,
-      maxZoom: 7,
-      minZoom: 4,
+      zoom: 5,
+      maxZoom: 15,
+      minZoom: 3,
       scrollwheel: false,
       zoomControl: true,
       zoomControlOption: {
@@ -30,16 +30,49 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
       },
       streetViewControl: false,
       mapTypeControl: false,
-      styles: mapStyleArray,
-      backgroundColor: "#ccffcc"
+      //styles: mapStyleArray,
+      //backgroundColor: "#000099"
       };
 
       //Create a map and bind it to 'map-canvas'
       var map = new google.maps.Map(document.getElementById('map-canvas'), options);
 
+      //Add click-listener to create marker on click
+
+      map.addListener('click', function(e){
+        createMark(e.latLng, map)
+      });
+
+      function createMark(latLng, map){
+        var marker = new google.maps.Marker({
+          position: latLng,
+          map: map,
+          Title: 'Click me!'
+        });
+
+        marker.addListener('click', function(){
+          WhatDo.resetDisplayDict();
+          for(var i = 0; i < interests.length; i++){
+            (function(i){
+              for(j = 0; j < searchTerms[interests[i]].length; j++){
+                console.log(searchTerms[interests[i]][j]);
+                var request = {
+                  location: latLng,
+                  radius: 10000,
+                  types:  [searchTerms[interests[i]][j]]
+                };
+                placeService.nearbySearch(request, function(result, status){
+                  callback(result, status, interests[i])
+                })
+              }
+            })(i);
+          }
+        });
+      }
+
       //Create a fusion table layer to highlight sweden
 
-      var layer = new google.maps.FusionTablesLayer({
+      /*var layer = new google.maps.FusionTablesLayer({
         query: {
           select: 'geometry',
           from: '1tv_FBqVJNF2q0yqZJiS1YAw3kpNDsfifBtQp7ns',
@@ -53,7 +86,7 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
         }]
       });
 
-      layer.setMap(map);
+      layer.setMap(map);*/
 
 
       //Create PlaceService 
@@ -63,9 +96,9 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
       var towns = WhatDo.towns;
 
       //Create marker for a list of towns
-      for(key in towns){
+      /*for(key in towns){
         createMarker(towns, key)
-      }
+      }*/
      
       //List with interests from service     
       var interests = WhatDo.getInterests();
@@ -76,7 +109,8 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
         var marker = new google.maps.Marker({
           position: towns[key],
           map: map,
-          Title: key
+          Title: key,
+          draggable: true
         });
 
         marker.addListener('click', function(){
