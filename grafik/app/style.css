@@ -175,12 +175,6 @@ width: 100vw;
 
 /* ------------- VIEW2 -------*/
 
-#vanster{
-	overflow-y: scroll;
-	height: 50vh;
-	margin-top: -25px;
-}
-
 #valdaInt {
 	font-family: Courier;
 	font-size: 15px;
@@ -227,7 +221,7 @@ width: 100vw;
 }
 
 #map-canvas {
-	height: 400px;
+	height: 550px;
 	width: 100%;
 	border: 2px solid black;
 }
@@ -252,4 +246,8 @@ width: 100vw;
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
 	background-color: #5CB85C;
 	border-color: transparent; 
+}
+
+.mapBackground {
+	background-color: #262626;
 }

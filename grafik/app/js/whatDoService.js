@@ -60,7 +60,6 @@ whatDoApp.factory('WhatDo',function ($resource) {
   		if(Array.isArray(this.displayDict[interest])){
 	  		for (var i = 0; i < result.length; i++) {
 	  			this.displayDict[interest].push(result[i])
-          console.log(result[i]);
 	  		}
   		}
   		else{
@@ -74,6 +73,12 @@ whatDoApp.factory('WhatDo',function ($resource) {
   	this.getDisplayDict = function(){
   		return this.displayDict;
   	}
+
+    this.resetDisplayDict = function(){
+      for (var interest in this.displayDict){
+        delete this.displayDict[interest];
+      }
+    }
 
   	this.getInterestInfo = function(){
   		return this.interestInfo;

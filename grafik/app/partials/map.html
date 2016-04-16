@@ -1,12 +1,21 @@
-<!-- We include the sidebar as it is shared across two screens. -->
-<div id="darkback">
 
-<ng-include src="'partials/navBar.html'"></ng-include>
-<ng-include src="'partials/shortInfo.html'" ng-controller="mapCtrl"></ng-include>
+<div class="mapBackground">
+	<ng-include src="'partials/navBar.html'"></ng-include>
 
-<div class="col-sm-6"> 
- 	<div ng-init="init()"/>
-		<div id="map-canvas"></div>
+	<div class="container"> 
+	 	<div ng-init="init()"/>
+			<div id="map-canvas"></div>
+		</div>
 	</div>
-</div>
+	<!--<ng-include src="'partials/shortInfo.html'" ng-controller="mapCtrl"></ng-include>-->
+	<div class="container mapBackground">
+	    <div class="well well-lg">
+            <div ng-repeat="(interest, places) in displayDict">
+                {{interest}} : {{val[0].name}}
+                <div ng-repeat="place in places">
+                	{{place.name}}
+                </div>
+            </div>
+	    </div>
+	</div>
 </div>

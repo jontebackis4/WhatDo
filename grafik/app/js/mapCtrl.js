@@ -80,21 +80,22 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
         });
 
         marker.addListener('click', function(){
-            for(var i = 0; i < interests.length; i++){
-              (function(i){
-                for(j = 0; j < searchTerms[interests[i]].length; j++){
-                  console.log(searchTerms[interests[i]][j]);
-                  var request = {
-                    location: towns[key],
-                    radius: 10000,
-                    types:  [searchTerms[interests[i]][j]]
-                  };
-                  placeService.nearbySearch(request, function(result, status){
-                    callback(result, status, interests[i])
-                  })
-                }
-              })(i);
-            }
+          WhatDo.resetDisplayDict();
+          for(var i = 0; i < interests.length; i++){
+            (function(i){
+              for(j = 0; j < searchTerms[interests[i]].length; j++){
+                console.log(searchTerms[interests[i]][j]);
+                var request = {
+                  location: towns[key],
+                  radius: 10000,
+                  types:  [searchTerms[interests[i]][j]]
+                };
+                placeService.nearbySearch(request, function(result, status){
+                  callback(result, status, interests[i])
+                })
+              }
+            })(i);
+          }
         }); 
       };
       //Add listener to marker
@@ -104,8 +105,9 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
 
 
       function callback(result, status, interest){
-        WhatDo.setDisplayDict(result, interest);
-        $scope.$apply(function(){});
+        $scope.$apply(function(){
+          WhatDo.setDisplayDict(result, interest);
+        });
       }
       
   }
