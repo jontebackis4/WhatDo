@@ -37,7 +37,11 @@
 }
 
 #borja{
-	margin-left:42%;
+	text-align: center;
+	font-family: Courier;
+	color:#4080bf;
+	background-color: rgba(255,255,255,0.5);
+	margin-left:45%;
 }
 
 
