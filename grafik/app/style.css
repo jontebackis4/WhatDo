@@ -76,6 +76,10 @@
     font-family: Courier;
 }
 
+.nav.navbar-nav li a:hover {
+	color: white; 
+}
+
 #steg1 {
 	text-align: center;
 	color:#004080;
