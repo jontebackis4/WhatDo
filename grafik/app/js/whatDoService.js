@@ -107,7 +107,7 @@ whatDoApp.factory('WhatDo',function ($resource) {
       'Göteborg': {lat: 57.708859, lng: 11.974583},
       'Stockholm': {lat: 59.329324, lng: 18.068604},
       'Malmö': {lat: 55.604971, lng: 13.003902},
-      'Uppsala': {lat: 42.032970, lng: 23.554690},
+      'Uppsala': {lat: 59.858564, lng: 23.554690},
       'Pajala': {lat: 67.212805, lng: 23.367330},
       'Jönköping': {lat: 57.782614, lng: 14.161788},
       'Karlstad': {lat: 59.402181, lng: 13.511498}, 
@@ -129,7 +129,8 @@ whatDoApp.factory('WhatDo',function ($resource) {
       'Norrköping': {lat: 58.587744, lng: 16.192421},
       'Västerås': {lat: 59.609900, lng: 16.544809},
       'Torpshammar': {lat: 62.475592, lng: 16.324513},
-      'Björklinge': {lat: 60.031777, lng: 17.552102}
+      'Björklinge': {lat: 60.031777, lng: 17.552102},
+      'Åre': {lat: 63.399042, lng: 13.081506}
     }
 
 
