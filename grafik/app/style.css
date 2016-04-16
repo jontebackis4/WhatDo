@@ -84,7 +84,7 @@
 	text-align: center;
 	color:#004080;
 	font-family: Courier;
-	text-shadow: 0.5px 0.5px white;
+	text-shadow: 1px 1px white;
 	padding-top:40px;
 	font-size: 55px;
 	font-weight: bold;
@@ -95,6 +95,23 @@
 	margin-top: -23px;
 	}
 
+.modal-dialog{
+	width: 90%;
+	margin-top: 50% auto;
+	height: 90%;
+}
+
+.modal-content{
+	background:rgba(255,255,255,0.5);
+	font-family: Courier;
+	color: white;
+}
+
+#placeName{
+	color:#004080;
+	text-shadow: 1px 1px white;
+	font-weight: bold;
+}
 
 /* ------- VIEW1/Välkomssidan ------ */
 
