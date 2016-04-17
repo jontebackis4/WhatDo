@@ -1,4 +1,4 @@
-whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService, auth) {
+whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService, auth, store, $location) {
   console.log("i homectrl");
 
   $scope.setUser = function (){
@@ -12,9 +12,11 @@ whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService, auth) {
   $scope.auth = auth;
 
   $scope.logout = function() {
+    console.log("LOGUT");
     auth.signout();
-    //store.remove('profile');
-    //store.remove('token');
+    store.remove('profile');
+    store.remove('token');
+    $location.path('/home');
   }
 
 });

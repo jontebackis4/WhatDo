@@ -37,26 +37,33 @@ var whatDoApp = angular.module('whatDo', ['ngRoute','ngResource', 'firebase', 'a
 // the path we use the ":" sign. For instance, our '/dish/:dishId' will be triggered when we access 
 // 'http://localhost:8000/#/dish/12345'. The 12345 value will be stored in a dishId parameter, which we can
 // then access through $routeParams service. More information on this in the dishCtrl.js 
-whatDoApp.config(['$routeProvider', 'authProvider',
-  function($routeProvider, authProvider) {
+whatDoApp.config(['$routeProvider', 'authProvider', '$locationProvider',
+  function($routeProvider, authProvider, $locationProvider) {
     $routeProvider.
       when('/home', {
         templateUrl: 'partials/home.html',
+        pageTitle: 'Home',
         controller: 'homeCtrl'
       }).
       when('/interests', {
         templateUrl: 'partials/interests.html',
-        controller: 'interestsCtrl'
+        pageTitle: 'Interests',
+        controller: 'interestsCtrl',
+        requiresLogin: true
       }).
       when('/search', {
         templateUrl: 'partials/map.html',
-        controller: 'mapCtrl'
+        pageTitle: 'Search',
+        controller: 'mapCtrl',
+        requiresLogin: true
       }).
       when('/favorit', {
       templateUrl: 'partials/favorit.html',
+      requiresLogin: true
       }).
       when('/current', {
       templateUrl: 'partials/current.html',
+      requiresLogin: true
       }).
       otherwise({
         redirectTo: '/home',
@@ -64,7 +71,9 @@ whatDoApp.config(['$routeProvider', 'authProvider',
 
     authProvider.init({
       domain: 'whatdo.eu.auth0.com',
-      clientID: 'RbZdbivO8xiFCv3XLo7rNO0zi56luzgR'
+      clientID: 'RbZdbivO8xiFCv3XLo7rNO0zi56luzgR',
+      callbackUrl: location.href,
+      loginUrl: '/home'
     });
 
     authProvider.on('loginSuccess', function($location, profilePromise, idToken, store) {
@@ -73,7 +82,7 @@ whatDoApp.config(['$routeProvider', 'authProvider',
         store.set('profile', profile);
         store.set('token', idToken);
       });
-      $location.path('/');
+      $location.path('/interests');
     });
 
     authProvider.on('loginFailure', function() {
@@ -92,7 +101,7 @@ whatDoApp.config(['$routeProvider', 'authProvider',
           }
         } else {
           // Either show the login page or use the refresh token to get a new idToken
-          $location.path('/');
+          $location.path('/home');
         }
       }
     });

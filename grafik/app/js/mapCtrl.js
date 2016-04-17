@@ -40,6 +40,9 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
       //Add click-listener to create marker on click
 
       map.addListener('click', function(e){
+        if(WhatDo.marker){
+          WhatDo.marker.setMap(null);
+        }
         createMark(e.latLng, map)
       });
 
@@ -47,8 +50,11 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
         var marker = new google.maps.Marker({
           position: latLng,
           map: map,
-          Title: 'Click me!'
+          Title: 'Click me!',
+          draggable: true
         });
+
+        WhatDo.marker = marker;
 
         marker.addListener('click', function(){
           WhatDo.resetDisplayDict();
@@ -57,7 +63,7 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
               for(j = 0; j < searchTerms[interests[i]].length; j++){
                 console.log(searchTerms[interests[i]][j]);
                 var request = {
-                  location: latLng,
+                  location: marker.getPosition(),
                   radius: 10000,
                   types:  [searchTerms[interests[i]][j]]
                 };
