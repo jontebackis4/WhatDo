@@ -1,23 +1,174 @@
-/* ----- ALLA VIEWS OCH HEADER ----- #98e698 */
+.index{
+	background-color: white;
+}
 
 #namn {
 	font-family: "Courier New";
 	font-weight: bold;
-	text-shadow: 2px 2px white;
-	color:#00802b;
+	text-shadow: 1px 1px white;
+	color: #191970;
 	text-align: center;
+	font-size: 50px;
+	padding-top: 190px;
 }
 
-/* ------- VIEW1/Välkomssidan ------ */
+#startlinje{
+	width:50%;
+	margin-top: -25px;
+	}
 
-#start{ 
-background-image: url("cykel.jpg");
-background-size: 98% 98%; 
-background-repeat: no-repeat;
-height: 99vh;
-width: 99vw;
-margin-left: 17px;
-margin-top:7px;
+#slogan {
+	font-family: Courier;
+	text-align: center;
+	color:white;
+	font-size: 15px;
+	margin-top:-5px;
+}
+
+.skuggaSlogan{
+    color: white;
+    text-shadow:
+    -1px -1px 0 gray,
+    1px -1px 0 gray,
+    -1px 1px 0 gray,
+    1px 1px 0 gray;  
+}
+
+.skuggaInfo3{
+    color: white;
+    text-shadow:
+    -1px -1px 0 #336699,
+    1px -1px 0 #336699,
+    -1px 1px 0 #336699,
+    1px 1px 0 #336699;  
+}
+
+
+#borja{
+	text-align: center;
+	font-family: Courier;
+	color:#4080bf;
+	background-color: rgba(255,255,255,0.5);
+	margin-left:45%;
+}
+
+
+#menybar{
+	background-color: transparent;
+	border-color: transparent;
+	color:yellow;
+}
+
+.info{
+	font-family: Courier;
+	text-align: center;
+	font-weight: lighter;
+}
+
+#info1{
+	font-size: 15px;
+	color:#4080bf;
+}
+
+#info3{
+	font-size: 15px;
+	color:#b3cbe6;
+}
+
+#info2{
+	font-size: 20px;
+	margin-bottom:40px;
+	margin-top:30px;
+	color:white;
+}
+
+#favline{
+	width:50%;
+	margin-top: -23px;
+}
+
+
+.nav.navbar-nav.navbar-right li a {
+    color: #8cb1d9;
+    font-family: Courier;
+}
+
+.nav.navbar-nav li a {
+    color: #8cb1d9;
+    font-family: Courier;
+}
+
+.nav.navbar-nav li a:hover {
+	color: white; 
+}
+
+.deliteFav{
+	left:50%;
+	transform: translateX(-50%);
+}
+
+#deliteBut{
+	background:rgba(255,255,255,0.5);
+	font-family: Courier;
+	/*color:#4080bf;*/
+	color:#004080;
+}
+.dropdown-menu {
+    }
+
+.dropdown-menu li a{
+	color: #8cb1d9;
+    font-family: Courier;
+}
+
+
+#steg1 {
+	text-align: center;
+	color:#004080;
+	font-family: Courier;
+	text-shadow: 1px 1px white;
+	padding-top:40px;
+	font-size: 55px;
+	font-weight: bold;
+}
+
+#infoline{
+	width:25%;
+	margin-top: -23px;
+	}
+
+.modal-dialog{
+	width: 90%;
+	margin-top: 50% auto;
+	height: 90%;
+}
+
+.modal-content{
+	background:rgba(255,255,255,0.5);
+	font-family: Courier;
+	color: white;
+}
+
+#placeName{
+	color:#004080;
+	text-shadow: 1px 1px white;
+	font-weight: bold;
+}
+
+#startsida{ 
+	background-image: url("trad.jpg");
+	background-size: 100% 100%; 
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100vw;
+}
+
+#darkback{
+	background-image: url("tradmorkast.jpg");
+	background-size: 100% 100%; 
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100vw;
 }
 
 
@@ -27,14 +178,7 @@ margin-top:7px;
 	font-size: 20px;
 	color:#00802b;;
 }
-.removeLinkLook:hover, .removeLinkLook:visited, .removeLinkLook:active, .removeLinkLook:link {
-	font-family: "Courier New";
-	font-weight: bold;
-	font-size: 20px;
-	color:#00802b;
-	text-decoration: none;
 
-}
 #underrubrik {
 	font-family: Courier;
 	text-align: center;
@@ -59,31 +203,31 @@ margin-top:7px;
 .knappar{
 	text-align: center;
 	font-family: Courier;
-	color:#006622;
+	color:#b3cbe6;
+	background-color: transparent;
+}
+
+.knappar2{
+	text-align: center;
+	font-family: Courier;
+	color:black;
 }
 .knappTryckt{
 	text-align: center;
 	font-family: Courier;
-	color:#006622;
-	background-color: #aaf683;
+	color:white;
+	background-color: #004080;
 }
 .knappTryckt:hover, .knappTryckt:focus, .knappTryckt:active, .knappTryckt.active, .open > .dropdown-toggle.knappTryckt{
-	background-color: #aaf683;
+	background-color: #004080;
+	color:white;
 }
 .sistaknappen {
 	text-align: center;
 	font-family: Courier;
-	color:#006622;
+	color:red;
 	padding-top: 30px;
 
-}
-
-/* ------------- VIEW2 -------*/
-
-#vanster{
-	overflow-y: scroll;
-	height: 50vh;
-	margin-top: -25px;
 }
 
 #valdaInt {
@@ -132,16 +276,21 @@ margin-top:7px;
 }
 
 #map-canvas {
-	height: 400px;
+	height: 550px;
 	width: 100%;
 	border: 2px solid black;
 }
-.navbar-header, .navbar-header:focus, .navbar-header:active{
-	background-color: #99E698;
 
+.removeLinkLook:hover, .removeLinkLook:visited, .removeLinkLook:active, .removeLinkLook:link {
+	font-family: "Courier New";
+	font-weight: bold;
+	font-size: 20px;
+	color:black;
+	text-decoration: none;
 }
+
 .nav>li>a:hover {
-	background-color: #5CB85C; 
+	background-color: gray; 
 }
 .nav>li>a:focus{
 	background-color: transparent;
@@ -149,4 +298,8 @@ margin-top:7px;
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
 	background-color: #5CB85C;
 	border-color: transparent; 
+}
+
+.mapBackground {
+	background-color: #262626;
 }

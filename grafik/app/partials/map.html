@@ -1,13 +1,30 @@
-<!-- We include the sidebar as it is shared across two screens. -->
 
-<!-- TODO in Lab 5: Display the input box for search (you can ignore the type dropdown since BigOven does
-not support it in free version) and list all the dishes that match the search. -->
+<div class="mapBackground">
+	<ng-include src="'partials/navBar.html'" ng-controller="homeCtrl"></ng-include>
 
-<ng-include src="'partials/shortInfo.html'" ng-controller="mapCtrl"></ng-include>
 
-<div class="col-sm-6"> 
- 	
+<p id="steg1">Steg 2.</p>
+<hr id="infoline">
+ <p class="info" id="info1">Tro det eller ej men det finns fler städer i Sverige än Stockholm, Göteborg och Malmö.</p>
+ <p class="info" id="info2">Så utforska kartan nedan och tryck dit du vill åka.</p>
 
- 	<div ng-init="init()"/>
-	<div id="map-canvas"></div>
+
+	<div class="container"> 
+	 	<div ng-init="init()"/>
+			<div class ="well well-lg" id="map-canvas"></div>
+		</div>
+	</div>
+	<!--<ng-include src="'partials/shortInfo.html'" ng-controller="mapCtrl"></ng-include>-->
+	<div class="container mapBackground">
+	    <div class="panel panel-default">
+            <div class="panel-heading" ng-repeat="(interest, places) in displayDict">
+                {{interest}} : {{val[0].name}}
+                <div class="panel-body">
+	                <li ng-repeat="place in places">
+	                	{{place.name}}
+	                </li>
+                </div>
+            </div>
+	    </div>
+	</div>
 </div>
