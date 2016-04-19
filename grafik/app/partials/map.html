@@ -1,5 +1,6 @@
 
 <div class="mapBackground">
+	<ng-include src="'partials/placeInfo.html'"></ng-include>
 	<ng-include src="'partials/navBar.html'" ng-controller="homeCtrl"></ng-include>
 
 
@@ -21,7 +22,7 @@
                 {{interest}} : {{val[0].name}}
                 <div class="panel-body">
 	                <li ng-repeat="place in places">
-	                	{{place.name}}
+	                	<a class="info" data-toggle="modal" data-target="#myModal">{{place.name}}</a>
 	                </li>
                 </div>
             </div>
