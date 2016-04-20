@@ -1,8 +1,6 @@
 app/bower_components/
 bower_components/
 node_modules/
-bower.json
-package.json
 README.md
 blogg.txt
 app/partials/.DS_Store
