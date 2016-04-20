@@ -303,3 +303,9 @@
 .mapBackground {
 	background-color: #262626;
 }
+
+.not-active {
+	text-decoration: line-through;
+  	pointer-events: none;
+  	cursor: default;
+}

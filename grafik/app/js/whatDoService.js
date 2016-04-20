@@ -20,7 +20,6 @@ whatDoApp.factory('WhatDo',function ($resource) {
       'btn13': true,
       'btn14': true
     }
-
   	this.searchTerms = {
   	Nöjesfält : ["amusement_park"], 
 		Djur : ["aquarium","zoo"],

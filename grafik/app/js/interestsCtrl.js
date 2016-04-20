@@ -14,6 +14,23 @@ whatDoApp.controller('interestsCtrl', function ($scope, WhatDo) {
 		}
 	}
 
+	$scope.toSearch = function(currentClass){
+		var res = true;
+		for (var k in WhatDo.btnStatus){
+    		if (WhatDo.btnStatus.hasOwnProperty(k)) {
+        		if(!WhatDo.btnStatus[k]){
+        			res = false;
+        		}
+    		}
+		}
+		if(res){
+			return currentClass + " disabled";
+		}
+		else{
+			return currentClass;
+		}
+	}
+
 	$scope.btnStatus = function(btn){
 		return WhatDo.getBtnStatus(btn);
 	}
