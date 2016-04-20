@@ -4,15 +4,6 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
 
   $scope.init = function() {
 
-    //Create styles for the map
-    var mapStyleArray = [
-      {
-        "stylers": [
-        { "visibility": "off" }
-        ]
-      }
-      ];
-
       //Create map options
       var options ={
       center: {
@@ -30,15 +21,19 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
       },
       streetViewControl: false,
       mapTypeControl: false,
-      //styles: mapStyleArray,
-      //backgroundColor: "#000099"
       };
 
       //Create a map and bind it to 'map-canvas'
       var map = new google.maps.Map(document.getElementById('map-canvas'), options);
 
-      //Add click-listener to create marker on click
+      //Create PlaceService to map
+      placeService = new google.maps.places.PlacesService(map);
 
+      //Stuff from service     
+      var interests = WhatDo.getInterests();
+      var searchTerms = WhatDo.getSearchTerms();
+
+      //Add click-listener to create marker on click
       map.addListener('click', function(e){
         if(WhatDo.marker){
           WhatDo.marker.setMap(null);
@@ -50,99 +45,39 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
         var marker = new google.maps.Marker({
           position: latLng,
           map: map,
-          Title: 'Click me!',
+          Title: 'I´m draggable',
           draggable: true
         });
 
-        WhatDo.marker = marker;
+        googleNearbySearch(marker);
 
-        marker.addListener('click', function(){
-          WhatDo.resetDisplayDict();
-          for(var i = 0; i < interests.length; i++){
-            (function(i){
-              for(j = 0; j < searchTerms[interests[i]].length; j++){
-                console.log(searchTerms[interests[i]][j]);
-                var request = {
-                  location: marker.getPosition(),
-                  radius: 10000,
-                  types:  [searchTerms[interests[i]][j]]
-                };
-                placeService.nearbySearch(request, function(result, status){
-                  callback(result, status, interests[i])
-                })
-              }
-            })(i);
-          }
-        });
+        google.maps.event.addListener(marker, 'dragend', function(){
+          googleNearbySearch(marker);
+        })
+
+        WhatDo.marker = marker; 
       }
 
-      //Create a fusion table layer to highlight sweden
-
-      /*var layer = new google.maps.FusionTablesLayer({
-        query: {
-          select: 'geometry',
-          from: '1tv_FBqVJNF2q0yqZJiS1YAw3kpNDsfifBtQp7ns',
-          where: "'Countryname' = 'Sweden'"
-        },
-        styles: [{
-          polygonOptions: {
-            fillColor: '#00ff00',
-            fillOpacity: 0.3
-          }
-        }]
-      });
-
-      layer.setMap(map);*/
-
-
-      //Create PlaceService 
-
-      placeService = new google.maps.places.PlacesService(map);
+      //Make nearby search
+      function googleNearbySearch(marker){
+        WhatDo.resetDisplayDict();
+        for(var i = 0; i < interests.length; i++){
+          (function(i){
+            for(j = 0; j < searchTerms[interests[i]].length; j++){
+              var request = {
+                location: marker.getPosition(),
+                radius: 10000,
+                types:  [searchTerms[interests[i]][j]]
+              };
+              placeService.nearbySearch(request, function(result, status){
+                callback(result, status, interests[i])
+              })
+            }
+          })(i);
+        }
+      }
 
       var towns = WhatDo.towns;
-
-      //Create marker for a list of towns
-      /*for(key in towns){
-        createMarker(towns, key)
-      }*/
-     
-      //List with interests from service     
-      var interests = WhatDo.getInterests();
-      var searchTerms = WhatDo.getSearchTerms();
-      console.log(interests);
-      
-      function createMarker(towns, key){
-        var marker = new google.maps.Marker({
-          position: towns[key],
-          map: map,
-          Title: key,
-          draggable: true
-        });
-
-        marker.addListener('click', function(){
-          WhatDo.resetDisplayDict();
-          for(var i = 0; i < interests.length; i++){
-            (function(i){
-              for(j = 0; j < searchTerms[interests[i]].length; j++){
-                console.log(searchTerms[interests[i]][j]);
-                var request = {
-                  location: towns[key],
-                  radius: 10000,
-                  types:  [searchTerms[interests[i]][j]]
-                };
-                placeService.nearbySearch(request, function(result, status){
-                  callback(result, status, interests[i])
-                })
-              }
-            })(i);
-          }
-        }); 
-      };
-      //Add listener to marker
-
-
-
-
 
       function callback(result, status, interest){
         $scope.$apply(function(){

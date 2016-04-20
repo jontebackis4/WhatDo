@@ -1,5 +1,4 @@
 whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService, auth, store, $location) {
-  console.log("i homectrl");
 
   $scope.setUser = function (){
     fbService.addUser();
