@@ -1,6 +1,5 @@
 
 <div class="mapBackground">
-	<ng-include src="'partials/placeInfo.html'"></ng-include>
 	<ng-include src="'partials/navBar.html'" ng-controller="homeCtrl"></ng-include>
 
 
@@ -15,22 +14,33 @@
 			<div class ="well well-lg" id="map-canvas"></div>
 		</div>
 	</div>
-	<!--<ng-include src="'partials/shortInfo.html'" ng-controller="mapCtrl"></ng-include>-->
-	<div class="container mapBackground" ng-repeat="(interest, places) in displayDict">
+	<div ng-controller="modalCtrl">
+		<div class="container mapBackground" ng-repeat="(interest, places) in displayDict">
 
-		<p class="interests">{{interest}}</p> 
-            	<hr class="intline">
+			<p class="interests">{{interest}}</p> 
+	    	<hr class="intline">
 
+	    	<div class="row text-left"> 
+	    		<div class="col-md-6" ng-repeat="place in places">>
+	    			<a class="platser" ng-click="open('lg'); getPlaceInfo(place.place_id)">{{place.name}}</a>
+	    		</div>
+	        </div>
+
+	    </div>
+	    <div class="fulfill">
+	    </div>
+	</div>
+</div>
+
+<!--
             	<div class="row text-left"> 
 
 	            		<div class="col-md-6" ng-repeat="place in places">>
 	            			<a class="places" data-toggle="modal" data-target="#myModal">{{place.name}}</a>
                 		</div>
              
-                </div>
+                </div> KONFLIKT I GITHUB
 
     </div>
     <div class="fulfill">
-    </div>
-
-</div>
+    </div>-->

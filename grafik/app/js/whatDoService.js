@@ -1,6 +1,9 @@
 
-whatDoApp.factory('WhatDo',function ($resource) {
-	/*The arrays under are synched such as interest [1] is the result [1]*/
+whatDoApp.factory('WhatDo',function ($resource, $rootScope) {
+
+    this.selectedPlaceId;
+    this.selectedPlaceInfo;
+    this.placeService;
   	this.marker;
   	this.interests = [];
   	this.displayDict = {};
@@ -56,17 +59,19 @@ whatDoApp.factory('WhatDo',function ($resource) {
   	}
 
   	this.setDisplayDict = function(result, interest){
-  		if(Array.isArray(this.displayDict[interest])){
-	  		for (var i = 0; i < result.length; i++) {
-	  			this.displayDict[interest].push(result[i])
-	  		}
-  		}
-  		else{
-  			this.displayDict[interest] = [];
-	  		for (var i = 0; i < result.length; i++) {
-	  			this.displayDict[interest].push(result[i]);
-	  		}
-  		}
+      if(result){
+    		if(Array.isArray(this.displayDict[interest])){
+  	  		for (var i = 0; i < result.length; i++) {
+  	  			this.displayDict[interest].push(result[i])
+  	  		}
+    		}
+    		else{
+    			this.displayDict[interest] = [];
+  	  		for (var i = 0; i < result.length; i++) {
+  	  			this.displayDict[interest].push(result[i]);
+  	  		}
+    		}
+      }
   	}
   	
   	this.getDisplayDict = function(){
@@ -101,6 +106,10 @@ whatDoApp.factory('WhatDo',function ($resource) {
   	this.getInterests = function(){
   		return this.interests;
   	}
+
+    this.update = function(){
+      $rootScope.$broadcast('update');
+    }
 
   	return this;
 });
