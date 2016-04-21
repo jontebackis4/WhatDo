@@ -4,10 +4,10 @@
 	<ng-include src="'partials/navBar.html'" ng-controller="homeCtrl"></ng-include>
 
 
-<p id="steg1">Steg 2.</p>
-<hr id="infoline">
- <p class="info" id="info1">Tro det eller ej men det finns fler städer i Sverige än Stockholm, Göteborg och Malmö.</p>
- <p class="info" id="info2">Så utforska kartan nedan och tryck dit du vill åka.</p>
+<p id="bigOver">Explore the world</p>
+<hr id="exploreLine">
+ <!--p class="info" id="info1">The world is in your hands. </p-->
+ <p class="info" id="info2">The world is in your hands so go ahead and discover the map.</p>
 
 
 	<div class="container"> 
@@ -24,7 +24,7 @@
             	<div class="row text-left"> 
 
 	            		<div class="col-md-6" ng-repeat="place in places">>
-	            			<a class="platser" data-toggle="modal" data-target="#myModal">{{place.name}}</a>
+	            			<a class="places" data-toggle="modal" data-target="#myModal">{{place.name}}</a>
                 		</div>
              
                 </div>

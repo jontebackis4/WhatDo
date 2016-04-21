@@ -1,10 +1,10 @@
-/* FOR ALL VIEWS */
+/* FOR ALL VIEWS  ------------------------------------------------------*/
 
 .index {
 	background-color: white;
 }
 
-/* HOME PAGE */
+/* HOME PAGE ------------------------------------------------------*/
 #homePage { 
 	background-image: url("tradm1.jpg");
 	background-size: 100% 100%; 
@@ -16,7 +16,7 @@
 
 #appName {
 	font-family: courier;
-	text-shadow: 1px 1px white;
+	text-shadow: 0.1px 0.5px white;
 	/*color: #4d94ff;*/
 	/*color:#1a75ff;*/
 	color:#0033cc;
@@ -74,7 +74,7 @@
 	margin-left:45%;
 }
 
-#darker {
+/*#darker {
 	color:#002080;
 	font-weight: bold;
     text-shadow:
@@ -82,11 +82,7 @@
     1px -1px 0 white,
     -1px 1px 0 white,
     1px 1px 0 white;  
-
-}
-
-
-/* */
+}*/
 
 /*.sloganShadow {
     color: white;
@@ -96,6 +92,135 @@
     -1px 1px 0 #999999,
     1px 1px 0 #999999;  
 }*/
+
+
+
+/* INTEREST VIEW  ------------------------------------------------------*/
+
+#darkBack {
+	background-image: url("tradmorkast.jpg");
+	background-size: 100% 100%; 
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100vw;
+}
+
+#bigOver {
+	text-align: center;
+	color:#004080;
+	font-family: Courier;
+	text-shadow: 0.1px 0.5px white;
+	padding-top:40px;
+	font-size: 55px;
+}
+
+#infoLine{
+	width:25%;
+	margin-top: -23px;
+}
+
+.info{
+	font-family: Courier;
+	text-align: center;
+	font-weight: lighter;
+}
+
+#info1{
+	font-size: 15px;
+	color:#4080bf;
+}
+
+#info3{
+	font-size: 15px;
+	color:#b3cbe6;
+}
+
+#info2{
+	font-size: 20px;
+	margin-bottom:40px;
+	margin-top:30px;
+	color:white;
+}
+
+.knappar{
+	text-align: center;
+	font-family: Courier;
+	color:#b3cbe6;
+	background-color: transparent;
+}
+
+.knappar2{
+	text-align: center;
+	font-family: Courier;
+	color:black;
+}
+.knappTryckt{
+	text-align: center;
+	font-family: Courier;
+	color:white;
+	background-color: #004080;
+}
+.knappTryckt:hover, .knappTryckt:focus, .knappTryckt:active, .knappTryckt.active, .open > .dropdown-toggle.knappTryckt{
+	background-color: #004080;
+	color:white;
+}
+.sistaknappen {
+	text-align: center;
+	font-family: Courier;
+	color:red;
+	padding-top: 30px;
+
+}
+/* MAP ------------------------------------------------------*/
+.mapBackground {
+	background-color: #262626;
+}
+
+#exploreLine{
+	width:45%;
+	margin-top: -23px;
+}
+
+#map-canvas {
+	height: 550px;
+	width: 100%;
+	border: 2px solid black;
+}
+
+.interests{
+	color:#b3cbe6;
+	font-size: 40px;
+	font-family: "Courier New";
+	text-align: left;
+	text-shadow: 1px 1px white;
+	/*font-weight: bold;*/
+	margin-top:35px;
+}
+
+.intline{
+	width:23%;
+	margin-top: -18px;
+	float: left;
+	margin-bottom:-10px;
+}
+
+.places{
+	font-family: Courier;
+	text-align: center;
+	font-weight: lighter;
+	/*color:#b3cbe6;*/
+	color:white;
+	text-align: center;
+	font-size:17px;
+}
+
+.fulfill{
+	height: 10vh;
+}
+
+/* ----------------------------------------------------------------------------------------------------------*/
+
+
 #borja{
 	text-align: center;
 	font-family: Courier;
@@ -122,28 +247,7 @@
 	color:yellow;
 }
 
-.info{
-	font-family: Courier;
-	text-align: center;
-	font-weight: lighter;
-}
 
-#info1{
-	font-size: 15px;
-	color:#4080bf;
-}
-
-#info3{
-	font-size: 15px;
-	color:#b3cbe6;
-}
-
-#info2{
-	font-size: 20px;
-	margin-bottom:40px;
-	margin-top:30px;
-	color:white;
-}
 
 #favline{
 	width:50%;
@@ -185,20 +289,7 @@
 }
 
 
-#steg1 {
-	text-align: center;
-	color:#004080;
-	font-family: Courier;
-	text-shadow: 1px 1px white;
-	padding-top:40px;
-	font-size: 55px;
-	font-weight: bold;
-}
 
-#infoline{
-	width:25%;
-	margin-top: -23px;
-	}
 
 .modal-dialog{
 	width: 90%;
@@ -220,13 +311,7 @@
 
 
 
-#darkback{
-	background-image: url("tradmorkast.jpg");
-	background-size: 100% 100%; 
-	background-repeat: no-repeat;
-	height: 100vh;
-	width: 100vw;
-}
+
 
 
 .removeLinkLook{
@@ -257,35 +342,6 @@
 	text-shadow: -3px 0 #00802b, 0 3px #006622, 3px 0 #006622, 0 -3px #00802b;
 }
 
-.knappar{
-	text-align: center;
-	font-family: Courier;
-	color:#b3cbe6;
-	background-color: transparent;
-}
-
-.knappar2{
-	text-align: center;
-	font-family: Courier;
-	color:black;
-}
-.knappTryckt{
-	text-align: center;
-	font-family: Courier;
-	color:white;
-	background-color: #004080;
-}
-.knappTryckt:hover, .knappTryckt:focus, .knappTryckt:active, .knappTryckt.active, .open > .dropdown-toggle.knappTryckt{
-	background-color: #004080;
-	color:white;
-}
-.sistaknappen {
-	text-align: center;
-	font-family: Courier;
-	color:red;
-	padding-top: 30px;
-
-}
 
 #valdaInt {
 	font-family: Courier;
@@ -332,11 +388,7 @@
 	margin-top: 3px;
 }
 
-#map-canvas {
-	height: 550px;
-	width: 100%;
-	border: 2px solid black;
-}
+
 
 .removeLinkLook:hover, .removeLinkLook:visited, .removeLinkLook:active, .removeLinkLook:link {
 	font-family: "Courier New";
@@ -357,9 +409,7 @@
 	border-color: transparent; 
 }
 
-.mapBackground {
-	background-color: #262626;
-}
+
 
 .panel-default>.panel-heading{
 	/*background-color:#262626;*/
@@ -379,39 +429,10 @@
   	cursor: default;
 }
 
-.interests{
-	color:#b3cbe6;
-	font-size: 40px;
-	font-family: "Courier New";
-	text-align: left;
-	text-shadow: 1px 1px white;
-	/*font-weight: bold;*/
-	margin-top:35px;
 
-}
-
-.intline{
-	width:23%;
-	margin-top: -18px;
-	float: left;
-	margin-bottom:-10px;
-}
-
-.platser{
-	font-family: Courier;
-	text-align: center;
-	font-weight: lighter;
-	/*color:#b3cbe6;*/
-	color:white;
-	text-align: center;
-	font-size:17px;
-}
 
 .middle{
 	float: none; 
 	margin: 0 auto;
 }
 
-.fulfill{
-	height: 10vh;
-}
