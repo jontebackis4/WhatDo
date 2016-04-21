@@ -27,7 +27,7 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
       var map = new google.maps.Map(document.getElementById('map-canvas'), options);
 
       //Create PlaceService to map
-      placeService = new google.maps.places.PlacesService(map);
+      WhatDo.placeService = new google.maps.places.PlacesService(map);
 
       //Stuff from service     
       var interests = WhatDo.getInterests();
@@ -69,7 +69,7 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
                 radius: 10000,
                 types:  [searchTerms[interests[i]][j]]
               };
-              placeService.nearbySearch(request, function(result, status){
+              WhatDo.placeService.nearbySearch(request, function(result, status){
                 callback(result, status, interests[i])
               })
             }

@@ -11,7 +11,7 @@
 
 
 
-var whatDoApp = angular.module('whatDo', ['ngRoute','ngResource', 'firebase', 'auth0', 'angular-storage', 'angular-jwt']);
+var whatDoApp = angular.module('whatDo', ['ngRoute','ngResource', 'firebase', 'auth0', 'angular-storage', 'angular-jwt', 'ui.bootstrap']);
 //jdsgksd
 
 // Here we configure our application module and more specifically our $routeProvider. 

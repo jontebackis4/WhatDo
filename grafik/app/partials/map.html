@@ -1,6 +1,5 @@
 
 <div class="mapBackground">
-	<ng-include src="'partials/placeInfo.html'"></ng-include>
 	<ng-include src="'partials/navBar.html'" ng-controller="homeCtrl"></ng-include>
 
 
@@ -16,13 +15,13 @@
 		</div>
 	</div>
 	<!--<ng-include src="'partials/shortInfo.html'" ng-controller="mapCtrl"></ng-include>-->
-	<div class="container mapBackground">
+	<div class="container mapBackground" ng-controller="modalCtrl">
 	    <div class="panel panel-default">
             <div class="panel-heading" ng-repeat="(interest, places) in displayDict">
                 {{interest}} : {{val[0].name}}
                 <div class="panel-body">
 	                <li ng-repeat="place in places">
-	                	<a class="info" data-toggle="modal" data-target="#myModal">{{place.name}}</a>
+	                	<a class="info" ng-click="open('lg'); getPlaceInfo(place.place_id)">{{place.name}}</a>
 	                </li>
                 </div>
             </div>

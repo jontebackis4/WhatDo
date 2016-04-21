@@ -1,6 +1,9 @@
 
 whatDoApp.factory('WhatDo',function ($resource) {
-	/*The arrays under are synched such as interest [1] is the result [1]*/
+
+    this.selectedPlaceId;
+    this.selectedPlaceInfo;
+    this.placeService;
   	this.marker;
   	this.interests = [];
   	this.displayDict = {};

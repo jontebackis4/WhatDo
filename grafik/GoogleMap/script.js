@@ -177,5 +177,6 @@
         }); 
       };
 
+	<a class="info" data-toggle="modal" data-target="#myModal">{{place.name}}</a>
 
       */
