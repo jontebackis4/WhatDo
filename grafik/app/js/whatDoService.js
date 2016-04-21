@@ -1,9 +1,12 @@
 
-whatDoApp.factory('WhatDo',function ($resource) {
+whatDoApp.factory('WhatDo',function ($resource, fbService, $firebaseArray, auth) {
 	/*The arrays under are synched such as interest [1] is the result [1]*/
+
   	this.marker;
   	this.interests = [];
   	this.displayDict = {};
+    this.favourites = [];
+    
     this.btnStatus = {
       'btn1': true,
       'btn2': true,
@@ -28,7 +31,7 @@ whatDoApp.factory('WhatDo',function ($resource) {
 		Museum : ["museum"],
 		Shopping : ["shopping_mall"],
 		Bio : ["movie_theater" ],
-		Sport: ["bowling_alley"],
+		Bowling : ["bowling_alley"],
 		Parker: ["park"],
 		Byggnader:["mosque","church", "synagogue", "hindu_temple", "city_hall" ],
 		Kyrkogård : ["cemetery"],
@@ -36,6 +39,44 @@ whatDoApp.factory('WhatDo',function ($resource) {
 		Mat: ["restaurant"], 
 		Litteratur: ["library"]
   	};
+
+    /*FIREBASE*/
+  this.setFavourite = function(idList){
+    var users = new Firebase("https://worldguide.firebaseio.com/users/" + auth.profile.user_id);
+    users.set({idList})
+  }
+  this.getFavourites = function(){
+    var user =  new Firebase("https://worldguide.firebaseio.com/users/" + auth.profile.user_id);
+    user.child("idList").on("value", function(snapshot) {
+      this.favourites = snapshot.val();
+      console.log(this.favourites);
+    }.bind(this));
+
+  }
+  
+    /*!FIREBASE*/
+
+    /*adds an id(string) to favourites(array), if it alredy exists it returns true then synch with firebase*/
+    this.addFavourite = function(id){
+      for(var i = 0; i < this.favourites.length; i++){
+        if(this.favourites[i] === id){
+          return true;
+        }
+      }
+      this.favourites.push(id);
+      this.setFavourite(this.favourites);
+    }
+
+    /*remove an id(string), then synch with firebase*/
+    this.removeFavourite = function(id){
+      for(var i = 0; i < this.favourites.length; i++){
+        if(this.favourites[i] === id){
+          this.favourites.splice(i, 1);
+          break;
+        }
+      }
+      this.setFavourite(this.favourites);
+    }
 
   	/*Interest is a string and result is an array with googlePlaces/Maps-objects*/
   	this.getSearchTerms = function(){

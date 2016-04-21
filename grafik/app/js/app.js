@@ -59,6 +59,7 @@ whatDoApp.config(['$routeProvider', 'authProvider', '$locationProvider',
       }).
       when('/favorit', {
       templateUrl: 'partials/favorit.html',
+      controller: 'favoritCtrl',
       requiresLogin: true
       }).
       when('/current', {
