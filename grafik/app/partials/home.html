@@ -1,15 +1,19 @@
 <!-- FORSTA SIDAN -->
 
-<div id="startsida">
+<div id="homePage">
 <!--button ng-click="setspcUser()">jonas</button-->
+<div class="homeDiv">
+	<p id="appName">Your tourist guide</p>
+	<hr id="homeLine">
 
-	<p id="namn">SverigeGuiden</p>
-	<hr id="startlinje">
+	<p id="slogan" class="sloganShadow">No more stones unturned</p>
 
-	<p id="slogan" class="skuggaSlogan">din guide till magiska dagar i Sveriges städer</p>
+	<p class="home" id="ho1">The world is an amazing place with lots of things to see and do.</p>
+	<p class="home" id="ho1">But too many times we find ourself in a city wandering around and missing the real deal.</p>
+	<p class="home" id="ho1">But no more, no more stones unturned.</p>
+	<p class="home" id="ho0">Your interests is all we need and you won't ever miss a single stone in the whole world again.</p>
+	<p class="home" id="ho2">Sign in and let us be your tourist guide.</p>
 
-
-	<input class="btn btn-default" id="borja" type="submit" ng-controller="homeCtrl" ng-click="auth.signin()" value="Logga in"/>
-	<!--input type="submit" ng-click="logout()" value="Log out"/-->
-
+	<input class="btn btn-default signInBut" type="submit" ng-controller="homeCtrl" ng-click="auth.signin()" value="SIGN IN HERE"/>
+</div>
 </div>
