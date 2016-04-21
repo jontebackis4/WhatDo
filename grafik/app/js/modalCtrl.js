@@ -2,7 +2,6 @@
 whatDoApp.controller('modalCtrl', ['$scope', '$uibModal', 'WhatDo', function($scope, $uibModal, WhatDo){
 
 	$scope.getPlaceInfo = function(placeId){
-		console.log(placeId);
 		WhatDo.selectedPlaceId = placeId;
 		var request = {
 			placeId: placeId
@@ -15,7 +14,8 @@ whatDoApp.controller('modalCtrl', ['$scope', '$uibModal', 'WhatDo', function($sc
     	console.log(place);
     	$scope.$apply(function(){
     		WhatDo.selectedPlaceInfo = place;
-    	})
+    		WhatDo.update();
+    	});
     };
 
 	$scope.open = function(size){
@@ -26,7 +26,5 @@ whatDoApp.controller('modalCtrl', ['$scope', '$uibModal', 'WhatDo', function($sc
 			controller: 'modalInstanceCtrl',
 			size: size,
 		});
-
-		//modalInstance.result.then(function())
 	}
 }])

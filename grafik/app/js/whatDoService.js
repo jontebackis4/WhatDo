@@ -1,5 +1,5 @@
 
-whatDoApp.factory('WhatDo',function ($resource) {
+whatDoApp.factory('WhatDo',function ($resource, $rootScope) {
 
     this.selectedPlaceId;
     this.selectedPlaceInfo;
@@ -106,6 +106,10 @@ whatDoApp.factory('WhatDo',function ($resource) {
   	this.getInterests = function(){
   		return this.interests;
   	}
+
+    this.update = function(){
+      $rootScope.$broadcast('update');
+    }
 
   	return this;
 });
