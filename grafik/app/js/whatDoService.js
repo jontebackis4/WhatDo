@@ -56,17 +56,19 @@ whatDoApp.factory('WhatDo',function ($resource) {
   	}
 
   	this.setDisplayDict = function(result, interest){
-  		if(Array.isArray(this.displayDict[interest])){
-	  		for (var i = 0; i < result.length; i++) {
-	  			this.displayDict[interest].push(result[i])
-	  		}
-  		}
-  		else{
-  			this.displayDict[interest] = [];
-	  		for (var i = 0; i < result.length; i++) {
-	  			this.displayDict[interest].push(result[i]);
-	  		}
-  		}
+      if(result){
+    		if(Array.isArray(this.displayDict[interest])){
+  	  		for (var i = 0; i < result.length; i++) {
+  	  			this.displayDict[interest].push(result[i])
+  	  		}
+    		}
+    		else{
+    			this.displayDict[interest] = [];
+  	  		for (var i = 0; i < result.length; i++) {
+  	  			this.displayDict[interest].push(result[i]);
+  	  		}
+    		}
+      }
   	}
   	
   	this.getDisplayDict = function(){
