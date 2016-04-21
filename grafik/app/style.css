@@ -1,39 +1,108 @@
-.index{
+/* FOR ALL VIEWS */
+
+.index {
 	background-color: white;
 }
 
-#namn {
-	font-family: "Courier New";
-	font-weight: bold;
-	text-shadow: 1px 1px white;
-	color: #191970;
-	text-align: center;
-	font-size: 50px;
-	padding-top: 190px;
+/* HOME PAGE */
+#homePage { 
+	background-image: url("tradm1.jpg");
+	background-size: 100% 100%; 
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100vw;
+	position: relative;
 }
 
-#startlinje{
-	width:50%;
+#appName {
+	font-family: courier;
+	text-shadow: 1px 1px white;
+	/*color: #4d94ff;*/
+	/*color:#1a75ff;*/
+	color:#0033cc;
+	text-align: center;
+	font-size: 50px;
+	padding-top: 200px;
+}
+
+#homeLine { 
+	width:47%;
 	margin-top: -25px;
 	}
 
 #slogan {
 	font-family: Courier;
 	text-align: center;
-	color:white;
-	font-size: 15px;
-	margin-top:-5px;
+	color:#e6e6e6;
+	font-size: 17px;
+	margin-top:-17px;
+	padding-bottom: 20px;
 }
 
-.skuggaSlogan{
+
+.home {
+	text-align: center;
+	font-family: courier;
+}
+
+#ho0{
+	margin:-3px;
+	color:#cce0ff;
+	margin-bottom: 30px;
+	font-style: italic;
+	text-shadow: 0.3px 0.3px #e6f0ff;
+}
+#ho1{
+	margin:-3px;
+	color:#cce0ff;
+	font-style: italic;
+	text-shadow: 0.3px 0.3px #e6f0ff;
+}
+
+#ho2 {
+	color:white;
+	margin-top:15px;
+	font-size: 17px;
+	margin-bottom: 40px;
+}
+
+.signInBut{
+	text-align: center;
+	font-family: Courier;
+	color:#b3cbe6;
+	background-color: transparent;
+	margin-left:45%;
+}
+
+#darker {
+	color:#002080;
+	font-weight: bold;
+    text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;  
+
+}
+
+
+/* */
+
+/*.sloganShadow {
     color: white;
     text-shadow:
-    -1px -1px 0 gray,
-    1px -1px 0 gray,
-    -1px 1px 0 gray,
-    1px 1px 0 gray;  
+    -1px -1px 0 #999999,
+    1px -1px 0 #999999,
+    -1px 1px 0 #999999,
+    1px 1px 0 #999999;  
+}*/
+#borja{
+	text-align: center;
+	font-family: Courier;
+	color:#4080bf;
+	background-color: rgba(255,255,255,0.5);
+	margin-left:45%;
 }
-
 .skuggaInfo3{
     color: white;
     text-shadow:
@@ -44,13 +113,7 @@
 }
 
 
-#borja{
-	text-align: center;
-	font-family: Courier;
-	color:#4080bf;
-	background-color: rgba(255,255,255,0.5);
-	margin-left:45%;
-}
+
 
 
 #menybar{
@@ -155,13 +218,7 @@
 	font-weight: bold;
 }
 
-#startsida{ 
-	background-image: url("trad.jpg");
-	background-size: 100% 100%; 
-	background-repeat: no-repeat;
-	height: 100vh;
-	width: 100vw;
-}
+
 
 #darkback{
 	background-image: url("tradmorkast.jpg");
@@ -176,7 +233,7 @@
 	font-family: "Courier New";
 	font-weight: bold;
 	font-size: 20px;
-	color:#00802b;;
+	color:#00802b;
 }
 
 #underrubrik {
@@ -304,8 +361,57 @@
 	background-color: #262626;
 }
 
+.panel-default>.panel-heading{
+	/*background-color:#262626;*/
+	background-color: #d9e5f2;
+	/*border-color:#262626;*/
+	border-color:#d9e5f2;
+}
+
+.panel-default{
+	/*border-color:#262626:*/
+
+}
+
 .not-active {
 	text-decoration: line-through;
   	pointer-events: none;
   	cursor: default;
+}
+
+.interests{
+	color:#b3cbe6;
+	font-size: 40px;
+	font-family: "Courier New";
+	text-align: left;
+	text-shadow: 1px 1px white;
+	/*font-weight: bold;*/
+	margin-top:35px;
+
+}
+
+.intline{
+	width:23%;
+	margin-top: -18px;
+	float: left;
+	margin-bottom:-10px;
+}
+
+.platser{
+	font-family: Courier;
+	text-align: center;
+	font-weight: lighter;
+	/*color:#b3cbe6;*/
+	color:white;
+	text-align: center;
+	font-size:17px;
+}
+
+.middle{
+	float: none; 
+	margin: 0 auto;
+}
+
+.fulfill{
+	height: 10vh;
 }

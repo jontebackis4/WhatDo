@@ -14,16 +14,20 @@
 			<div class ="well well-lg" id="map-canvas"></div>
 		</div>
 	</div>
-	<div class="container mapBackground" ng-controller="modalCtrl">
-	    <div class="panel panel-default">
-            <div class="panel-heading" ng-repeat="(interest, places) in displayDict">
-                {{interest}} : {{val[0].name}}
-                <div class="panel-body">
-	                <li ng-repeat="place in places">
-	                	<a class="info" ng-click="open('lg'); getPlaceInfo(place.place_id)">{{place.name}}</a>
-	                </li>
-                </div>
-            </div>
+	<div ng-controller="modalCtrl">
+		<div class="container mapBackground" ng-repeat="(interest, places) in displayDict">
+
+			<p class="interests">{{interest}}</p> 
+	    	<hr class="intline">
+
+	    	<div class="row text-left"> 
+	    		<div class="col-md-6" ng-repeat="place in places">>
+	    			<a class="platser" ng-click="open('lg'); getPlaceInfo(place.place_id)">{{place.name}}</a>
+	    		</div>
+	        </div>
+
+	    </div>
+	    <div class="fulfill">
 	    </div>
 	</div>
 </div>
