@@ -3,7 +3,7 @@ whatDoApp.factory('fbService',function ($resource, $firebaseArray, auth) {
 console.log("firebase service");
 	//var users = new Firebase("https://sverigeguiden.firebaseio.com/users");
 	//var users = $firebaseArray(users);
-	this.res;
+	
 	this.addUser = function (){
 		var users = new Firebase("https://worldguide.firebaseio.com/users");
 		var users = $firebaseArray(users);
@@ -17,15 +17,16 @@ console.log("firebase service");
 			favoritplats: ['hej', 'grisfest','heeeej']});
 	}
 
-	this.setFavourite = function(idList){
-		var users = new Firebase("https://worldguide.firebaseio.com/users/" + auth.profile.clientID);
+	this.setFavourites = function(idList){
+		var users = new Firebase("https://worldguide.firebaseio.com/users/" + auth.profile.user_id);
 		users.set({idList})
 	}
 	this.getFavourites = function(){
-		
-		var user =  new Firebase("https://worldguide.firebaseio.com/users/" + auth.profile.clientID);
-		user.child("idList").on("value", function(snapshot) {
-
+		var user =  new Firebase("https://worldguide.firebaseio.com/users/" + auth.profile.user_id);
+		var user = $firebaseArray(user);
+		console.log(auth);
+		return user.$loaded().then(function(response){
+			return response;
 		});
 		
 	}
