@@ -1,4 +1,4 @@
-whatDoApp.controller('modalInstanceCtrl', ['$scope', '$uibModalInstance', 'WhatDo', function($scope, $uibModalInstance, WhatDo) {
+whatDoApp.controller('modalInstanceCtrl', ['$scope', '$uibModalInstance', 'WhatDo', 'fbService', function($scope, $uibModalInstance, WhatDo, fbService) {
 
 	$scope.info = WhatDo.selectedPlaceInfo;
 
@@ -9,4 +9,14 @@ whatDoApp.controller('modalInstanceCtrl', ['$scope', '$uibModalInstance', 'WhatD
 	$scope.close = function(){
 		$uibModalInstance.dismiss('close');
 	};
+
+	$scope.addFavourite = function(id, name){
+		WhatDo.addFavourite(id, name);
+		fbService.setFavourites(WhatDo.favourites);
+	}
+
+	$scope.removeFavourite = function(id, name){
+		WhatDo.removeFavourites(id, name);
+		fbService.setFavourites(WhatDo.favourites);
+	}
 }]);

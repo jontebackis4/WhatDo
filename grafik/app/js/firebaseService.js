@@ -17,9 +17,9 @@ console.log("firebase service");
 			favoritplats: ['hej', 'grisfest','heeeej']});
 	}
 
-	this.setFavourites = function(idList){
+	this.setFavourites = function(idDict){
 		var users = new Firebase("https://worldguide.firebaseio.com/users/" + auth.profile.user_id);
-		users.set({idList})
+		users.set({idDict})
 	}
 	this.getFavourites = function(){
 		var user =  new Firebase("https://worldguide.firebaseio.com/users/" + auth.profile.user_id);

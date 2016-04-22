@@ -4,11 +4,12 @@
 
 <p id="bigOver">My favourits</p>
 <hr id="favLine">
- <p class="info skuggaInfo3" id="info3">Places i go when i'm dreaming.</p>
- <p class="info skuggaSlogan" id="info2">☆ Sjöfartsmuseet</p>
- <p class="info skuggaSlogan" id="info2">☆ Sjöfartsmuseet</p>
- <p class="info skuggaSlogan" id="info2">☆ Sjöfartsmuseet</p>
-
+<p class="info skuggaInfo3" id="info3">Places i go when i'm dreaming.</p>
+<div ng-controller ="modalCtrl">
+	<div class = "info skuggaSlogan" ng-repeat="(name, id) in favouriteDict" id ="info2" ng-click="open('lg'); getPlaceInfo(id)">
+		☆ {{name}}
+	</div>
+</div>
 
 <div class="btn-group deliteFav">
   <button type="button" id="deliteBut" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >

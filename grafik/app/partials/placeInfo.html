@@ -10,5 +10,6 @@
   <p ng-repeat="day in info.opening_hours.weekday_text">{{day}}</p>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-default" ng-click="cancel()">Lägg till i favoriter</button>
+  <button type="button" class="btn btn-default" ng-click="removeFavourite(info.place_id, info.name)">Remove from Favourites</button>
+  <button type="button" class="btn btn-default" ng-click="addFavourite(info.place_id, info.name)">Lägg till i favoriter</button>
 </div>

@@ -1,8 +1,8 @@
 whatDoApp.controller('favoritCtrl', function ($scope, WhatDo, fbService, auth) {
 	/*WhatDo.addFavourite("1336");*/
-	WhatDo.addFavourite("1337");
-	fbService.setFavourites(WhatDo.favourites);
+	
 	fbService.getFavourites().then(function(response){
-		console.log(response[0][0]);
+		console.log(response);
 	})
+	$scope.favouriteDict = WhatDo.favourites;
 });
