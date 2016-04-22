@@ -1,5 +1,22 @@
 whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService, auth, store, $location) {
-
+  $scope.init = function(){
+    fbService.getFavourites().then(function(response){
+      
+      if(response[0]){
+        for(var res in response[0]){
+          if(!(res.charAt(0) == "$")){
+            console.log(res + "  " + response[0][res]);
+            WhatDo.favourites[res] = response[0][res];
+          }
+        }
+        WhatDo.update();
+      }
+      
+    });
+    $scope.$on("update", function(){
+      $scope.favouriteDict = WhatDo.favourites;
+    })
+  }
   $scope.setUser = function (){
     fbService.addUser();
   };
