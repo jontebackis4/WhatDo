@@ -6,7 +6,7 @@
 
 /* HOME PAGE ------------------------------------------------------*/
 #homePage { 
-	background-image: url("tradm1.jpg");
+	background-image: url("tradmorkast.jpg");
 	background-size: 100% 100%; 
 	background-repeat: no-repeat;
 	height: 100vh;
@@ -16,13 +16,16 @@
 
 #appName {
 	font-family: courier;
-	text-shadow: 0.1px 0.5px white;
-	/*color: #4d94ff;*/
-	/*color:#1a75ff;*/
-	color:#0033cc;
+	color:white;
 	text-align: center;
 	font-size: 50px;
-	padding-top: 200px;
+	padding-top: 250px;
+	font-weight: bold;
+	text-shadow: 
+	-1px -1px 0 black,
+	1px -1px 0 black, 
+	-1px 1px 0 black, 
+	1px 1px 0 black;
 }
 
 #homeLine { 
@@ -33,49 +36,45 @@
 #slogan {
 	font-family: Courier;
 	text-align: center;
-	color:#e6e6e6;
+	color:rgb(140, 176, 217);
 	font-size: 17px;
 	margin-top:-17px;
-	padding-bottom: 20px;
+	padding-bottom: 35px;
 }
 
 
 .home {
-	text-align: center;
+	text-align: center !important;
 	font-family: courier;
 }
 
 #ho0{
 	margin:-3px;
-	color:#cce0ff;
-	margin-bottom: 30px;
-	font-style: italic;
+	color:#262626;
 	text-shadow: 0.3px 0.3px #e6f0ff;
-}
-#ho1{
-	margin:-3px;
-	color:#cce0ff;
-	font-style: italic;
-	text-shadow: 0.3px 0.3px #e6f0ff;
-}
-
-#ho2 {
-	color:white;
-	margin-top:15px;
 	font-size: 17px;
-	margin-bottom: 40px;
+	margin-top:1px;
+	text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+    font-style: italic; 
+    font-weight: bold; 
 }
 
 .signInBut{
 	text-align: center;
 	font-family: Courier;
-	color:#b3cbe6;
-	background-color: transparent;
+	color:white;
+	background-color: rgba(140, 176, 217,0.5);
 	margin-left:45%;
+	/*left:50%;
+ 	transform: translateX(-50%);*/
 }
 
 #darker {
-	color:#002080;
+	color:black;
 	font-weight: bold;
     text-shadow:
     -1px -1px 0 white,
@@ -84,15 +83,44 @@
     1px 1px 0 white;  
 }
 
-/*.sloganShadow {
+.sloganShadow {
     color: white;
     text-shadow:
-    -1px -1px 0 #999999,
-    1px -1px 0 #999999,
-    -1px 1px 0 #999999,
-    1px 1px 0 #999999;  
-}*/
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;  
+}
 
+.wellFirst{
+	background:rgba(0,0,0,0.5);
+	margin-top:20px;
+	margin-left:25%;
+	margin-right:25%;
+	border-color:rgba(0,0,0,0.5);
+	border-radius: 4%;
+}
+
+.collText{
+	color:white;
+	text-align: center;
+	font-family: Courier;
+	font-size: 15px;
+	margin-bottom: -5px;
+}
+
+#coll0{
+	margin-top: 20px;
+	font-size:18px !important;
+}
+
+#coll1{
+	font-size:18px !important;
+}
+
+#youTou{
+	color:#4da6ff;
+}
 /* INTEREST VIEW  ------------------------------------------------------*/
 
 #darkBack {
@@ -253,6 +281,12 @@
 	background-color: gray;
 }
 
+.about{
+	width:30px;
+	height:30px;
+	margin-right:-20px;
+	margin-top:-8px;
+}
 
  /* FAVOURIT LIST -------------------------------*/
 

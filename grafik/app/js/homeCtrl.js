@@ -1,4 +1,6 @@
 whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService, auth, store, $location) {
+  
+  $scope.isCollapsed = true;
 
   $scope.setUser = function (){
     fbService.addUser();
@@ -44,5 +46,6 @@ whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService, auth, store
 
     return {"background-color":"transparent"}
   }
+
 
 });
