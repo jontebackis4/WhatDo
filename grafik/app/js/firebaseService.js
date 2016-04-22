@@ -18,14 +18,18 @@ console.log("firebase service");
 	}
 
 	this.setFavourites = function(idDict){
+		
 		var users = new Firebase("https://worldguide.firebaseio.com/users/" + auth.profile.user_id);
-		users.set({idDict})
+		if(idDict){
+			users.set({idDict});
+		}
+		
 	}
 	this.getFavourites = function(){
 		var user =  new Firebase("https://worldguide.firebaseio.com/users/" + auth.profile.user_id);
 		var user = $firebaseArray(user);
-		console.log(auth);
 		return user.$loaded().then(function(response){
+			
 			return response;
 		});
 		

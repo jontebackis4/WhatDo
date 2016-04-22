@@ -1,26 +1,11 @@
 <div id="homePage">
-
-<ng-include src="'partials/navBar.html'" ng-controller="homeCtrl"></ng-include>
-
-<p id="bigOver">My favourits</p>
-<hr id="favLine">
-<p class="info skuggaInfo3" id="info3">Places i go when i'm dreaming.</p>
-<div ng-controller ="modalCtrl">
-	<div class = "info skuggaSlogan" ng-repeat="(name, id) in favouriteDict" id ="info2" ng-click="open('lg'); getPlaceInfo(id)">
-		☆ {{name}}
+	<ng-include src="'partials/navBar.html'" ng-controller="homeCtrl"></ng-include>
+	<p id="bigOver">My favourits</p>
+	<hr id="favLine">
+	<p class="info skuggaInfo3" id="info3">Places i go when i'm dreaming.</p>
+	<div ng-controller ="modalCtrl">
+		<div class = "info skuggaSlogan" ng-repeat="(name, id) in favouriteDict" id ="info2" ng-click="open('lg'); getPlaceInfo(id)">
+			☆ {{name}}
+		</div>
 	</div>
-</div>
-
-<div class="btn-group deliteFav">
-  <button type="button" id="deliteBut" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-    Delite a favourit<span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a href="#">favourit1</a></li>
-    <li><a href="#">favourit2</a></li>
-    <li><a href="#">favourit3</a></li>
-  </ul>
-</div>
-
-
 </div>
