@@ -3,13 +3,13 @@
 <div id="homePage" ng-controller="homeCtrl">
 <!--button ng-click="setspcUser()">jonas</button-->
 <div class="homeDiv">
-	<p id="appName">Your tourist guide</p>
+	<p id="appName">YOUR TOURIST GUIDE</p>
 	<hr id="homeLine">
 	<p id="slogan" class="sloganShadow">No more stones unturned</p>
 
 	<input class="btn btn-default signInBut" type="submit" ng-controller="homeCtrl" ng-click="auth.signin()" value="SIGN IN HERE"/>
 
-	<p class="home" id="ho0" ng-click="isCollapsed = !isCollapsed">First time here? no worries, click here!</p>
+	<p class="homeText">First time here? no worries, <span ng-click="isCollapsed = !isCollapsed">click here!</span></p>
 
 	<div uib-collapse="isCollapsed">
 		<div class="well well-lg wellFirst">

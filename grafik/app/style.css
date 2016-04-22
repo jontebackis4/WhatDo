@@ -1,7 +1,7 @@
 /* FOR ALL VIEWS  ------------------------------------------------------*/
 
 .index {
-	background-color: white;
+	background-color: #262626;
 }
 
 /* HOME PAGE ------------------------------------------------------*/
@@ -15,7 +15,7 @@
 }
 
 #appName {
-	font-family: courier;
+	font-family: garamond;
 	color:white;
 	text-align: center;
 	font-size: 50px;
@@ -42,13 +42,9 @@
 	padding-bottom: 35px;
 }
 
-
-.home {
+.homeText{
 	text-align: center !important;
 	font-family: courier;
-}
-
-#ho0{
 	margin:-3px;
 	color:#262626;
 	text-shadow: 0.3px 0.3px #e6f0ff;
@@ -63,14 +59,17 @@
     font-weight: bold; 
 }
 
+.homeText span:hover{
+	cursor: pointer;
+}
+
 .signInBut{
 	text-align: center;
 	font-family: Courier;
 	color:white;
 	background-color: rgba(140, 176, 217,0.5);
-	margin-left:45%;
-	/*left:50%;
- 	transform: translateX(-50%);*/
+	margin-left:50%;
+ 	transform: translateX(-50%);
 }
 
 #darker {
@@ -316,6 +315,12 @@
 	color:#004080;
 }
 
+
+ /*MODAL-------------------------------------------------------*/
+
+ .modal-body {
+ 	overflow:auto;
+ }
  /*---------------------------------------------------------------------------*/
 
 
