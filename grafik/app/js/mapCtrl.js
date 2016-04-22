@@ -1,6 +1,6 @@
 // Search controller that we use whenever we have a search inputs
 // and search results
-whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
+whatDoApp.controller('mapCtrl', function ($scope,WhatDo, $location) {
 
   $scope.init = function() {
 
@@ -90,6 +90,11 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo) {
   $scope.interestList = WhatDo.getInterests();
 
   $scope.displayDict = WhatDo.displayDict;
+
+  /*EMMELI*/
+  if ($scope.interestList.length == 0){
+    $location.path("/interests");
+  }
 
 });
 

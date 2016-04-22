@@ -15,18 +15,17 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#/interests">Intressen</a></li>
-        <li><a href="#/search" ng-class = "toSearch()">Välj stad</a></li>
-        <li><a href="#/current">Vald Stad</a></li>
+        <li><a href="#/interests" ng-style="active('/interests')">Interests</a></li>
+        <li><a href="#/search" ng-class = "toSearch()" ng-style="active('/search')">Explore the world</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Min profil<span class="caret"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My profile<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#favorit">Favoriter</a></li>
+            <li><a href="#favorit">Favourites</a></li>
             <li role="separator" class="divider"></li>
-            <li><a ng-click="logout()">Logga ut</a></li>
+            <li><a ng-click="logout()">Sign out</a></li>
           </ul>
         </li>
       </ul>

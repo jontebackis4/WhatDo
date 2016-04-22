@@ -2,11 +2,7 @@
 <div class="mapBackground">
 	<ng-include src="'partials/navBar.html'" ng-controller="homeCtrl"></ng-include>
 
-
-<p id="bigOver">Explore the world</p>
-<hr id="exploreLine">
- <!--p class="info" id="info1">The world is in your hands. </p-->
- <p class="info" id="info2">The world is in your hands so go ahead and discover the map.</p>
+ <p class="info" id="info2">The world is in your hand so go ahead and choose your destination.</p>
 
 
 	<div class="container"> 
@@ -17,9 +13,9 @@
 	<div ng-controller="modalCtrl">
 		<div class="container mapBackground" ng-repeat="(interest, places) in displayDict">
 
-			<p class="interests">{{interest}}</p> 
+			<p class="interests">{{interest.toUpperCase()}}</p> 
 	    	<hr class="intline">
-
+	    	
 	    	<div class="row text-left"> 
 	    		<div class="col-md-6" ng-repeat="place in places">>
 	    			<a class="platser" ng-click="open('lg'); getPlaceInfo(place.place_id)">{{place.name}}</a>
@@ -31,16 +27,3 @@
 	    </div>
 	</div>
 </div>
-
-<!--
-            	<div class="row text-left"> 
-
-	            		<div class="col-md-6" ng-repeat="place in places">>
-	            			<a class="places" data-toggle="modal" data-target="#myModal">{{place.name}}</a>
-                		</div>
-             
-                </div> KONFLIKT I GITHUB
-
-    </div>
-    <div class="fulfill">
-    </div>-->

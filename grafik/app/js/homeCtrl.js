@@ -35,4 +35,14 @@ whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService, auth, store
     }
   }
 
+/* Emmeli */
+  $scope.active = function(position){
+
+    if (position == $location.path()){
+      return {"text-shadow":"-1px -1px 0 #999999, 1px -1px 0 #999999,-1px 1px 0 #999999,1px 1px 0 #999999", "font-size":"20px", "color":"white"}
+    }
+
+    return {"background-color":"transparent"}
+  }
+
 });
