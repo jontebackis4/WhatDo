@@ -74,7 +74,7 @@
 	margin-left:45%;
 }
 
-/*#darker {
+#darker {
 	color:#002080;
 	font-weight: bold;
     text-shadow:
@@ -82,7 +82,7 @@
     1px -1px 0 white,
     -1px 1px 0 white,
     1px 1px 0 white;  
-}*/
+}
 
 /*.sloganShadow {
     color: white;
@@ -92,8 +92,6 @@
     -1px 1px 0 #999999,
     1px 1px 0 #999999;  
 }*/
-
-
 
 /* INTEREST VIEW  ------------------------------------------------------*/
 
@@ -105,40 +103,17 @@
 	width: 100vw;
 }
 
-#bigOver {
-	text-align: center;
-	color:#004080;
-	font-family: Courier;
-	text-shadow: 0.1px 0.5px white;
-	padding-top:40px;
-	font-size: 55px;
-}
-
-#infoLine{
-	width:25%;
-	margin-top: -23px;
-}
-
 .info{
 	font-family: Courier;
 	text-align: center;
 	font-weight: lighter;
 }
 
+
 #info1{
-	font-size: 15px;
-	color:#4080bf;
-}
-
-#info3{
-	font-size: 15px;
-	color:#b3cbe6;
-}
-
-#info2{
 	font-size: 20px;
 	margin-bottom:40px;
-	margin-top:30px;
+	margin-top:120px;
 	color:white;
 }
 
@@ -169,16 +144,23 @@
 	font-family: Courier;
 	color:red;
 	padding-top: 30px;
+}
 
+.btn-default.disabled{
+	border-color: white;
+	background-color: #8cb0d9;
+	color:white;
 }
 /* MAP ------------------------------------------------------*/
 .mapBackground {
 	background-color: #262626;
 }
 
-#exploreLine{
-	width:45%;
-	margin-top: -23px;
+#info2{
+	font-size: 20px;
+	margin-bottom:35px;
+	color:white;
+	margin-top: 40px;
 }
 
 #map-canvas {
@@ -218,7 +200,89 @@
 	height: 10vh;
 }
 
-/* ----------------------------------------------------------------------------------------------------------*/
+/* NAVBAR ----------------------------------------------- */
+#menybar{
+	background-color: transparent;
+	border-color: transparent;
+	color:yellow;
+}
+.nav.navbar-nav.navbar-right li a {
+    color: #8cb1d9;
+    font-family: Courier;
+}
+
+.nav.navbar-nav li a {
+    color: #8cb1d9;
+    font-family: Courier;
+}
+
+.nav.navbar-nav li a:hover {
+	color: white; 
+}
+
+.nav>li>a:hover {
+	background-color: gray; 
+}
+.nav>li>a:focus{
+	background-color: transparent;
+}
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
+	background-color: #5CB85C;
+	border-color: transparent; 
+}
+.not-active {
+	color:transparent !important;
+  	pointer-events: none;
+  	cursor: default;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    background-color: transparent;
+    color: white;
+}
+.dropdown-menu {
+	background-color: transparent;
+ }
+
+ .dropdown-menu >li>a:hover {
+	background-color: transparent;
+	color:white;
+ }
+
+.dropdown-menu .divider {
+	background-color: gray;
+}
+
+
+ /* FAVOURIT LIST -------------------------------*/
+
+#bigOver {
+	text-align: center;
+	color:#004080;
+	font-family: Courier;
+	text-shadow: 0.1px 0.5px white;
+	padding-top:40px;
+	font-size: 55px;
+}
+
+#favLine{
+	width:50%;
+	margin-top: -23px;
+}
+
+.deliteFav{
+	left:50%;
+	transform: translateX(-50%);
+}
+
+#deliteBut{
+	background:rgba(255,255,255,0.5);
+	font-family: Courier;
+	/*color:#4080bf;*/
+	color:#004080;
+}
+
+ /*---------------------------------------------------------------------------*/
 
 
 #borja{
@@ -240,55 +304,10 @@
 
 
 
-
-#menybar{
-	background-color: transparent;
-	border-color: transparent;
-	color:yellow;
-}
-
-
-
-#favline{
-	width:50%;
-	margin-top: -23px;
-}
-
-
-.nav.navbar-nav.navbar-right li a {
-    color: #8cb1d9;
-    font-family: Courier;
-}
-
-.nav.navbar-nav li a {
-    color: #8cb1d9;
-    font-family: Courier;
-}
-
-.nav.navbar-nav li a:hover {
-	color: white; 
-}
-
-.deliteFav{
-	left:50%;
-	transform: translateX(-50%);
-}
-
-#deliteBut{
-	background:rgba(255,255,255,0.5);
-	font-family: Courier;
-	/*color:#4080bf;*/
-	color:#004080;
-}
-.dropdown-menu {
-    }
-
 .dropdown-menu li a{
 	color: #8cb1d9;
     font-family: Courier;
 }
-
-
 
 
 .modal-dialog{
@@ -309,13 +328,8 @@
 	font-weight: bold;
 }
 
-
-
-
-
-
 .removeLinkLook{
-	font-family: "Courier New";
+	font-family: "Courier New", courier;
 	font-weight: bold;
 	font-size: 20px;
 	color:#00802b;
@@ -388,25 +402,12 @@
 	margin-top: 3px;
 }
 
-
-
 .removeLinkLook:hover, .removeLinkLook:visited, .removeLinkLook:active, .removeLinkLook:link {
-	font-family: "Courier New";
+	font-family: "Courier New", courier;
 	font-weight: bold;
 	font-size: 20px;
 	color:black;
 	text-decoration: none;
-}
-
-.nav>li>a:hover {
-	background-color: gray; 
-}
-.nav>li>a:focus{
-	background-color: transparent;
-}
-.nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
-	background-color: #5CB85C;
-	border-color: transparent; 
 }
 
 
@@ -423,16 +424,19 @@
 
 }
 
-.not-active {
-	text-decoration: line-through;
-  	pointer-events: none;
-  	cursor: default;
-}
-
-
-
 .middle{
 	float: none; 
 	margin: 0 auto;
 }
 
+
+#infoLine{
+	width:25%;
+	margin-top: -23px;
+}
+
+
+#info3{
+	font-size: 15px;
+	color:#b3cbe6;
+}
