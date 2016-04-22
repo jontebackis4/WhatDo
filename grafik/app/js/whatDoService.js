@@ -1,12 +1,15 @@
 
-whatDoApp.factory('WhatDo',function ($resource, $rootScope) {
 
-    this.selectedPlaceId;
+whatDoApp.factory('WhatDo',function ($resource, auth, $rootScope) {
+	/*The arrays under are synched such as interest [1] is the result [1]*/
+  	this.selectedPlaceId;
     this.selectedPlaceInfo;
     this.placeService;
-  	this.marker;
+    this.marker;
   	this.interests = [];
   	this.displayDict = {};
+    this.favourites = [];
+    
     this.btnStatus = {
       'btn1': true,
       'btn2': true,
@@ -31,7 +34,7 @@ whatDoApp.factory('WhatDo',function ($resource, $rootScope) {
 		Museum : ["museum"],
 		Shopping : ["shopping_mall"],
 		Bio : ["movie_theater" ],
-		Sport: ["bowling_alley"],
+		Bowling : ["bowling_alley"],
 		Parker: ["park"],
 		Byggnader:["mosque","church", "synagogue", "hindu_temple", "city_hall" ],
 		Kyrkogård : ["cemetery"],
@@ -39,6 +42,26 @@ whatDoApp.factory('WhatDo',function ($resource, $rootScope) {
 		Mat: ["restaurant"], 
 		Litteratur: ["library"]
   	};
+
+    /*adds an id(string) to favourites(array), if it alredy exists it returns true then synch with firebase*/
+    this.addFavourite = function(id){
+      for(var i = 0; i < this.favourites.length; i++){
+        if(this.favourites[i] === id){
+          return true;
+        }
+      }
+      this.favourites.push(id);
+    }
+
+    /*remove an id(string), then synch with firebase*/
+    this.removeFavourite = function(id){
+      for(var i = 0; i < this.favourites.length; i++){
+        if(this.favourites[i] === id){
+          this.favourites.splice(i, 1);
+          break;
+        }
+      }
+    }
 
   	/*Interest is a string and result is an array with googlePlaces/Maps-objects*/
   	this.getSearchTerms = function(){
