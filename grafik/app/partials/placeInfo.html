@@ -4,11 +4,20 @@
   <h2 class="modal-title"><span id="placeName">{{info.name}}</span></h2>
 </div>
 <div class="modal-body">
-  <p>Adress: {{info.formatted_address}}</p>
-  <p>Hemsida: {{info.website}}</p>
-  <p>Öppettider: </p>
-  <p ng-repeat="day in info.opening_hours.weekday_text">{{day}}</p>
+  <div class="col-md-6">
+    <p ng-if="info.formatted_address">Address: {{info.formatted_address}}</p>
+    <p ng-if="info.website">Website: {{info.website}}</p>
+    <div ng-if="info.opening_hours">Opening hours:
+      <li ng-repeat="day in info.opening_hours.weekday_text">{{day}}</li>
+    </div>
+    <p ng-if="info.international_phone_number">Phone number: {{info.international_phone_number}}</p>
+    <p ng-if="info.rating">Rating: {{info.rating}}</p>
+  </div>
+  <div class="col-md-6" ng-if="info.photos">
+    <img ng-src="{{getPhoto(info.photos)}}" style="width: 300px; height: 300px">
+  </div>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-default" ng-click="cancel()">Lägg till i favoriter</button>
+  <button type="button" class="btn btn-default" ng-click="removeFavourite(info.place_id, info.name); close()">Remove from Favourites</button>
+  <button type="button" class="btn btn-default" ng-click="addFavourite(info.place_id, info.name)">Lägg till i favoriter</button>
 </div>

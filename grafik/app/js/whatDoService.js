@@ -8,7 +8,7 @@ whatDoApp.factory('WhatDo',function ($resource, auth, $rootScope) {
     this.marker;
   	this.interests = [];
   	this.displayDict = {};
-    this.favourites = [];
+    this.favourites = {};
     
     this.btnStatus = {
       'btn1': true,
@@ -44,20 +44,20 @@ whatDoApp.factory('WhatDo',function ($resource, auth, $rootScope) {
   	};
 
     /*adds an id(string) to favourites(array), if it alredy exists it returns true then synch with firebase*/
-    this.addFavourite = function(id){
-      for(var i = 0; i < this.favourites.length; i++){
-        if(this.favourites[i] === id){
+    this.addFavourite = function(id, name){
+      for(var fav in  this.favourites){
+        if(this.favourites[fav] === id){
           return true;
         }
       }
-      this.favourites.push(id);
+      this.favourites[name] = id;
     }
 
     /*remove an id(string), then synch with firebase*/
-    this.removeFavourite = function(id){
-      for(var i = 0; i < this.favourites.length; i++){
-        if(this.favourites[i] === id){
-          this.favourites.splice(i, 1);
+    this.removeFavourites = function(id, name){
+      for(var fav in  this.favourites){
+        if(this.favourites[fav] === id && fav === name){
+          delete this.favourites[fav];
           break;
         }
       }
