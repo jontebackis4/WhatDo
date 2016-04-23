@@ -1,5 +1,25 @@
 whatDoApp.controller('modalInstanceCtrl', ['$scope', '$uibModalInstance', 'WhatDo', 'fbService', function($scope, $uibModalInstance, WhatDo, fbService) {
 
+	$scope.alerts = [];
+
+  	$scope.addAlert = function(message) {
+  		$scope.alerts.splice(0);
+    	$scope.alerts.push({msg: message});
+  	};
+
+  	$scope.inFav = function(fav){
+  		for(favo in WhatDo.favourites){
+  			if(favo === fav){
+  				return true;
+  			}
+  		}
+  		return false;
+  	}
+
+  	$scope.closeAlert = function() {
+    	$scope.alerts.splice(0);
+  	};
+
 	$scope.info = WhatDo.selectedPlaceInfo;
 
 	$scope.$on('update', function(){
