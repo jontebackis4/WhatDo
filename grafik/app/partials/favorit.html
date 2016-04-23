@@ -6,9 +6,9 @@
 
 	<div ng-controller ="modalCtrl">
 		<div class="row favList">
-			<p class="text-center standard noFavourite" ng-if="checkResult()">You have no favourites</p>
-			<div class="col-md-6 standard" ng-repeat="(name, id) in favouriteDict" id ="youFav">
-			<span class="clickable" ng-click="open('lg'); getPlaceInfo(id)">☆ {{name}}</span>
+			<p class="text-center standard noFavourite" ng-if="checkResult()">You haven't explored the world map enough to have any favourites, yet!</p>
+			<div class="col-md-6 standard" ng-repeat="(name, id) in favouriteDict" id="youFav">
+				<span class="clickable" ng-click="open('lg'); getPlaceInfo(id)">☆ {{name}}</span>
 			</div>
 		</div>
 		

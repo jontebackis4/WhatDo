@@ -27,20 +27,20 @@ whatDoApp.factory('WhatDo',function ($resource, auth, $rootScope) {
       'btn14': true
     }
   	this.searchTerms = {
-  	'AMUSEMENT PARKS' : ["amusement_park"], 
-		'ZOO' : ["aquarium","zoo"],
-		'ART GALLERIES': ["art_gallery"],
-		'CLUBS & BARS' : ["bar", "night_club"],
-		'MUSEUM' : ["museum"],
-		'SHOPPING' : ["shopping_mall"],
-		'MOVIE THEATER' : ["movie_theater" ],
-		'BOWLING' : ["bowling_alley"],
-		'PARKS': ["park"],
-		'ARCHITECTURE':["mosque","church", "synagogue", "hindu_temple", "city_hall" ],
-		'CEMETERY' : ["cemetery"],
-		'CAFÉ': ["cafe"],
-		'RESTAURANTS': ["restaurant"], 
-		'LIBRARY': ["library"]
+  	'Amusement parks' : ["amusement_park"], 
+		'Zoo' : ["aquarium","zoo"],
+		'Art galleries': ["art_gallery"],
+		'Clubs & Bars' : ["bar", "night_club"],
+		'Museum' : ["museum"],
+		'Shopping' : ["shopping_mall"],
+		'Movie theater' : ["movie_theater" ],
+		'Bowling' : ["bowling_alley"],
+		'Parks': ["park"],
+		'Architecture':["mosque","church", "synagogue", "hindu_temple", "city_hall" ],
+		'Cemetery' : ["cemetery"],
+		'Café': ["cafe"],
+		'Restaurants': ["restaurant"], 
+		'Library': ["library"]
   	};
 
     /*adds an id(string) to favourites(array), if it alredy exists it returns true then synch with firebase*/
