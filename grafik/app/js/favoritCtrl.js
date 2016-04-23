@@ -5,5 +5,5 @@ whatDoApp.controller('favoritCtrl', function ($scope, $rootScope, WhatDo, fbServ
 	$scope.$on("update", function(){
 		$scope.favouriteDict = WhatDo.favourites;
 	})
-	
+	$scope.favouriteDict = WhatDo.favourites;
 });
