@@ -1,35 +1,33 @@
 
 <div class="mapBackground">
 	<ng-include src="'partials/navBar.html'" ng-controller="homeCtrl"></ng-include>
-
- <p class="standard" id="mapInf">The world is in your hand so go ahead and choose your destination.</p>
-
+	<p class="standard" id="mapInf">The world is in your hand so go ahead and choose your destination.</p>
+	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
 	<div class="container"> 
-	 	<div ng-init="init()"/>
-	 	<p class="standard" id="mapDes0">Discover new places by simply clicking on the map, then below a personalized guide will appear just for you. </p>
-	 	<p class="standard" id="mapDes1">If you like what you've found - click, read more and add to <a href="#favorit" id="favBtn">Your Favourites</a>.</p>
+		<div ng-init="init()"/>
+			<p class="standard" id="mapDes0">Discover new places by simply clicking on the map, then below a personalized guide will appear just for you. </p>
+			<p class="standard" id="mapDes1">If you like what you've found - click, read more and add to <a href="#favorit" id="favBtn">Your Favourites</a>.</p>
 			<div class ="well well-lg" id="map-canvas"></div>
 		</div>
 	</div>
 
-	
 	<div ng-controller="modalCtrl">
 		<img src="ajax-loader.gif" ng-show="loading != 0"/>
 		<div class="container mapBackground" ng-repeat="(interest, places) in displayDict">
 
 			<p class="interests">{{interest}}</p> 
-	    	<hr class="intline">
-	    	
-	    	<div class="row text-left">
-	    		<p ng-if="checkResult(places)" class="noResult">There are no result at the current location</p>
-	    		<div class="col-md-6" ng-repeat="place in places">>
-	    			<a class="platser" ng-click="open('lg'); getPlaceInfo(place.place_id)">{{place.name}}</a>
-	    		</div>
-	        </div>
+			<hr class="intline">
+			<div class="row text-left">
+				<div class="col-md-6" ng-if="checkResult(places)">
+					<p id="noResult">There are no results at the current location</p>
+				</div>
+				<div class="col-md-6" ng-repeat="place in places">
+					<a class="placeList" ng-click="open('lg'); getPlaceInfo(place.place_id)">{{place.name}}</a>
+				</div>
+			</div>
 
-	    </div>
-	    <div class="fulfill">
-	    </div>
+		</div>
+		<div class="fulfill"></div>
 	</div>
 </div>

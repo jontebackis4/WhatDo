@@ -18,20 +18,18 @@
         <li><a href="#/search" ng-class = "toSearch()" ng-style="active('/search')"ng-click="initFavourites(); resetDisplayDict()">Explore the world</a></li>
       </ul>
 
-        <ul class="nav navbar-nav navbar-right">
-        <li><a href="#/home"><img class="about" src="http://i.imgur.com/ehYY3nZ.png?1"></a></li>
-      </ul>
-
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My profile<span class="caret"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <img class="iconGlobe" src="http://i.imgur.com/ehYY3nZ.png?1"><span class="caret"></span></a>
           <ul class="dropdown-menu">
+            <li><a>About</a></li>
             <li role="separator" class="divider"></li>
             <li><a ng-click="logout()">Sign out</a></li>
           </ul>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
 </div>

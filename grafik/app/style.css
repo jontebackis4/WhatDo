@@ -1,5 +1,4 @@
 /* FOR ALL VIEWS  -----------------------------------------------------------------------------------------------------------------------------*/
-
 .index {
 	background-color: #262626;
 }
@@ -109,11 +108,6 @@
 #darker {
 	color:#91B4DA;
 	font-weight: bold;
-    /*text-shadow:
-    -1px -1px 0 white,
-    1px -1px 0 white,
-    -1px 1px 0 white,
-    1px 1px 0 white;*/  
 }
 
 #youTou{
@@ -191,6 +185,7 @@
 	color:white;
 	margin-top: 40px;
 }
+
 #mapDes0{
 	color:white;
 	font-size: 15px;
@@ -218,7 +213,6 @@
 	1px 1px 0 #999999; 
 }
 
-
 #map-canvas {
 	height: 550px;
 	width: 100%;
@@ -226,30 +220,44 @@
 }
 
 .interests{
-	color:#b3cbe6;
+	color: white;
 	font-size: 40px;
-	font-family: "Courier New";
+	font-family: garamond;
 	text-align: left;
-	text-shadow: 1px 1px white;
-	/*font-weight: bold;*/
+	text-shadow: 
+	-1px -1px 0 #666666, 
+	1px -1px 0 #666666,
+	-1px 1px 0 #666666,
+	1px 1px 0 #666666;
 	margin-top:35px;
 }
 
 .intline{
-	width:23%;
-	margin-top: -18px;
+	width:29%;
+	margin-top: -21px;
 	float: left;
 	margin-bottom:-10px;
 }
 
-.places{
-	font-family: Courier;
+.placeList{
+	font-family: garamond;
 	text-align: center;
-	font-weight: lighter;
-	/*color:#b3cbe6;*/
-	color:white;
-	text-align: center;
+	color:#b3cbe6;
 	font-size:17px;
+	font-style: italic;
+}
+
+.placeList:hover{
+	cursor: pointer;
+	font-style: none;
+	color:#d9d9d9;
+}
+
+#noResult{
+	color:#a6a6a6;
+	font-family: garamond;
+	font-style: italic;
+	font-size: 17px;
 }
 
 .fulfill{
@@ -309,11 +317,9 @@
 	background-color: gray;
 }
 
-.about{
+.iconGlobe{
 	width:30px;
 	height:30px;
-	margin-right:-20px;
-	margin-top:-8px;
 }
 
  /* FAVOURIT LIST ----------------------------------------------------------------------------------------------------------------*/
@@ -343,13 +349,10 @@
 
 #youFav{
 	font-size: 20px;
-	color:white;
+	color: white;
 }
 
 .clickable:hover{
-	cursor: pointer;
-}
-#youFav:hover{
 	cursor: pointer;
 	text-decoration: underline;
 }
@@ -361,8 +364,7 @@
 	margin-top: 40px;
 }
 
- /*MODAL-------------------------------------------------------*/
-
+ /*MODAL-------------------------------------------------------------------------------------------------------------------------*/
 .modal-header {
 	background-color: #d9d9d9;
 	text-align: center;
@@ -435,71 +437,12 @@ span.ng-binding.ng-scope{
 	padding-right:15px;
 }
 
- /*---------------------------------------------------------------------------*/
-
-
-.skuggaInfo3{
-    color: white;
-    text-shadow:
-    -1px -1px 0 #336699,
-    1px -1px 0 #336699,
-    -1px 1px 0 #336699,
-    1px 1px 0 #336699;  
-}
-
-
 .dropdown-menu li a{
 	color: #8cb1d9;
     font-family: Courier;
 }
 
-
-.modal-dialog{
-	width: 90%;
-	margin-top: 50% auto;
-	height: 90%;
-}
-
-
-.removeLinkLook{
-	font-family: "Courier New", courier;
-	font-weight: bold;
-	font-size: 20px;
-	color:#00802b;
-}
-
-
-.removeLinkLook:hover, .removeLinkLook:visited, .removeLinkLook:active, .removeLinkLook:link {
-	font-family: "Courier New", courier;
-	font-weight: bold;
-	font-size: 20px;
-	color:black;
-	text-decoration: none;
-}
-
 .panel-default>.panel-heading{
-	/*background-color:#262626;*/
 	background-color: #d9e5f2;
-	/*border-color:#262626;*/
 	border-color:#d9e5f2;
 }
-
-.panel-default{
-	/*border-color:#262626:*/
-
-}
-
-.middle{
-	float: none; 
-	margin: 0 auto;
-}
-
-#infoLine{
-	width:25%;
-	margin-top: -23px;
-}
-
-.noResult {
-	color: #FFFFFF;
-}
-
