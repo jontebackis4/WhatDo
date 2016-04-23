@@ -93,10 +93,24 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo, $location) {
 
   $scope.interestList = WhatDo.getInterests();
 
+  $scope.$on('update', function(){
+    $scope.displayDict = WhatDo.displayDict;
+  })
+
   $scope.displayDict = WhatDo.displayDict;
 
+  $scope.checkResult = function(array){
+    if(Array.isArray(array)){
+      if(array.length === 0){
+        return true;
+      } else {
+        return false;
+      }
+    }
+  };
+
   /*EMMELI*/
-  if ($scope.interestList.length == 0){
+  if ($scope.interestList.length === 0){
     $location.path("/interests");
   }
 
