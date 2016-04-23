@@ -37,7 +37,7 @@ whatDoApp.factory('WhatDo',function ($resource, auth, $rootScope) {
 		Bowling : ["bowling_alley"],
 		Parker: ["park"],
 		Byggnader:["mosque","church", "synagogue", "hindu_temple", "city_hall" ],
-		Kyrkogård : ["cemetery"],
+		Kyrkogårdar : ["cemetery"],
 		Fika: ["cafe"],
 		Mat: ["restaurant"], 
 		Litteratur: ["library"]

@@ -70,6 +70,7 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo, $location) {
                 types:  [searchTerms[interests[i]][j]]
               };
               WhatDo.placeService.nearbySearch(request, function(result, status){
+                $scope.loading++;
                 callback(result, status, interests[i])
               })
             }
@@ -82,10 +83,13 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo, $location) {
       function callback(result, status, interest){
         $scope.$apply(function(){
           WhatDo.setDisplayDict(result, interest);
+          $scope.loading--;
         });
       }
       
   }
+
+  $scope.loading = 0;
 
   $scope.interestList = WhatDo.getInterests();
 
