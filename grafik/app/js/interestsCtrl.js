@@ -8,9 +8,9 @@ whatDoApp.controller('interestsCtrl', function ($scope, WhatDo) {
 	
 	$scope.setBtn = function(value) {
 		if (value){
-			return 'btn btn-default btn-lg knappar';
+			return 'btn btn-default btn-lg theBtn';
 		}else{
-			return'btn btn-default btn-lg knappTryckt';
+			return'btn btn-default btn-lg presBtnt';
 		}
 	}
 

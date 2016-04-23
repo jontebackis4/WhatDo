@@ -1,10 +1,10 @@
 <div id="homePage">
 	<ng-include src="'partials/navBar.html'" ng-controller="homeCtrl"></ng-include>
-	<p id="bigOver">My favourits</p>
+	<p id="bigOver">My favourites</p>
 	<hr id="favLine">
-	<p class="info skuggaInfo3" id="info3">Places i go when i'm dreaming.</p>
+	<p class="standard skuggaInfo3" id="favInf">Places i go when I'm dreaming.</p>
 	<div ng-controller ="modalCtrl">
-		<div class = "info skuggaSlogan" ng-repeat="(name, id) in favouriteDict" id ="info2" ng-click="open('lg'); getPlaceInfo(id)">
+		<div class = "standard skuggaSlogan" ng-repeat="(name, id) in favouriteDict" id ="youFav" ng-click="open('lg'); getPlaceInfo(id)">
 			☆ {{name}}
 		</div>
 	</div>
