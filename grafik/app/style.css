@@ -7,10 +7,9 @@
 /* HOME PAGE -----------------------------------------------------------------------------------------------------------------------------------*/
 #homePage { 
 	background-image: url("tradmorkast.jpg");
-	background-size: 100% 100%; 
+	background-size: cover; 
 	background-repeat: no-repeat;
-	height: 100vh;
-	width: 100vw;
+	min-height: 100vh;
 	position: relative;
 }
 
@@ -33,17 +32,13 @@
 	margin-top: -25px;
 	}
 
-#slogan {
+.slogan {
 	font-family: garamond;
 	text-align: center;
 	color:rgb(140, 176, 217);
 	font-size: 17px;
 	margin-top:-17px;
 	padding-bottom: 35px;
-}
-
-.sloganShadow {
-    color: white;
     text-shadow:
     -1px -1px 0 black,
     1px -1px 0 black,
@@ -86,6 +81,7 @@
 	margin-top:20px;
 	margin-left:25%;
 	margin-right:25%;
+	margin-bottom: 0;
 	border-color:rgba(0,0,0,0.5);
 	border-radius: 4%;
 }
@@ -175,6 +171,7 @@
 	font-family: Courier;
 	color:red;
 	padding-top: 30px;
+	margin-bottom: 0;
 }
 
 .btn-default.disabled{
@@ -293,18 +290,22 @@
 }
 
  /* FAVOURIT LIST -------------------------------*/
-
 #bigOver {
+	font-family: garamond;
+	color:white;
 	text-align: center;
-	color:#004080;
-	font-family: Courier;
-	text-shadow: 0.1px 0.5px white;
-	padding-top:40px;
-	font-size: 55px;
+	font-size: 50px;
+	padding-top: 50px;
+	font-weight: bold;
+	text-shadow: 
+	-1px -1px 0 black,
+	1px -1px 0 black, 
+	-1px 1px 0 black, 
+	1px 1px 0 black;
 }
 
 #favLine{
-	width:50%;
+	width:30%;
 	margin-top: -23px;
 }
 
@@ -315,9 +316,16 @@
 
 #youFav{
 	font-size: 20px;
-	margin-bottom:35px;
 	color:white;
-	margin-top: 40px;
+}
+
+.favList{
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.clickable:hover{
+	cursor: pointer;
 }
 
  /*MODAL-------------------------------------------------------*/
@@ -397,13 +405,6 @@ span.ng-binding.ng-scope{
  /*---------------------------------------------------------------------------*/
 
 
-#borja{
-	text-align: center;
-	font-family: Courier;
-	color:#4080bf;
-	background-color: rgba(255,255,255,0.5);
-	margin-left:45%;
-}
 .skuggaInfo3{
     color: white;
     text-shadow:
@@ -412,8 +413,6 @@ span.ng-binding.ng-scope{
     -1px 1px 0 #336699,
     1px 1px 0 #336699;  
 }
-
-
 
 
 .dropdown-menu li a{
@@ -436,72 +435,6 @@ span.ng-binding.ng-scope{
 	color:#00802b;
 }
 
-#underrubrik {
-	font-family: Courier;
-	text-align: center;
-	color:#00802b;
-}
-
-#morkare {
-	font-family: Courier;
-	color:#006622;
-	font-weight: bold;
-	text-shadow: 2px 2px #c1f0c1;
-}
-
-#intressen {
-	font-family: Courier;
-	text-align: center;
-	color:#98e698;
-	font-weight: bold;
-	text-shadow: -3px 0 #00802b, 0 3px #006622, 3px 0 #006622, 0 -3px #00802b;
-}
-
-
-#valdaInt {
-	font-family: Courier;
-	font-size: 15px;
-	color:#006622;
-	padding-left: 100px;
-}
-
-.forsta{
-	font-family: Courier;
-	color: white;
-	font-weight: bold;
-	text-align: center;
-	text-shadow: -3px 0 #00802b, 0 3px #006622, 3px 0 #006622, 0 -3px #00802b;
-}
-
-#try{
-	padding-top: 100px;
-	font-size: 50px;
-}
-
-#staden {
-	margin-top: -25px;
-	font-size: 80px;
-}
-
-.kategorier{
-	font-family: Courier;
-	color:#006622;
-	font-weight: bold;
-	font-size: 30px;
-	padding-left: 20px;
-}
-
-.attgora{
-	font-family: Courier;
-	color:white;
-	font-weight: italic;
-	font-size: 20px;
-	padding-left: 30px;
-}
-
-#lasmer {
-	margin-top: 3px;
-}
 
 .removeLinkLook:hover, .removeLinkLook:visited, .removeLinkLook:active, .removeLinkLook:link {
 	font-family: "Courier New", courier;
@@ -510,8 +443,6 @@ span.ng-binding.ng-scope{
 	color:black;
 	text-decoration: none;
 }
-
-
 
 .panel-default>.panel-heading{
 	/*background-color:#262626;*/
@@ -529,7 +460,6 @@ span.ng-binding.ng-scope{
 	float: none; 
 	margin: 0 auto;
 }
-
 
 #infoLine{
 	width:25%;
