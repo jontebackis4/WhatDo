@@ -1,10 +1,10 @@
-/* FOR ALL VIEWS  ------------------------------------------------------*/
+/* FOR ALL VIEWS  -----------------------------------------------------------------------------------------------------------------------------*/
 
 .index {
 	background-color: #262626;
 }
 
-/* HOME PAGE ------------------------------------------------------*/
+/* HOME PAGE -----------------------------------------------------------------------------------------------------------------------------------*/
 #homePage { 
 	background-image: url("tradmorkast.jpg");
 	background-size: 100% 100%; 
@@ -34,7 +34,7 @@
 	}
 
 #slogan {
-	font-family: Courier;
+	font-family: garamond;
 	text-align: center;
 	color:rgb(140, 176, 217);
 	font-size: 17px;
@@ -42,9 +42,27 @@
 	padding-bottom: 35px;
 }
 
+.sloganShadow {
+    color: white;
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;  
+}
+
+.signInBtn{
+	text-align: center;
+	font-family: Courier;
+	color:white;
+	background-color: rgba(140, 176, 217,0.5);
+	margin-left:50%;
+ 	transform: translateX(-50%);
+}
+
 .homeText{
 	text-align: center !important;
-	font-family: courier;
+	font-family: garamond;
 	margin:-3px;
 	color:#262626;
 	text-shadow: 0.3px 0.3px #e6f0ff;
@@ -63,34 +81,6 @@
 	cursor: pointer;
 }
 
-.signInBut{
-	text-align: center;
-	font-family: Courier;
-	color:white;
-	background-color: rgba(140, 176, 217,0.5);
-	margin-left:50%;
- 	transform: translateX(-50%);
-}
-
-#darker {
-	color:black;
-	font-weight: bold;
-    text-shadow:
-    -1px -1px 0 white,
-    1px -1px 0 white,
-    -1px 1px 0 white,
-    1px 1px 0 white;  
-}
-
-.sloganShadow {
-    color: white;
-    text-shadow:
-    -1px -1px 0 black,
-    1px -1px 0 black,
-    -1px 1px 0 black,
-    1px 1px 0 black;  
-}
-
 .wellFirst{
 	background:rgba(0,0,0,0.5);
 	margin-top:20px;
@@ -103,24 +93,38 @@
 .collText{
 	color:white;
 	text-align: center;
-	font-family: Courier;
+	font-family: garamond;
 	font-size: 15px;
 	margin-bottom: -5px;
+	font-style: italic;
 }
 
 #coll0{
 	margin-top: 20px;
-	font-size:18px !important;
+	font-size:18px;
+	font-style: normal;
 }
 
 #coll1{
-	font-size:18px !important;
+	font-size:18px;
+	font-style: normal;
+}
+
+#darker {
+	color:#91B4DA;
+	font-weight: bold;
+    /*text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;*/  
 }
 
 #youTou{
 	color:#4da6ff;
 }
-/* INTEREST VIEW  ------------------------------------------------------*/
+
+/* INTEREST VIEW  ------------------------------------------------------------------------------------------------------------------------------*/
 
 #darkBack {
 	background-image: url("tradmorkast.jpg");
@@ -130,43 +134,43 @@
 	width: 100vw;
 }
 
-.info{
-	font-family: Courier;
+.standard{
+	font-family: garamond;
 	text-align: center;
 	font-weight: lighter;
 }
 
 
-#info1{
-	font-size: 20px;
+#intInf{
+	font-size: 30px;
 	margin-bottom:40px;
 	margin-top:120px;
 	color:white;
 }
 
-.knappar{
+.theBtn{
 	text-align: center;
 	font-family: Courier;
 	color:#b3cbe6;
 	background-color: transparent;
 }
 
-.knappar2{
+.button0{
 	text-align: center;
 	font-family: Courier;
 	color:black;
 }
-.knappTryckt{
+.presBtnt{
 	text-align: center;
 	font-family: Courier;
 	color:white;
 	background-color: #004080;
 }
-.knappTryckt:hover, .knappTryckt:focus, .knappTryckt:active, .knappTryckt.active, .open > .dropdown-toggle.knappTryckt{
+.presBtnt:hover, .presBtnt:focus, .presBtnt:active, .presBtnt.active, .open > .dropdown-toggle.presBtnt{
 	background-color: #004080;
 	color:white;
 }
-.sistaknappen {
+.lastBtn {
 	text-align: center;
 	font-family: Courier;
 	color:red;
@@ -178,12 +182,13 @@
 	background-color: #8cb0d9;
 	color:white;
 }
-/* MAP ------------------------------------------------------*/
+
+/* MAP ---------------------------------------------------------------------------------------------------------------------------------*/
 .mapBackground {
 	background-color: #262626;
 }
 
-#info2{
+#mapInf{
 	font-size: 20px;
 	margin-bottom:35px;
 	color:white;
@@ -303,24 +308,92 @@
 	margin-top: -23px;
 }
 
-.deliteFav{
-	left:50%;
-	transform: translateX(-50%);
+#favInf{
+	font-size: 15px;
+	color:#b3cbe6;
 }
 
-#deliteBut{
-	background:rgba(255,255,255,0.5);
-	font-family: Courier;
-	/*color:#4080bf;*/
-	color:#004080;
+#youFav{
+	font-size: 20px;
+	margin-bottom:35px;
+	color:white;
+	margin-top: 40px;
 }
-
 
  /*MODAL-------------------------------------------------------*/
 
+.modal-header {
+	background-color: #d9d9d9;
+	text-align: center;
+	color:#4d4d4d;
+	font-family: garamond;
+}
+
  .modal-body {
+ 	background-color: #d9d9d9;
  	overflow:auto;
+ 	color:#4d4d4d;
+ 	font-size: 17px;
+ 	font-family: garamond;
  }
+
+.modal-footer{
+	background-color: #d9d9d9;
+	font-family: garamond;
+	color:white;
+	margin-top: 0px;
+}
+
+.modal-content{
+	background: #d9d9d9;
+}
+
+#placeName{
+	color:white;
+	text-shadow: 
+	-1px -1px 0 black, 
+	1px -1px 0 black, 
+	-1px 1px 0 black, 
+	1px 1px 0 black;
+	font-weight: bold;
+	font-size: 45px;
+}
+
+#picture{
+	width: 300px; 
+	height: 300px;
+	padding:2px;
+   	border:1px solid white;
+   	margin-top: 5%;
+   	margin-bottom: 5%;
+}
+
+.placeCat{
+	color: white;
+	font-weight: bold;
+}
+
+.placeBtn{
+	background-color: rgb(140, 176, 217);
+	color:white;
+}
+
+.placeBtn:hover{
+	background-color: white;
+	color:rgb(140, 176, 217);
+}
+
+.alert-warning{
+	background-color: #969696;
+	font-family: garamond;
+	color:white;
+	border-color:#969696; 
+}
+
+span.ng-binding.ng-scope{
+	padding-right:15px;
+}
+
  /*---------------------------------------------------------------------------*/
 
 
@@ -355,17 +428,6 @@
 	height: 90%;
 }
 
-.modal-content{
-	background: #ffffff;
-	font-family: Courier;
-	color: #000000;
-}
-
-#placeName{
-	color:#004080;
-	text-shadow: 1px 1px white;
-	font-weight: bold;
-}
 
 .removeLinkLook{
 	font-family: "Courier New", courier;
@@ -475,7 +537,4 @@
 }
 
 
-#info3{
-	font-size: 15px;
-	color:#b3cbe6;
-}
+

@@ -2,7 +2,7 @@ whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService, auth, store
   
   $scope.isCollapsed = true;
 
-  $scope.init = function(){
+  $scope.initFavourites = function(){
     fbService.getFavourites().then(function(response){
       
       if(response[0]){

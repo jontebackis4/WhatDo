@@ -1,16 +1,35 @@
 // Dinner controller that we use whenever we have view that needs to 
 // display or modify the dinner menu
-whatDoApp.controller('interestsCtrl', function ($scope, WhatDo) {
+whatDoApp.controller('interestsCtrl', function ($scope, WhatDo, fbService) {
 	
+	$scope.initFavourites = function(){
+	    fbService.getFavourites().then(function(response){
+	      
+		    if(response[0]){
+		        for(var res in response[0]){
+		          	if(!(res.charAt(0) == "$")){
+		            	console.log(res + "  " + response[0][res]);
+		            	WhatDo.favourites[res] = response[0][res];
+		          	}
+		        }	
+	        	WhatDo.update();
+	    	}
+	      
+	   	});
+	    $scope.$on("update", function(){
+	      	$scope.favouriteDict = WhatDo.favourites;
+	    })
+	}
+
 	$scope.addInterest = function(interest){
 		WhatDo.addInterest(interest);
 	}
 	
 	$scope.setBtn = function(value) {
 		if (value){
-			return 'btn btn-default btn-lg knappar';
+			return 'btn btn-default btn-lg theBtn';
 		}else{
-			return'btn btn-default btn-lg knappTryckt';
+			return'btn btn-default btn-lg presBtnt';
 		}
 	}
 
