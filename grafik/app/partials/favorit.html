@@ -4,9 +4,11 @@
 	<hr id="favLine">
 	<p class="standard skuggaInfo3" id="favInf">Places i go when I'm dreaming.</p>
 	<div ng-controller ="modalCtrl">
+		<p class="text-center standard noFavourite" ng-if="checkResult()">You have no favourites</p>
 		<div class = "standard skuggaSlogan" ng-repeat="(name, id) in favouriteDict" id ="youFav" ng-click="open('lg'); getPlaceInfo(id)">
 			☆ {{name}}
 		</div>
+		
 	</div>
 
 </div>

@@ -8,7 +8,6 @@ whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService, auth, store
       if(response[0]){
         for(var res in response[0]){
           if(!(res.charAt(0) == "$")){
-            console.log(res + "  " + response[0][res]);
             WhatDo.favourites[res] = response[0][res];
           }
         }

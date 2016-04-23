@@ -319,6 +319,17 @@
 	color:white;
 	margin-top: 40px;
 }
+#youFav:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.noFavourite{
+	font-size: 20px;
+	margin-bottom:35px;
+	color:white;
+	margin-top: 40px;
+}
 
  /*MODAL-------------------------------------------------------*/
 
