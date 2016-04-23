@@ -20,7 +20,8 @@
 			<p class="interests">{{interest.toUpperCase()}}</p> 
 	    	<hr class="intline">
 	    	
-	    	<div class="row text-left"> 
+	    	<div class="row text-left">
+	    		<p ng-if="checkResult(places)" class="noResult">There are no result at the current location</p>
 	    		<div class="col-md-6" ng-repeat="place in places">>
 	    			<a class="platser" ng-click="open('lg'); getPlaceInfo(place.place_id)">{{place.name}}</a>
 	    		</div>

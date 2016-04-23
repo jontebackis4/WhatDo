@@ -69,8 +69,10 @@ whatDoApp.config(['$routeProvider', 'authProvider', '$locationProvider',
   .run(function($rootScope, auth, store, jwtHelper, $location){
     auth.hookEvents();
 
+    var refreshingToken = null;
     $rootScope.$on('$locationChangeStart', function() {
       var token = store.get('token');
+      var refreshToken = store.get('refreshToken');
       if (token) {
         if (!jwtHelper.isTokenExpired(token)) {
           if (!auth.isAuthenticated) {
@@ -78,7 +80,19 @@ whatDoApp.config(['$routeProvider', 'authProvider', '$locationProvider',
           }
         } else {
           // Either show the login page or use the refresh token to get a new idToken
-          $location.path('/home');
+          if (refreshToken) {
+            if (refreshingToken === null) {
+                refreshingToken =  auth.refreshIdToken(refreshToken).then(function(idToken) {
+                  store.set('token', idToken);
+                  auth.authenticate(store.get('profile'), idToken);
+                }).finally(function() {
+                    refreshingToken = null;
+                });
+            }
+            return refreshingToken;
+          } else {
+            $location.path('/login');
+          }
         }
       }
     });

@@ -360,7 +360,7 @@
 }
 
 #picture{
-	width: 300px; 
+	width: 100%; 
 	height: 300px;
 	padding:2px;
    	border:1px solid white;
@@ -536,5 +536,7 @@ span.ng-binding.ng-scope{
 	margin-top: -23px;
 }
 
-
+.noResult {
+	color: #FFFFFF;
+}
 

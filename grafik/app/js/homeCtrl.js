@@ -56,6 +56,11 @@ whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService, auth, store
     }
   }
 
+  $scope.resetDisplayDict = function(){
+    WhatDo.resetDisplayDict();
+    WhatDo.update();
+  };
+
 /* Emmeli */
   $scope.active = function(position){
 
