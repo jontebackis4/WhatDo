@@ -24,13 +24,13 @@
   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert()">{{alert.msg}}</uib-alert>
     <div ng-if="inFav(info.name)">
         <!-- code to render a large video block-->
-        <button type="button" class="btn btn-default placeBtn" ng-click="removeFavourite(info.place_id, info.name); addAlert('Removed')">Remove from Favourites</button>
-        <button type="button" class="btn btn-default placeBtn" ng-click="addFavourite(info.place_id, info.name); addAlert('Allredy in favourites')">Add to Favourites</button>
+        <button type="button" class="btn btn-default placeBtn" ng-click="removeFavourite(info.place_id, info.name); addAlert('Removed from Favourites')">Remove from Favourites</button>
+        <button type="button" class="btn btn-default placeBtn" ng-click="addFavourite(info.place_id, info.name); addAlert('Already in Favourites')">Add to Favourites</button>
         
     </div>
     <div ng-if="!inFav(info.name)">
-            <button type="button" class="btn btn-default placeBtn" ng-click="removeFavourite(info.place_id, info.name); addAlert('Removed')">Remove from Favourites</button>
-            <button type="button" class="btn btn-default placeBtn" ng-click="addFavourite(info.place_id, info.name); addAlert('Saved')">Add to Favourites</button>
+            <button type="button" class="btn btn-default placeBtn" ng-click="removeFavourite(info.place_id, info.name); addAlert('Removed from Favourites')">Remove from Favourites</button>
+            <button type="button" class="btn btn-default placeBtn" ng-click="addFavourite(info.place_id, info.name); addAlert('Saved in Favourites')">Add to Favourites</button>
         <!-- code to render the regular video block -->
     </div>
 

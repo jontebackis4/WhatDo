@@ -1,14 +1,11 @@
-<!-- FORSTA SIDAN -->
+<!-- HOMEPAGE! -->
 
 <div id="homePage" ng-controller="homeCtrl">
-<!--button ng-click="setspcUser()">jonas</button-->
-<div class="homeDiv">
+
 	<p id="appName">YOUR TOURIST GUIDE</p>
 	<hr id="homeLine">
 	<p id="slogan" class="sloganShadow">No more stones unturned</p>
-
-	<input class="btn btn-default signInBut" type="submit" ng-controller="homeCtrl" ng-click="auth.signin()" value="SIGN IN HERE"/>
-
+	<input class="btn btn-default signInBtn" type="submit" ng-controller="homeCtrl" ng-click="auth.signin()" value="SIGN IN HERE"/>
 	<p class="homeText">First time here? no worries, <span ng-click="isCollapsed = !isCollapsed">click here!</span></p>
 
 	<div uib-collapse="isCollapsed">
@@ -17,12 +14,10 @@
 			<p class="collText">But too often we find ourselves wandering around in a city and</p> 
 			<p class="collText">missing the real deal.</p>
 			<p class="collText">But no more, no more stones unturned.</p>
-			<p class="collText" id="coll0"><span id="darker">Your interests</span> are all we need to help you have a </p>
-			<p class="collText" id="coll1"><span id="darker">personalised experience</span> of all the world has to offer.</p>
+			<p class="collText" id="coll0">We believe the world has so much to offer.</p>
+			<p class="collText" id="coll1">All we need is <span id="darker">your favourite interests</span> to provide you a <span id="darker">personalised</span> experience.</p>
 			<p class="collText" id="coll1">So sign in and let us be <span id="youTou">your tourist guide</span>.</p>
-				</div>
+		</div>
 	</div>
 
-
-</div>
 </div>

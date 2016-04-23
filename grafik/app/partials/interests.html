@@ -1,37 +1,34 @@
-<!-- We include the sidebar as it is shared across two screens. -->
+<!-- INTERESTS VIEW -->
 <div id="darkBack">
-<ng-include src="'partials/navBar.html'" ng-controller="homeCtrl"></ng-include>
+    <ng-include src="'partials/navBar.html'" ng-controller="homeCtrl"></ng-include>
 
-  <p class="info" id="info1">Pick your favourite interests so you can get straight to the good stuff.</p>
+    <p class="standard" id="intInf">Pick your favourite interests so you can get straight to the good stuff.</p>
 
-<!--h1 id="intressen"> INTRESSEN?</h1-->
-
-   <p class="knappar2">
-        <button ng-class="setBtn(btnStatus('btn1'))" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Nöjesfält'); btnSwitch('btn1')">NÖJESFÄLT</button>
-        <button ng-class="setBtn(btnStatus('btn2'))" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Djur'); btnSwitch('btn2')">DJUR</button>
-        <button ng-class="setBtn(btnStatus('btn3'))" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Konst'); btnSwitch('btn3')">KONST</button>
-        <button ng-class="setBtn(btnStatus('btn4'))" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Nattliv'); btnSwitch('btn4')">NATTLIV</button>
-        <button ng-class="setBtn(btnStatus('btn5'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Fika'); btnSwitch('btn5')">FIKA</button>
-    <p>
-    <p class="knappar2">
-        <button ng-class="setBtn(btnStatus('btn6'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Museum'); btnSwitch('btn6')">MUSEUM</button>
-        <button ng-class="setBtn(btnStatus('btn7'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Shopping'); btnSwitch('btn7')">SHOPPING</button>
-        <button ng-class="setBtn(btnStatus('btn8'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Bio'); btnSwitch('btn8')">BIO</button>
-        <button ng-class="setBtn(btnStatus('btn9'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Bowling'); btnSwitch('btn9')">BOWLING</button>
-        <button ng-class="setBtn(btnStatus('btn10'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Mat'); btnSwitch('btn10')">MAT</button>
+    <p class="button0">
+          <button ng-class="setBtn(btnStatus('btn1'))" type="button" class="btn btn-default btn-lg theBtn" ng-click ="addInterest('Nöjesfält'); btnSwitch('btn1')">NÖJESFÄLT</button>
+          <button ng-class="setBtn(btnStatus('btn2'))" type="button" class="btn btn-default btn-lg theBtn" ng-click ="addInterest('Djur'); btnSwitch('btn2')">DJUR</button>
+          <button ng-class="setBtn(btnStatus('btn3'))" type="button" class="btn btn-default btn-lg theBtn" ng-click ="addInterest('Konst'); btnSwitch('btn3')">KONST</button>
+          <button ng-class="setBtn(btnStatus('btn4'))" type="button" class="btn btn-default btn-lg theBtn" ng-click ="addInterest('Nattliv'); btnSwitch('btn4')">NATTLIV</button>
+          <button ng-class="setBtn(btnStatus('btn5'))" type="button" class="btn btn-default btn-lg theBtn" ng-click="addInterest('Fika'); btnSwitch('btn5')">FIKA</button>
     </p>
-    <p class="knappar2">
-        <button ng-class="setBtn(btnStatus('btn11'))" type="button" class="btn btn-default btn-lg knappar" ng-click ="addInterest('Parker'); btnSwitch('btn11')">PARKER</button>
-        <button ng-class="setBtn(btnStatus('btn12'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Byggnader'); btnSwitch('btn12')">BYGGNADER</button>
-        <button ng-class="setBtn(btnStatus('btn13'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Kyrkogårdar'); btnSwitch('btn13')">KYRKOGÅRDAR</button>
-        <button ng-class="setBtn(btnStatus('btn14'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Litteratur'); btnSwitch('btn14')">LITTERATUR</button>
-   </p>
-   <p class="sistaknappen">
-   <a href="#/search" ng-class="toSearch('btn btn-default btn-lg knappar')"ng-click="initFavourites()">I'VE SELECTED ALL MY INTERESTS</a>
-   
-   </p>
-</div>
-<!-- TODO in Lab 5: Display the dish information including image, Description, 
-Instructions, Ingredients and total cost. -->
-  
+
+    <p class="button0">
+          <button ng-class="setBtn(btnStatus('btn6'))" type="button" class="btn btn-default btn-lg theBtn" ng-click="addInterest('Museum'); btnSwitch('btn6')">MUSEUM</button>
+          <button ng-class="setBtn(btnStatus('btn7'))" type="button" class="btn btn-default btn-lg theBtn" ng-click="addInterest('Shopping'); btnSwitch('btn7')">SHOPPING</button>
+          <button ng-class="setBtn(btnStatus('btn8'))" type="button" class="btn btn-default btn-lg theBtn" ng-click="addInterest('Bio'); btnSwitch('btn8')">BIO</button>
+          <button ng-class="setBtn(btnStatus('btn9'))" type="button" class="btn btn-default btn-lg theBtn" ng-click="addInterest('Bowling'); btnSwitch('btn9')">BOWLING</button>
+          <button ng-class="setBtn(btnStatus('btn10'))" type="button" class="btn btn-default btn-lg theBtn" ng-click="addInterest('Mat'); btnSwitch('btn10')">MAT</button>
+    </p>
+
+    <p class="button0">
+          <button ng-class="setBtn(btnStatus('btn11'))" type="button" class="btn btn-default btn-lg theBtn" ng-click ="addInterest('Parker'); btnSwitch('btn11')">PARKER</button>
+          <button ng-class="setBtn(btnStatus('btn12'))" type="button" class="btn btn-default btn-lg theBtn" ng-click="addInterest('Byggnader'); btnSwitch('btn12')">BYGGNADER</button>
+          <button ng-class="setBtn(btnStatus('btn13'))" type="button" class="btn btn-default btn-lg theBtn" ng-click="addInterest('Kyrkogårdar'); btnSwitch('btn13')">KYRKOGÅRDAR</button>
+          <button ng-class="setBtn(btnStatus('btn14'))" type="button" class="btn btn-default btn-lg theBtn" ng-click="addInterest('Litteratur'); btnSwitch('btn14')">LITTERATUR</button>
+    </p>
+
+    <p class="lastBtn">
+        <a href="#/search" ng-class="toSearch('btn btn-default btn-lg theBtn')"ng-click="initFavourites()">I'VE SELECTED ALL MY INTERESTS</a>
+    </p>
+
 </div>
