@@ -13,7 +13,9 @@ whatDoApp.factory('fbService',function ($resource, $firebaseArray, auth) {
 		var user =  new Firebase("https://worldguide.firebaseio.com/users/" + auth.profile.user_id);
 		var user = $firebaseArray(user);
 		return user.$loaded().then(function(response){
-			
+			if(!response){
+				console.log("no connection");
+			}
 			return response;
 		});
 		
