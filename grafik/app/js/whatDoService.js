@@ -27,20 +27,20 @@ whatDoApp.factory('WhatDo',function ($resource, auth, $rootScope) {
       'btn14': true
     }
   	this.searchTerms = {
-  	Nöjesfält : ["amusement_park"], 
-		Djur : ["aquarium","zoo"],
-		Konst: ["art_gallery"],
-		Nattliv : ["bar", "night_club"],
-		Museum : ["museum"],
-		Shopping : ["shopping_mall"],
-		Bio : ["movie_theater" ],
-		Bowling : ["bowling_alley"],
-		Parker: ["park"],
-		Byggnader:["mosque","church", "synagogue", "hindu_temple", "city_hall" ],
-		Kyrkogårdar : ["cemetery"],
-		Fika: ["cafe"],
-		Mat: ["restaurant"], 
-		Litteratur: ["library"]
+  	'AMUSEMENT PARKS' : ["amusement_park"], 
+		'ZOO' : ["aquarium","zoo"],
+		'ART GALLERIES': ["art_gallery"],
+		'CLUBS & BARS' : ["bar", "night_club"],
+		'MUSEUM' : ["museum"],
+		'SHOPPING' : ["shopping_mall"],
+		'MOVIE THEATER' : ["movie_theater" ],
+		'BOWLING' : ["bowling_alley"],
+		'PARKS': ["park"],
+		'ARCHITECTURE':["mosque","church", "synagogue", "hindu_temple", "city_hall" ],
+		'CEMETERY' : ["cemetery"],
+		'CAFÉ': ["cafe"],
+		'RESTAURANTS': ["restaurant"], 
+		'LIBRARY': ["library"]
   	};
 
     /*adds an id(string) to favourites(array), if it alredy exists it returns true then synch with firebase*/
