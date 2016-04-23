@@ -8,7 +8,7 @@
 <div class="modal-body">
   <div class="col-md-6">
     <p ng-if="info.formatted_address">Address: {{info.formatted_address}}</p>
-    <p ng-if="info.website">Website: {{info.website}}</p>
+    <p ng-if="info.website">Website: <a href ="{{info.website}}"target="_blank">{{info.website}}</a></p>
     <div ng-if="info.opening_hours">Opening hours:
       <li ng-repeat="day in info.opening_hours.weekday_text">{{day}}</li>
     </div>
