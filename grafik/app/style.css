@@ -186,11 +186,38 @@
 }
 
 #mapInf{
-	font-size: 20px;
-	margin-bottom:35px;
+	font-size: 30px;
+	margin-bottom:5px;
 	color:white;
 	margin-top: 40px;
 }
+#mapDes0{
+	color:white;
+	font-size: 15px;
+	margin-bottom: 0;
+	font-style: italic;
+}
+
+#mapDes1{
+	color:white;
+	font-size: 17px;
+	margin-bottom: 20px;
+	font-style: italic;
+}
+
+#favBtn{
+	color:#88B1D9;
+}
+
+#favBtn:hover{
+	color:white;
+	text-shadow:
+	-1px -1px 0 #999999, 
+	1px -1px 0 #999999,
+	-1px 1px 0 #999999,
+	1px 1px 0 #999999; 
+}
+
 
 #map-canvas {
 	height: 550px;
@@ -289,7 +316,7 @@
 	margin-top:-8px;
 }
 
- /* FAVOURIT LIST -------------------------------*/
+ /* FAVOURIT LIST ----------------------------------------------------------------------------------------------------------------*/
 #bigOver {
 	font-family: garamond;
 	color:white;
@@ -309,19 +336,14 @@
 	margin-top: -23px;
 }
 
-#favInf{
-	font-size: 15px;
-	color:#b3cbe6;
+.favList{
+    margin-left: 300px;
+    margin-right: 300px;
 }
 
 #youFav{
 	font-size: 20px;
 	color:white;
-}
-
-.favList{
-    margin-left: 300px;
-    margin-right: 300px;
 }
 
 .clickable:hover{
@@ -377,7 +399,7 @@
 }
 
 .placeCat{
-	color: white;
+	color: black;
 	font-weight: bold;
 }
 
