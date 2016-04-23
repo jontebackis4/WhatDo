@@ -55,7 +55,7 @@ whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService, auth, store
     WhatDo.resetDisplayDict();
   };
 
-/* Emmeli */
+
   $scope.active = function(position){
 
     if (position == $location.path()){
