@@ -1,7 +1,7 @@
 <!-- We include the sidebar as it is shared across two screens. -->
 <div id="darkBack">
 <ng-include src="'partials/navBar.html'" ng-controller="homeCtrl"></ng-include>
-
+  
   <p class="info" id="info1">Pick your favourite interests so you can get straight to the good stuff.</p>
 
 <!--h1 id="intressen"> INTRESSEN?</h1-->
@@ -25,11 +25,10 @@
         <button ng-class="setBtn(btnStatus('btn12'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Byggnader'); btnSwitch('btn12')">BYGGNADER</button>
         <button ng-class="setBtn(btnStatus('btn13'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Kyrkogårdar'); btnSwitch('btn13')">KYRKOGÅRDAR</button>
         <button ng-class="setBtn(btnStatus('btn14'))" type="button" class="btn btn-default btn-lg knappar" ng-click="addInterest('Litteratur'); btnSwitch('btn14')">LITTERATUR</button>
-   </p>
-   <p class="sistaknappen">
-   <a href="#/search" ng-class="toSearch('btn btn-default btn-lg knappar')">I'VE SELECTED ALL MY INTERESTS</a>
-   
-   </p>
+    </p>
+    <p class="sistaknappen">
+      <a href="#/search" ng-class="toSearch('btn btn-default btn-lg knappar')">I'VE SELECTED ALL MY INTERESTS</a>
+    </p>
 </div>
 <!-- TODO in Lab 5: Display the dish information including image, Description, 
 Instructions, Ingredients and total cost. -->

@@ -14,6 +14,7 @@
 
 	
 	<div ng-controller="modalCtrl">
+		<img src="ajax-loader.gif" ng-show="loading != 0"/>
 		<div class="container mapBackground" ng-repeat="(interest, places) in displayDict">
 
 			<p class="interests">{{interest.toUpperCase()}}</p> 
