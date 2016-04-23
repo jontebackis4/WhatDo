@@ -11,13 +11,9 @@ whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService, auth, store
             WhatDo.favourites[res] = response[0][res];
           }
         }
-        WhatDo.update();
       }
       
     });
-    $scope.$on("update", function(){
-      $scope.favouriteDict = WhatDo.favourites;
-    })
   }
   
   $scope.setUser = function (){
@@ -57,7 +53,6 @@ whatDoApp.controller("homeCtrl", function($scope, WhatDo, fbService, auth, store
 
   $scope.resetDisplayDict = function(){
     WhatDo.resetDisplayDict();
-    WhatDo.update();
   };
 
 /* Emmeli */

@@ -20,11 +20,9 @@ whatDoApp.controller('modalInstanceCtrl', ['$scope', '$uibModalInstance', 'WhatD
     	$scope.alerts.splice(0);
   	};
 
-	$scope.info = WhatDo.selectedPlaceInfo;
-
-	$scope.$on('update', function(){
-		$scope.info = WhatDo.selectedPlaceInfo;
-	});
+	$scope.info = function(){
+		return WhatDo.selectedPlaceInfo;
+	}
 
 	$scope.getPhoto = function(photos){
 		return photos[0].getUrl({'maxWidth': photos[0].width, 'maxHeight': photos[0].height});

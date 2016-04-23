@@ -8,17 +8,12 @@ whatDoApp.controller('interestsCtrl', function ($scope, WhatDo, fbService) {
 		    if(response[0]){
 		        for(var res in response[0]){
 		          	if(!(res.charAt(0) == "$")){
-		            	console.log(res + "  " + response[0][res]);
 		            	WhatDo.favourites[res] = response[0][res];
 		          	}
-		        }	
-	        	WhatDo.update();
+		        }
 	    	}
 	      
 	   	});
-	    $scope.$on("update", function(){
-	      	$scope.favouriteDict = WhatDo.favourites;
-	    })
 	}
 
 	$scope.addInterest = function(interest){
@@ -57,4 +52,8 @@ whatDoApp.controller('interestsCtrl', function ($scope, WhatDo, fbService) {
 	$scope.btnSwitch = function(btn){
 		WhatDo.setBtnStatus(btn);
 	}
+
+	$scope.resetDisplayDict = function(){
+    	WhatDo.resetDisplayDict();
+  	};
 });

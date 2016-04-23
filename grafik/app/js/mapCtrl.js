@@ -63,7 +63,6 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo, $location) {
         WhatDo.resetDisplayDict();
         for(var i = 0; i < interests.length; i++){
           (function(i){
-            console.log(searchTerms);
             for(j = 0; j < searchTerms[interests[i]].length; j++){
               var request = {
                 location: marker.getPosition(),
@@ -93,10 +92,6 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo, $location) {
   $scope.loading = 0;
 
   $scope.interestList = WhatDo.getInterests();
-
-  $scope.$on('update', function(){
-    $scope.displayDict = WhatDo.displayDict;
-  })
 
   $scope.displayDict = WhatDo.displayDict;
 

@@ -11,10 +11,8 @@ whatDoApp.controller('modalCtrl', ['$scope', '$uibModal', 'WhatDo', function($sc
 	};
 
     function callbackPlaceInfo(place, status){
-    	console.log(place);
     	$scope.$apply(function(){
     		WhatDo.selectedPlaceInfo = place;
-    		WhatDo.update();
     	});
     };
 
