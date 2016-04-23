@@ -36,13 +36,11 @@ whatDoApp.controller('modalInstanceCtrl', ['$scope', '$uibModalInstance', 'WhatD
 
 	$scope.addFavourite = function(id, name){
 		WhatDo.addFavourite(id, name);
-		console.log(WhatDo.favourites);
 		fbService.setFavourites(WhatDo.favourites);
 	}
 
 	$scope.removeFavourite = function(id, name){
 		WhatDo.removeFavourites(id, name);
-		console.log(WhatDo.favourites);
 		fbService.setFavourites(WhatDo.favourites);
 	}
 }]);
