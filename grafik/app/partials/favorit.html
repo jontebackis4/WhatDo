@@ -2,13 +2,16 @@
 	<ng-include src="'partials/navBar.html'" ng-controller="homeCtrl"></ng-include>
 	<p id="bigOver">My favourites</p>
 	<hr id="favLine">
-	<p class="standard skuggaInfo3" id="favInf">Places i go when I'm dreaming.</p>
+	<p class="slogan">Places I go when I'm dreaming.</p>
+
 	<div ng-controller ="modalCtrl">
-		<p class="text-center standard noFavourite" ng-if="checkResult()">You have no favourites</p>
-		<div class = "standard skuggaSlogan" ng-repeat="(name, id) in favouriteDict" id ="youFav" ng-click="open('lg'); getPlaceInfo(id)">
-			☆ {{name}}
+		<div class="row favList">
+			<p class="text-center standard noFavourite" ng-if="checkResult()">You have no favourites</p>
+			<div class="col-md-6 standard" ng-repeat="(name, id) in favouriteDict" id ="youFav">
+			<span class="clickable" ng-click="open('lg'); getPlaceInfo(id)">☆ {{name}}</span>
+			</div>
 		</div>
 		
 	</div>
-
+	
 </div>

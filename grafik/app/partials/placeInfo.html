@@ -6,7 +6,7 @@
 
 
 <div class="modal-body">
-  <div class="col-md-8">
+  <div class="col-md-6">
     <p ng-if="info.formatted_address"><span class="placeCat">Address:</span> {{info.formatted_address}}</p>
     <p ng-if="info.website"><span class="placeCat">Website: </span><a href ="{{info.website}}"target="_blank"> {{info.website}}</a></p>
     <div ng-if="info.opening_hours"><span class="placeCat">Opening hours:</span>
@@ -15,7 +15,7 @@
     <p ng-if="info.international_phone_number"><span class="placeCat">Phone number:</span> {{info.international_phone_number}}</p>
     <p ng-if="info.rating"><span class="placeCat">Rating:</span> {{info.rating}}</p>
   </div>
-  <div class="col-md-4" ng-if="info.photos">
+  <div class="col-md-6" ng-if="info.photos">
     <img ng-src="{{getPhoto(info.photos)}}" id="picture">
   </div>
 </div>
