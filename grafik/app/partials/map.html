@@ -13,8 +13,8 @@
 	</div>
 
 	<div ng-controller="modalCtrl">
-		<img src="ajax-loader.gif" ng-show="loading != 0"/>
-		<div class="container mapBackground" ng-repeat="(interest, places) in displayDict">
+		<img class = "loading center-block" src="ajax-loader.gif" ng-if="loading() != 0"/>
+		<div class="container mapBackground" ng-if="loading() == 0" ng-repeat="(interest, places) in displayDict">
 
 			<p class="interests">{{interest}}</p> 
 			<hr class="intline">
@@ -22,7 +22,7 @@
 				<div class="col-md-6" ng-if="checkResult(places)">
 					<p id="noResult">There are no results at the current location.</p>
 				</div>
-				<div class="col-md-6" ng-repeat="place in places">
+				<div class="col-md-6 colOverFlow" ng-repeat="place in places">
 					<a class="placeList" ng-click="open('lg'); getPlaceInfo(place.place_id)">{{place.name}}</a>
 				</div>
 			</div>

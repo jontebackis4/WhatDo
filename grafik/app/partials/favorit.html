@@ -1,13 +1,13 @@
-<div id="homePage">
+<div class="homePage">
 	<ng-include src="'partials/navBar.html'" ng-controller="homeCtrl"></ng-include>
-	<p id="bigOver">My favourites</p>
+	<p class="bigOver">My favourites</p>
 	<hr id="favLine">
 	<p class="slogan">Places I go when I'm dreaming.</p>
 
 	<div ng-controller ="modalCtrl">
 		<div class="row favList">
 			<p class="text-center standard noFavourite" ng-if="checkResult()">You haven't explored the world map enough to have any favourites, yet!</p>
-			<div class="col-md-6 standard" ng-repeat="(name, id) in favouriteDict()" id="youFav">
+			<div class="col-md-6 standard colOverFlow" ng-repeat="(name, id) in favouriteDict()" id="youFav">
 				<span class="clickable" ng-click="open('lg'); getPlaceInfo(id)">☆ {{name}}</span>
 			</div>
 		</div>

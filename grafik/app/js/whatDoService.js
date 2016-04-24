@@ -2,7 +2,17 @@
 
 whatDoApp.factory('WhatDo',function ($resource, auth, $rootScope) {
 	/*The arrays under are synched such as interest [1] is the result [1]*/
-  	this.selectedPlaceId;
+  	this.loading = 0;
+    this.getLoading=function(){
+      console.log(this.loading);
+      return this.loading;
+    }
+    this.incLoading = function(){
+      this.loading--;
+      console.log(this.loading);
+    }
+
+    this.selectedPlaceId;
     this.selectedPlaceInfo;
     this.placeService;
     this.marker;
@@ -43,7 +53,18 @@ whatDoApp.factory('WhatDo',function ($resource, auth, $rootScope) {
 		'Library': ["library"]
   	};
 
-    /*adds an id(string) to favourites(array), if it alredy exists it returns true then synch with firebase*/
+    
+  this.getNrOfCalls= function(){
+    var calls = 0;
+    for(var i = 0; i < this.interests.length; i++){
+      for(var j = 0; j < this.searchTerms[this.interests[i]].length; j++){
+        calls ++;
+      }
+    }
+    return calls;
+  }
+
+
     this.addFavourite = function(id, name){
       for(var fav in  this.favourites){
         if(this.favourites[fav] === id){

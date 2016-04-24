@@ -29,6 +29,7 @@ whatDoApp.controller('modalInstanceCtrl', ['$scope', '$uibModalInstance', 'WhatD
 	};
 	
 	$scope.close = function(){
+		WhatDo.selectedPlaceInfo = null;
 		$uibModalInstance.dismiss('close');
 	};
 
