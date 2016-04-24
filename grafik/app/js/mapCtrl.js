@@ -61,6 +61,7 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo, $location) {
       //Make nearby search
       function googleNearbySearch(marker){
         WhatDo.resetDisplayDict();
+        WhatDo.loading = WhatDo.getNrOfCalls();
         for(var i = 0; i < interests.length; i++){
           (function(i){
             for(j = 0; j < searchTerms[interests[i]].length; j++){
@@ -70,7 +71,6 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo, $location) {
                 types:  [searchTerms[interests[i]][j]]
               };
               WhatDo.placeService.nearbySearch(request, function(result, status){
-                $scope.loading++;
                 callback(result, status, interests[i])
               })
             }
@@ -83,14 +83,16 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo, $location) {
       function callback(result, status, interest){
         $scope.$apply(function(){
           WhatDo.setDisplayDict(result, interest);
-          $scope.loading--;
+          WhatDo.loading--;
         });
       }
       
   }
+  
 
-  $scope.loading = 0;
-
+  $scope.loading = function(){
+    return WhatDo.loading;
+  } 
   $scope.interestList = WhatDo.getInterests();
 
   $scope.displayDict = WhatDo.displayDict;

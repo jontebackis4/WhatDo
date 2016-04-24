@@ -448,3 +448,8 @@ span.ng-binding.ng-scope{
 	width:30px;
 	height:30px;
 }
+
+.loading{
+	width: 60px;
+	height: 20px;
+}
