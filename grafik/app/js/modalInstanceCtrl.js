@@ -1,4 +1,4 @@
-whatDoApp.controller('modalInstanceCtrl', ['$scope', '$uibModalInstance', 'WhatDo', 'fbService', function($scope, $uibModalInstance, WhatDo, fbService) {
+whatDoApp.controller('modalInstanceCtrl', ['$scope', '$uibModalInstance', 'WhatDo', 'fbService', function($scope, $uibModalInstance, WhatDo, fbService, loading) {
 
 	$scope.alerts = [];
 
@@ -41,4 +41,6 @@ whatDoApp.controller('modalInstanceCtrl', ['$scope', '$uibModalInstance', 'WhatD
 		WhatDo.removeFavourites(id, name);
 		fbService.setFavourites(WhatDo.favourites);
 	}
+
+	//$scope.loading = loading;
 }]);
