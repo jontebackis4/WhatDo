@@ -20,7 +20,7 @@
 			<hr class="intline">
 			<div class="row text-left">
 				<div class="col-md-6" ng-if="checkResult(places)">
-					<p id="noResult">There are no results at the current location</p>
+					<p id="noResult">There are no results at the current location.</p>
 				</div>
 				<div class="col-md-6" ng-repeat="place in places">
 					<a class="placeList" ng-click="open('lg'); getPlaceInfo(place.place_id)">{{place.name}}</a>

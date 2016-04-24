@@ -29,7 +29,7 @@
 #homeLine { 
 	width:47%;
 	margin-top: -25px;
-	}
+}
 
 .slogan {
 	font-family: garamond;
@@ -264,64 +264,6 @@
 	height: 10vh;
 }
 
-/* NAVBAR ----------------------------------------------- */
-#menybar{
-	background-color: transparent;
-	border-color: transparent;
-	color:yellow;
-}
-.nav.navbar-nav.navbar-right li a {
-    color: #8cb1d9;
-    font-family: Courier;
-}
-
-.nav.navbar-nav li a {
-    color: #8cb1d9;
-    font-family: Courier;
-}
-
-.nav.navbar-nav li a:hover {
-	color: white; 
-}
-
-.nav>li>a:hover {
-	background-color: gray; 
-}
-.nav>li>a:focus{
-	background-color: transparent;
-}
-.nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
-	background-color: #5CB85C;
-	border-color: transparent; 
-}
-.not-active {
-	color:transparent !important;
-  	pointer-events: none;
-  	cursor: default;
-}
-
-.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
-    background-color: transparent;
-    color: white;
-}
-.dropdown-menu {
-	background-color: transparent;
- }
-
- .dropdown-menu >li>a:hover {
-	background-color: transparent;
-	color:white;
- }
-
-.dropdown-menu .divider {
-	background-color: gray;
-}
-
-.iconGlobe{
-	width:30px;
-	height:30px;
-}
-
  /* FAVOURIT LIST ----------------------------------------------------------------------------------------------------------------*/
 #bigOver {
 	font-family: garamond;
@@ -364,7 +306,7 @@
 	margin-top: 40px;
 }
 
- /*MODAL-------------------------------------------------------------------------------------------------------------------------*/
+ /*MODAL & NAVBAR ---------------------------------------------------------------------------------------------------------------*/
 .modal-header {
 	background-color: #d9d9d9;
 	text-align: center;
@@ -437,12 +379,72 @@ span.ng-binding.ng-scope{
 	padding-right:15px;
 }
 
+.panel-default>.panel-heading{
+	background-color: #d9e5f2;
+	border-color:#d9e5f2;
+}
+
+#menybar{
+	background-color: transparent;
+	border-color: transparent;
+	color:yellow;
+}
+
+.nav.navbar-nav.navbar-right li a {
+    color: #8cb1d9;
+    font-family: Courier;
+}
+
+.nav.navbar-nav li a {
+    color: #8cb1d9;
+    font-family: Courier;
+}
+
+.nav.navbar-nav li a:hover {
+	color: white; 
+}
+
+.nav>li>a:hover {
+	background-color: gray; 
+}
+
+.nav>li>a:focus{
+	background-color: transparent;
+}
+
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
+	background-color: #5CB85C;
+	border-color: transparent; 
+}
+
+.not-active {
+	color:transparent !important;
+  	pointer-events: none;
+  	cursor: default;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    background-color: transparent;
+    color: white;
+}
+.dropdown-menu {
+	background-color: transparent;
+ }
+
 .dropdown-menu li a{
 	color: #8cb1d9;
     font-family: Courier;
 }
+ .dropdown-menu >li>a:hover {
+	background-color: transparent;
+	color:white;
+ }
 
-.panel-default>.panel-heading{
-	background-color: #d9e5f2;
-	border-color:#d9e5f2;
+.dropdown-menu .divider {
+	background-color: gray;
+}
+
+.iconGlobe{
+	width:30px;
+	height:30px;
 }

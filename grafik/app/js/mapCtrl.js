@@ -105,7 +105,6 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo, $location) {
     }
   };
 
-  /*EMMELI*/
   if ($scope.interestList.length === 0){
     $location.path("/interests");
   }
