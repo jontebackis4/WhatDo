@@ -344,6 +344,11 @@
 	font-size: 45px;
 }
 
+.colOverFlow{
+	overflow-wrap: break-word;
+  	word-wrap: break-word;
+}
+
 #picture{
 	width: 100%; 
 	height: 300px;
