@@ -1,5 +1,5 @@
 
-<div ng-if="loading" class="modal-header">
+<div class="modal-header">
   <button type="button" class="close" ng-click="close()">&times;</button>
   <h2 class="modal-title"><span id="placeName">{{info().name}}</span></h2>
 </div>
@@ -16,6 +16,10 @@
   </div>
   <div class="col-md-6" ng-if="info().photos">
     <img ng-src="{{getPhoto(info().photos)}}" id="picture">
+    <div ng-if="getPhotoAttr(info().photos)" class="attrText">
+      <p class="col-md-4">Photo by: </p>
+      <p class="col-md-6" ng-bind-html="renderHtml(getPhotoAttr(info().photos))"></p>
+    </div>
   </div>
 </div>
 

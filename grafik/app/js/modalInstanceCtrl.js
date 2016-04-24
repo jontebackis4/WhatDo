@@ -1,4 +1,4 @@
-whatDoApp.controller('modalInstanceCtrl', ['$scope', '$uibModalInstance', 'WhatDo', 'fbService', function($scope, $uibModalInstance, WhatDo, fbService, loading) {
+whatDoApp.controller('modalInstanceCtrl', ['$scope', '$uibModalInstance', 'WhatDo', 'fbService', '$sce', function($scope, $uibModalInstance, WhatDo, fbService, $sce) {
 
 	$scope.alerts = [];
 
@@ -27,9 +27,16 @@ whatDoApp.controller('modalInstanceCtrl', ['$scope', '$uibModalInstance', 'WhatD
 	$scope.getPhoto = function(photos){
 		return photos[0].getUrl({'maxWidth': photos[0].width, 'maxHeight': photos[0].height});
 	};
+
+	$scope.getPhotoAttr = function(photos){
+		return photos[0].html_attributions[0]
+	};
+
+	$scope.renderHtml = function(htmlCode){
+		return $sce.trustAsHtml(htmlCode);
+	};
 	
 	$scope.close = function(){
-		WhatDo.selectedPlaceInfo = null;
 		$uibModalInstance.dismiss('close');
 	};
 
@@ -42,6 +49,4 @@ whatDoApp.controller('modalInstanceCtrl', ['$scope', '$uibModalInstance', 'WhatD
 		WhatDo.removeFavourites(id, name);
 		fbService.setFavourites(WhatDo.favourites);
 	}
-
-	//$scope.loading = loading;
 }]);
