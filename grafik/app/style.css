@@ -4,7 +4,7 @@
 }
 
 /* HOME PAGE -----------------------------------------------------------------------------------------------------------------------------------*/
-#homePage { 
+.homePage { 
 	background-image: url("tradmorkast.jpg");
 	background-size: cover; 
 	background-repeat: no-repeat;
@@ -115,15 +115,6 @@
 }
 
 /* INTEREST VIEW  ------------------------------------------------------------------------------------------------------------------------------*/
-
-#darkBack {
-	background-image: url("tradmorkast.jpg");
-	background-size: 100% 100%; 
-	background-repeat: no-repeat;
-	height: 100vh;
-	width: 100vw;
-}
-
 .standard{
 	font-family: garamond;
 	text-align: center;
@@ -265,7 +256,7 @@
 }
 
  /* FAVOURIT LIST ----------------------------------------------------------------------------------------------------------------*/
-#bigOver {
+.bigOver {
 	font-family: garamond;
 	color:white;
 	text-align: center;
@@ -304,6 +295,58 @@
 	margin-bottom:35px;
 	color:white;
 	margin-top: 40px;
+}
+ /*ABOUT ---------------------------------------------------------------------------------------------------------------*/
+#fixDiv{
+	overflow: scroll;
+}
+
+#aboutOver{
+	padding-top: 0;
+}
+
+#aboutUn{
+	padding-bottom: 0px;
+	margin-top: 30px;
+}
+
+.aboutTex{
+	color:white;
+	font-size: 17px;
+	font-style: italic;
+	margin-bottom: 0;
+}
+
+#picPos{
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+.perPic{
+	width:152px;
+	height:114px;
+	border:2px solid white;
+	position: center;
+	margin-left:50%;
+ 	transform: translateX(-50%);
+}
+
+.picTex{
+	color:white;
+	font-style: italic;
+	font-family: garamond;
+	text-align: center;
+	font-size: 17px;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.thanksTo{
+	color:white;
+	font-size:12px;
+	font-style: italic;
 }
 
  /*MODAL & NAVBAR ---------------------------------------------------------------------------------------------------------------*/
