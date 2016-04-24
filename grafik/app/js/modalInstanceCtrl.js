@@ -35,6 +35,10 @@ whatDoApp.controller('modalInstanceCtrl', ['$scope', '$uibModalInstance', 'WhatD
 	$scope.renderHtml = function(htmlCode){
 		return $sce.trustAsHtml(htmlCode);
 	};
+
+	$scope.loading = function(){
+		return WhatDo.loadingModal;
+	};
 	
 	$scope.close = function(){
 		$uibModalInstance.dismiss('close');

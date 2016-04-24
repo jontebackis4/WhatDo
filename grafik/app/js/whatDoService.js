@@ -1,17 +1,9 @@
 
 
 whatDoApp.factory('WhatDo',function ($resource, auth, $rootScope) {
-	/*The arrays under are synched such as interest [1] is the result [1]*/
-  	this.loading = 0;
-    this.getLoading=function(){
-      console.log(this.loading);
-      return this.loading;
-    }
-    this.incLoading = function(){
-      this.loading--;
-      console.log(this.loading);
-    }
 
+  	this.loadingMap = 0;
+    this.loadingModal = 0;
     this.selectedPlaceId;
     this.selectedPlaceInfo;
     this.placeService;
@@ -97,11 +89,6 @@ whatDoApp.factory('WhatDo',function ($resource, auth, $rootScope) {
       this.btnStatus[btn] = !this.btnStatus[btn];
     }
 
-  	this.resetCityData = function(){
-  		this.interests = [];
-  		this.interestInfo = [];
-  	}
-
   	this.setDisplayDict = function(result, interest){
       if(result){
     		if(Array.isArray(this.displayDict[interest])){
@@ -150,10 +137,6 @@ whatDoApp.factory('WhatDo',function ($resource, auth, $rootScope) {
   	this.getInterests = function(){
   		return this.interests;
   	}
-
-    this.update = function(){
-      $rootScope.$broadcast('update');
-    }
 
   	return this;
 });

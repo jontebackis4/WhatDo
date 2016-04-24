@@ -6,14 +6,14 @@ whatDoApp.controller('modalCtrl', ['$scope', '$uibModal', 'WhatDo', function($sc
 		var request = {
 			placeId: placeId
 		};
-
+		WhatDo.loadingModal = 1;
 	    WhatDo.placeService.getDetails(request, callbackPlaceInfo)
 	};
 
     function callbackPlaceInfo(place, status){
-    	console.log(place);
     	$scope.$apply(function(){
     		WhatDo.selectedPlaceInfo = place;
+    		WhatDo.loadingModal = 0;
     	});
     };
 

@@ -5,6 +5,7 @@
 </div>
 
 <div class="modal-body">
+  <img class = "loading center-block" src="ajax-loader.gif" ng-if="loading() != 0"/>
   <div class="col-md-6 colOverFlow">
     <p ng-if="info().formatted_address"><span class="placeCat">Address:</span> {{info().formatted_address}}</p>
     <p ng-if="info().website"><span class="placeCat">Website: </span><a href ="{{info().website}}"target="_blank"> {{info().website}}</a></p>
@@ -17,7 +18,7 @@
   <div class="col-md-6" ng-if="info().photos">
     <img ng-src="{{getPhoto(info().photos)}}" id="picture">
     <div ng-if="getPhotoAttr(info().photos)" class="attrText">
-      <p class="col-md-4">Photo by: </p>
+      <p class="col-md-3">Photo by: </p>
       <p class="col-md-6" ng-bind-html="renderHtml(getPhotoAttr(info().photos))"></p>
     </div>
   </div>

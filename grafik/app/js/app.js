@@ -5,18 +5,15 @@ whatDoApp.config(['$routeProvider', 'authProvider', '$locationProvider',
     $routeProvider.
       when('/home', {
         templateUrl: 'partials/home.html',
-        pageTitle: 'Home',
         controller: 'homeCtrl'
       }).
       when('/interests', {
         templateUrl: 'partials/interests.html',
-        pageTitle: 'Interests',
         controller: 'interestsCtrl',
         requiresLogin: true
       }).
       when('/search', {
         templateUrl: 'partials/map.html',
-        pageTitle: 'Search',
         controller: 'mapCtrl',
         requiresLogin: true
       }).
@@ -41,7 +38,6 @@ whatDoApp.config(['$routeProvider', 'authProvider', '$locationProvider',
     });
 
     authProvider.on('loginSuccess', function($location, profilePromise, idToken, store) {
-      console.log("Login Success");
       profilePromise.then(function(profile) {
         store.set('profile', profile);
         store.set('token', idToken);

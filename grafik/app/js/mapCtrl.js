@@ -1,6 +1,6 @@
 // Search controller that we use whenever we have a search inputs
 // and search results
-whatDoApp.controller('mapCtrl', function ($scope,WhatDo, $location) {
+whatDoApp.controller('mapCtrl', function ($scope, WhatDo, $location) {
 
   $scope.init = function() {
 
@@ -41,6 +41,7 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo, $location) {
         createMark(e.latLng, map)
       });
 
+      //Create marker and make nearbySearch instantly and on dragend
       function createMark(latLng, map){
         var marker = new google.maps.Marker({
           position: latLng,
@@ -61,7 +62,7 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo, $location) {
       //Make nearby search
       function googleNearbySearch(marker){
         WhatDo.resetDisplayDict();
-        WhatDo.loading = WhatDo.getNrOfCalls();
+        WhatDo.loadingMap = WhatDo.getNrOfCalls();
         for(var i = 0; i < interests.length; i++){
           (function(i){
             for(j = 0; j < searchTerms[interests[i]].length; j++){
@@ -83,7 +84,7 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo, $location) {
       function callback(result, status, interest){
         $scope.$apply(function(){
           WhatDo.setDisplayDict(result, interest);
-          WhatDo.loading--;
+          WhatDo.loadingMap--;
         });
       }
       
@@ -91,8 +92,9 @@ whatDoApp.controller('mapCtrl', function ($scope,WhatDo, $location) {
   
 
   $scope.loading = function(){
-    return WhatDo.loading;
-  } 
+    return WhatDo.loadingMap;
+  }
+  
   $scope.interestList = WhatDo.getInterests();
 
   $scope.displayDict = WhatDo.displayDict;

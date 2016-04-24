@@ -1,6 +1,5 @@
 
 whatDoApp.controller('favoritCtrl', function ($scope, $rootScope, $location, WhatDo, fbService, auth) {
-	/*WhatDo.addFavourite("1336");*/
 	
 	if (WhatDo.interests.length === 0){
     	$location.path("/interests");
