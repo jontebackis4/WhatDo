@@ -91,7 +91,7 @@ whatDoApp.config(['$routeProvider', 'authProvider', '$locationProvider',
             }
             return refreshingToken;
           } else {
-            $location.path('/login');
+            $location.path('/home');
           }
         }
       }
