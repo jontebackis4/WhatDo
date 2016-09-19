@@ -113,5 +113,11 @@ whatDoApp.controller('mapCtrl', function ($scope, WhatDo, $location) {
     $location.path("/interests");
   }
 
+  //Calculates the searchradius relative to the zoom level
+  calcRadius = function(){
+    zoomLevel = map.getZoom();
+    searchRadius = WhatDo.getSearchRadius();
+  }
+
 });
 

@@ -8,6 +8,7 @@ whatDoApp.factory('WhatDo',function ($resource, auth, $rootScope) {
     this.selectedPlaceInfo;
     this.placeService;
     this.marker;
+    this.searchRadius = 5;
   	this.interests = [];
   	this.displayDict = {};
     this.favourites = {};
@@ -137,6 +138,14 @@ whatDoApp.factory('WhatDo',function ($resource, auth, $rootScope) {
   	this.getInterests = function(){
   		return this.interests;
   	}
+
+    this.getSearchRadius = function(){
+      return this.searchRadius;
+    }
+
+    this.getSearchRadius = function(radius){
+      this.searchRadius = radius;
+    }
 
   	return this;
 });
